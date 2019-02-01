@@ -120,9 +120,16 @@
   from   {opacity:0;}
   to  {opacity:1;}
 }
-.popBox {display:none;z-index:10;
-		margin:0 auto; position:relative;
-		background-color:white;}
+.popBox {display:none;z-index:2;
+		margin:50px 20px; position:absolute;
+		background-color:white;
+		padding:20px;
+        border-radius: 8px;
+		width:30%;
+		font-size:100%;
+}
+
+.popBox a{font-size:125%; text-align:center}
 
 .wijaSlide {
 	height:400px;width:200px;

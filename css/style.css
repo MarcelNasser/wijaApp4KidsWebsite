@@ -70,7 +70,7 @@ position:relative;top:5px}
 
 @keyframes blueheart {
   0%   {color: black;}
-  50%  {color: cornflowerblue;}
+  50%  {color: dodgerblue;}
   100% {color: black;}
 }
 
@@ -100,18 +100,20 @@ position:relative;top:5px}
 	}
 }
 
-#topnav{width:100%; z-index:15;}
+#topnav{width:100%; z-index:5;}
 
 #menuIconWrapper{background-color:white;z-index:5;width:auto;border: 2px solid #f3f3f3;display:inline-block;}
 
-#menuIcon {position:relative;z-index:15;color:black;}
+#menuIcon {position:relative;z-index:5;color:black;}
 
 #menuIcon:hover{color:red}
 
 #topnavDropMenu{
-background-color:#f9f9f9;z-index:15;display:none;border: 2px solid #f3f3f3;position:absolute;
+background-color:white;z-index:5;display:none;border: 2px solid #f3f3f3;position:absolute;
 box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2); min-width:350px;min-height:350px;
 }
+
+#dropMenu-content{z-index:5;}
 
 #dropMenu-content a{display:block;padding:8px 16px 8px 16px;}
 

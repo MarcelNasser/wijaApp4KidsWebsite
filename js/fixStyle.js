@@ -13,6 +13,7 @@
 	var colors=["blue","green","red"];
 	var icolo=0;
 	var jobInfo = document.getElementById("responseLine");
+	var responseHttp= document.getElementById("responseContainer");
 	
 	function openMenu(){
 		if(dropMenu.style.display == "none")
@@ -31,9 +32,20 @@
 	}
 	
 	function closeMenu(){
-		if(overlay.style.display!="none"){
-			overlay.style.display ="none";}
+		closeOverlay();
 		dropMenu.style.display="none";
+	}
+	
+	function closeOverlay(){
+		if (popBox!=null){
+			if (popBox.style.display=="none"){overlay.style.display ="none";}
+		}
+		if (mailBox!=null){
+			if (mailBox.style.display=="none"){overlay.style.display ="none";}
+		}
+		if (responseHttp!=null){
+			if (responseHttp.style.display=="none"){overlay.style.display ="none";}
+		}
 	}
 	
 	function sendMail(){
@@ -65,8 +77,24 @@
 		// }
 	}	
 	
-	function closeResponseBox(){
-		
+	function openResponseHttp(){
+		if(responseHttp.style.display == "none")
+			{
+			overlay.style.zIndex="6";
+			overlay.style.display ="block";
+			responseHttp.style.display="block";
+			tabContact.style.display="none";
+			}
+		//else{closeResponseHttp();}			
+	}
+	
+	function closeResponseHttp(){
+		if(overlay.style.display!="none"){
+			overlay.style.display ="none";
+			overlay.style.zIndex="1";
+		}
+		responseHttp.style.display ="none";		
+		tabContact.style.display="block";
 	}
 	
 	function switchHideStatus(status1,status2){
@@ -82,18 +110,17 @@
 				if (popBox!=null){closePopBox();}
 				if (mailBox!=null){closeMailBox();}
 				if (dropMenu!=null){closeMenu();}
+				if (responseHttp!=null){closeResponseHttp();}
 				// switchHideStatus("block","none");
 			}
 			else if (event.target == wrapper) {
 				if (popBox!=null){closePopBox();}
 				if (mailBox!=null){closeMailBox();}
 				if (dropMenu!=null){closeMenu();}
+				if (responseHttp!=null){closeResponseHttp();}
 				// switchHideStatus("block","none");
 			}
 		}
-		/*else if (event.target == dropMenu) {
-			closeMenu();
-		}*/
 	}
 	window.onload = function(){
 		var maxwidth=Math.min(900,window.innerWidth);

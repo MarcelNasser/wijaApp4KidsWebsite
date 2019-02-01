@@ -53,6 +53,7 @@ function showDivContent(obj){
 	overlay.style.display ="block";
 	popBox.style.display ="inline-block";
 	popBox.classList.add("fadein");
+	//popBox.style.width=(int)(wrapper.style.width/3);
 }
 
 function stopSpin(obj){
