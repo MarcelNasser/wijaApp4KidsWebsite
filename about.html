@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="js/requestSomething.js"></script>
+		<link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<title>wiJa/About us</title>
+	</head>
+	
+	<body>
+		<div id="wrapper">
+			<div id="overlay" class="hideable"></div>
+			<div id="wijaInfo">
+				<div id="topnav">
+					<div id="menuIconWrapper">
+						<a onclick="openMenu()" href="javascript:void(0);" id="menuIcon">
+						<i class="material-icons resizable" style="font-size:250%;background-color:white;color:grey;">menu</i>
+						</a>
+					</div>
+					<div id="topnavDropMenu" class="hideable">
+						<div id="dropMenu-content">
+						<ul id="dropMenuList">
+						<li><a href="index.html"  onclick="closeMenu()" onmouseover="turnGrey(this)" onmouseout="turnWhite(this)">
+							<i class="material-icons menuButton spinable" style="font-size:100%">home</i>
+							<span> Home </span>
+						</a></li>			
+						<li><a href="https://play.google.com/store" onmouseover="turnGrey(this)" onmouseout="turnWhite(this)" target="_blank" onclick="closeMenu()">
+							<i class="material-icons menuButton spinable"style="font-size:100%">android</i>
+							<span> Games </span>
+						</a></li>
+						<li><a href="contact.html" onclick="closeMenu()" onmouseover="turnGrey(this)" onmouseout="turnWhite(this)">
+							<i class="material-icons menuButton spinable" style="font-size:100%">group_add</i>
+							<span> Connect with Us </span>
+						</a></li>
+						<li><a href="about.html" onclick="closeMenu()" onmouseover="turnGrey(this)" onmouseout="turnWhite(this)">
+							<i class="material-icons menuButton spinable" style="font-size:100%">business</i>
+							<span> About Us </span>
+						</a></li>
+						</ul>
+						</div>
+					</div>
+					<div id="androidBadge" class="resizable">
+						<a href="https://play.google.com/store" target="_blank"><img src="icons/google-play-badge.png" /></a>
+					</div>	
+				</div>
+				<!--<div id="workWrapper">
+				<img src="icons/working_icon.png"/>
+				</div>-->
+
+				<!--<div id="logoWrapper">
+				<img src="icons/wija-icon2.png" />
+				</div>-->
+			</div>
+			<div id="content">
+			<h2 style="	border-bottom :1px gray solid;"> About Us </h2>
+			<div id="firstPost">
+				<p> The project wiJa has been initiated to improve learning skills of kids while having fun. As parents, we designed our Android App with perfect content for children.</p>
+				<h4> - ads free - </h4>
+				<p>First of all, our apps are free from advertisements and disturbing information for young kids. We are appalled by wild ads poping out in regular Android apps for kids. 
+				The content of these ads cannot be supervised by the parents. And kids are at risk and not ready for that. We stepped up against that with this wiJa's project. </p>
+				<h4> - no jailing animations - </h4>
+				<p>Secondly, a sober design was prefered to help kids to navigate easily through the whole app. WiJa's apps are not saturated with attention drawing animations. 
+				Kids are free to get in and get out of wiJa thanks to the pure design. We don't want your kids to get poluted by wild animations running around. We keep your kid focus on scheduled
+				task. When he has finished, he may leave anytime.</p>
+				<h4> - supervised content - </h4>
+				<p>Lastly, we are responsible for the content of the app and the educational material within. We will like your return to improve it.</p>
+			</div>
+			</div>
+			
+			<div id="footer">
+				<p>&copy; Copyright 2019.</p>
+			</div>
+		
+		</div>
+	</body>
+	
+	<script src="js/fixStyle.js"></script>
+
+</html>

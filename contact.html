@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="js/requestSomething.js"></script>
+		<link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="css/style-table.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="css/style-mailbox.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="css/style-responseHttp.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<title>wiJa/Follow us</title>
+	</head>
+	
+	<body>
+		<div id="wrapper">
+			<div id="overlay" class="hideable"></div>
+			<div id="wijaInfo">
+				<div id="topnav">
+					<div id="menuIconWrapper">
+						<a onclick="openMenu()" href="javascript:void(0);" id="menuIcon">
+						<i class="material-icons resizable" style="font-size:250%;background-color:white;color:grey;">menu</i>
+						</a>
+					</div>
+					<div id="topnavDropMenu" class="hideable">
+						<div id="dropMenu-content">
+						<ul id="dropMenuList">
+						<li><a href="index.html"  onclick="closeMenu()" onmouseover="turnGrey(this)" onmouseout="turnWhite(this)">
+							<i class="material-icons menuButton spinable" style="font-size:100%">home</i>
+							<span> Home </span>
+						</a></li>			
+						<li><a href="https://play.google.com/store" onmouseover="turnGrey(this)" onmouseout="turnWhite(this)" target="_blank" onclick="closeMenu()">
+							<i class="material-icons menuButton spinable"style="font-size:100%">android</i>
+							<span> Games </span>
+						</a></li>
+						<li><a href="contact.html" onclick="closeMenu()" onmouseover="turnGrey(this)" onmouseout="turnWhite(this)">
+							<i class="material-icons menuButton spinable" style="font-size:100%">group_add</i>
+							<span> Connect with Us </span>
+						</a></li>
+						<li><a href="about.html" onclick="closeMenu()" onmouseover="turnGrey(this)" onmouseout="turnWhite(this)">
+							<i class="material-icons menuButton spinable" style="font-size:100%">business</i>
+							<span> About Us </span>
+						</a></li>
+						</ul>
+						</div>
+					</div>
+					<div id="androidBadge" class="resizable">
+						<a href="https://play.google.com/store" target="_blank"><img src="icons/google-play-badge.png" /></a>
+					</div>	
+				</div>
+
+			</div>
+			<div id="content">
+				<h2 style="	border-bottom :1px gray solid;"> Connect With Us </h2>
+				<div id="mailBox" class="hideable">
+				  <form >
+					<label for="fname">First Name</label>
+					<input type="text" id="fname" name="firstname" placeholder="Your name..">
+					<label for="lname">Last Name</label>
+					<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+					<label for="lname">E-mail</label>
+					<input type="text" id="lname" name="e-mail" placeholder="Your e-mail please..">
+					<label for="country">Comment</label>
+					<textarea> </textarea>				  
+					<input type="submit" value="Submit">
+				  </form>
+				</div>
+				<div id="responseWrapper">				
+					<div id="responseContainer" onclick="requestSomething()">
+						<p id="responseLine"><br>-- Click here to contact the Webmaster --<br><br></p>
+					</div>
+				</div>
+				<table id="tableContact" class="hideable">
+					<tr>
+						<td>
+							<div class="blueBeat">
+								<a href="https://facebook.com" target="_blank"><div class="focusable"><img src="icons/facebook.png" /></div></a>
+							</div>
+						</td>
+						<td>
+							<div class="redBeat">
+								<a href="https://twitter.com" target="_blank"><div class="focusable"><img src="icons/twitter_bird.png" /></div></a>
+							</div>
+						</td>
+					  </tr>
+					  <tr>
+						<td>
+							<div class="redBeat">
+								<a href="javascript:void(0);" onclick="sendMail()"><div class="focusable"><img src="icons/mail_icon.png" /></div></a>
+							</div>
+						</td>
+						<td>
+							<div class="blueBeat">
+								<a href="https://facebook.com" target="_blank"><div class="focusable"><img src="icons/email.png" /></div></a>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+			<div id="footer">
+				<p>&copy; Copyright 2019.</p>
+			</div>
+			
+		</div>
+	</body>
+	
+	<script src="js/fixStyle.js"></script>
+
+</html>

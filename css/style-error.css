@@ -1,0 +1,8 @@
+h2 {margin:10px 0 15px 0;text-align:center; padding:20px 0;
+            font-size:200%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
+            font-weight:bold;
+			border-bottom :1px gray solid; }
+
+#ballWrapper{background-color:white;width:auto;height:auto;display:inline-block;text-align:center;margin:0 auto;float:center;}
+			
+#ballWrapper img{max-height:200px;max-width:200px;vertical-align: middle;}

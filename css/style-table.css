@@ -1,0 +1,90 @@
+#tableContact {width:50%; text-align:center; text-size:150%;margin:0px auto; display:block}
+#tableContact tr:nth-child(odd){background-color: #f2f2f2;}
+#tableContact tr:nth-child(even){background-color: #f2f2f2;}
+#tableContact td {width:50%}
+#tableContact img {max-height:75px; padding:10px;}
+#tableContact div{padding:20px 20px 20px 20px;}
+
+.blueBeat {
+  -webkit-animation-name: bluebeat; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 9s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinite;
+  animation-name: bluebeat;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bluebeat {
+  0%   {background-color: #f2f2f2;}
+  50%  {background-color: dodgerblue;}
+  100% {background-color: #f2f2f2;}
+}
+
+@keyframes bluebeat {
+  0%   {background-color: #f2f2f2;}
+  50%  {background-color: dodgerblue;}
+  100% {background-color: #f2f2f2;}
+}
+
+.redBeat {
+  -webkit-animation-name: redbeat; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 12s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinite;
+  animation-name: redbeat;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes redbeat {
+  0%   {background-color: #f2f2f2;}
+  50%  {background-color: #ff8000;}
+  100% {background-color: #f2f2f2;}
+}
+
+@keyframes redbeat {
+  0%   {background-color: #f2f2f2;}
+  50%  {background-color: #ff8000;}
+  100% {background-color: #f2f2f2;}
+}
+
+.greenBeat {
+  -webkit-animation-name: greenbeat; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 6.5s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinite;
+  animation-name: greenbeat;
+  animation-duration: 6.5s;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes greenbeat {
+  0%   {background-color: #f2f2f2;}
+  50%  {background-color: black;}
+  100% {background-color: #f2f2f2;}
+}
+
+@keyframes greenbeat {
+  0%   {background-color: #f2f2f2;}
+  50%  {background-color: black;}
+  100% {background-color: #f2f2f2;}
+}
+
+.yellowBeat {
+  -webkit-animation-name: yellowbeat; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 6.5s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinite;
+  animation-name: yellowbeat;
+  animation-duration: 6.5s;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes yellowbeat {
+  0%   {background-color: #f2f2f2;}
+  50%  {background-color: gold;}
+  100% {background-color: #f2f2f2;}
+}
+
+@keyframes yellowbeat {
+  0%   {background-color: #f2f2f2;}
+  50%  {background-color: gold;}
+  100% {background-color: #f2f2f2;}
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="js/requestSomething.js"></script>
+		<link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="css/style-wijaslides.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<title>wiJa's Story</title>
+	</head>
+	
+	<body>
+		<div id="wrapper">
+			<div id="overlay" class="hideable"></div>
+			<div id="wijaInfo">
+				<div id="topnav">
+					<div id="menuIconWrapper">
+						<a onclick="openMenu()" href="javascript:void(0);" id="menuIcon">
+						<i class="material-icons resizable" style="font-size:250%;background-color:white;color:grey;">menu</i>
+						</a>
+					</div>
+					<div id="topnavDropMenu" class="hideable">
+						<div id="dropMenu-content">
+						<ul id="dropMenuList">
+						<li><a href="index.html"  onclick="closeMenu()" onmouseover="turnGrey(this)" onmouseout="turnWhite(this)">
+							<i class="material-icons menuButton spinable" style="font-size:100%">home</i>
+							<span> Home </span>
+						</a></li>			
+						<li><a href="https://play.google.com/store" onmouseover="turnGrey(this)" onmouseout="turnWhite(this)" target="_blank" onclick="closeMenu()">
+							<i class="material-icons menuButton spinable"style="font-size:100%">android</i>
+							<span> Games </span>
+						</a></li>
+						<li><a href="contact.html" onclick="closeMenu()" onmouseover="turnGrey(this)" onmouseout="turnWhite(this)">
+							<i class="material-icons menuButton spinable" style="font-size:100%">group_add</i>
+							<span> Connect with Us </span>
+						</a></li>
+						<li><a href="about.html" onclick="closeMenu()" onmouseover="turnGrey(this)" onmouseout="turnWhite(this)">
+							<i class="material-icons menuButton spinable" style="font-size:100%">business</i>
+							<span> About Us </span>
+						</a></li>
+						</ul>
+						</div>
+					</div>
+					<div id="androidBadge" class="resizable">
+						<a href="https://play.google.com/store" target="_blank"><img src="icons/google-play-badge.png" /></a>
+					</div>	
+				</div>
+			</div>
+			<div id="content">
+			<h1> Welcome To WiJa's Story </h1>
+			<!-- <h3> The website is under construction ... </h3> -->
+			</div>
+			<span class="popBox hideable">
+				bidule
+			</span>
+			<div id="wijaSlidesWrapper">
+				<div id="storyW">
+					<h3>W</h3>
+					<p>ija begins ...</p>
+				</div>
+				<div class="slideBox spinableY">
+					<div class="front" onclick="openStoryW()">W</div>
+					<div class="right">I</div>
+					<div class="back">J</div>
+					<div class="left">A</div>
+					<div class="top">&nbsp</div>
+					<div class="bottom">&nbsp</div>
+				</div>
+				<!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a> -->
+				<!-- <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+
+			</div>
+
+			<div id="responseWrapper">				
+				<div id="responseContainer" onclick="requestSomething()">
+					<p id="responseLine"><br>-- Click here to contact the Webmaster --<br><br></p>
+				</div>
+			</div>
+			
+			<div id="footer">
+				<p>&copy; Copyright 2019.</p>
+			</div>
+			
+		</div>
+	</body>
+	<script src="js/fixStyle.js"></script>
+	<script src="js/fixBoxBehavior.js"></script>
+
+</html>
