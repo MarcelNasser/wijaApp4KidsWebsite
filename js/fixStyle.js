@@ -32,8 +32,11 @@
 	}
 	
 	function closeMenu(){
+		if (dropMenu.style.display!="none"){
 		closeOverlay();
 		dropMenu.style.display="none";
+		return true;
+		}else{return false;}
 	}
 	
 	function closeOverlay(){
@@ -60,21 +63,23 @@
 	}
 	
 	function closeMailBox(){
-		if(overlay.style.display!="none"){
-		overlay.style.display ="none";
-		overlay.style.zIndex="1";
-		}
+		if(mailBox.style.display!="none"){
 		mailBox.style.display="none";
+		closeOverlay();
+		overlay.style.zIndex="1";
 		tabContact.style.display="block";
+		return true;
+		}
+		else{return false;}
 	}
 	
 	function closePopBox(){
-		if(overlay.style.display!="none"){
-			overlay.style.display ="none";}
-		popBox.style.display ="none";
-		// for (var i = 0; i < popBox.length; i++) {
-			// popBox[i].style.display="none";
-		// }
+		if(popBox.style.display!="none"){
+			overlay.style.display ="none";
+			popBox.style.display ="none";
+			return true;
+		}
+		else{return false;}
 	}	
 	
 	function openResponseHttp(){
@@ -89,12 +94,14 @@
 	}
 	
 	function closeResponseHttp(){
-		if(overlay.style.display!="none"){
-			overlay.style.display ="none";
+		if(responseHttp.style.display!="none"){
+			responseHttp.style.display ="none";		
+			closeOverlay();
 			overlay.style.zIndex="1";
+			tabContact.style.display="block";
+			return true;
 		}
-		responseHttp.style.display ="none";		
-		tabContact.style.display="block";
+		else{return false;}
 	}
 	
 	function switchHideStatus(status1,status2){
@@ -103,21 +110,21 @@
 			hideable[i].style.display=status2;}
 		}
 	}		
-		
+	var closeStack=false;
 	window.onclick = function(event) {
 		if(overlay.style.display != "none"){
 			if (event.target == overlay) {
-				if (popBox!=null){closePopBox();}
-				if (mailBox!=null){closeMailBox();}
-				if (dropMenu!=null){closeMenu();}
-				if (responseHttp!=null){closeResponseHttp();}
+				if (dropMenu!=null){closeStack=closeMenu();}
+				if (mailBox!=null ){closeStack=closeMailBox();}
+				if (responseHttp!=null){closeStack=closeResponseHttp();}
+				if (popBox!=null){closeStack=closePopBox();}
 				// switchHideStatus("block","none");
 			}
 			else if (event.target == wrapper) {
-				if (popBox!=null){closePopBox();}
-				if (mailBox!=null){closeMailBox();}
-				if (dropMenu!=null){closeMenu();}
-				if (responseHttp!=null){closeResponseHttp();}
+				if (dropMenu!=null){closeStack=closeMenu();}
+				if (mailBox!=null ){closeStack=closeMailBox();}
+				if (responseHttp!=null){closeStack=closeResponseHttp();}
+				if (popBox!=null){closeStack=closePopBox();}
 				// switchHideStatus("block","none");
 			}
 		}

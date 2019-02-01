@@ -48,8 +48,8 @@ function fadeOut2(obj){
 function showDivContent(obj){
 	var face=obj.innerHTML;
 	// box.body.style.visibility="hidden";
-	overlay.style.zIndex="1";
-	popBox.style.zIndex="5";
+	//overlay.style.zIndex="1";
+	//popBox.style.zIndex="5";
 	overlay.style.display ="block";
 	popBox.style.display ="inline-block";
 	popBox.classList.add("fadein");
