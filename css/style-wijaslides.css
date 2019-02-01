@@ -74,7 +74,7 @@
 }
 
 .spinableY {
-	animation: spinY 30s infinite linear;
+	animation: spinY 30s 10 linear;
 }
 	
 .fadeable {
@@ -121,15 +121,15 @@
   to  {opacity:1;}
 }
 .popBox {display:none;z-index:2;
-		margin:50px 20px; position:absolute;
+		margin:20px 20px; position:absolute;
 		background-color:white;
 		padding:20px;
         border-radius: 8px;
-		width:30%;
+		width:25%;
 		font-size:100%;
 }
 
-.popBox a{font-size:125%; text-align:center}
+.popBox a{font-size:125%;}
 
 .wijaSlide {
 	height:400px;width:200px;

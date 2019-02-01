@@ -8,25 +8,26 @@
 	var dropMenu=document.getElementById("topnavDropMenu");
 	var dropMenuList=document.getElementById("dropMenuList");
 	var mailBox=document.getElementById("mailBox");
+	var wijaBox=document.getElementById("wijaBox");
 	var tabContact=document.getElementById("tableContact");
 	var menuList=document.getElementsByClassName("material-icons menuButton");
 	var colors=["blue","green","red"];
 	var icolo=0;
 	var jobInfo = document.getElementById("responseLine");
 	var responseHttp= document.getElementById("responseContainer");
+	var overlayStack=['','overlay'];
 	
 	function openMenu(){
-		if(dropMenu.style.display == "none")
+		if(dropMenu.style.display != "block")
 			{
 			overlay.style.display ="block";
 			dropMenu.style.display="block";
-			//jobInfo.innerHTML+="-"+wrapper.style.height+"-\n";
-			// dropMenu.style.height=wrapper.style.height+"";
 			for (var i = 0; i < menuList.length; i++) {
 					icolo=Math.floor(Math.random()*colors.length);
 					menuList[i].style.color=colors[icolo%colors.length];
 					menuList[i].style.fontSize="110%";
-				}        
+				}
+			overlayStack.push('Menu');
 			}
 		else {closeMenu();}
 	}
@@ -34,9 +35,8 @@
 	function closeMenu(){
 		if (dropMenu.style.display!="none"){
 		closeOverlay();
+		}
 		dropMenu.style.display="none";
-		return true;
-		}else{return false;}
 	}
 	
 	function closeOverlay(){
@@ -51,26 +51,28 @@
 		}
 	}
 	
-	function sendMail(){
-		if(mailBox.style.display == "none")
+	function openMailBox(){
+	/*	var overlay=document.getElementById("overlay");
+		var mailBox=document.getElementById("mailBox");
+		var tabContact=document.getElementById("tableContact");
+		jobInfo.innerHTML+="mailBox.style.display="+mailBox.style.display+"\n";*/
+		if(mailBox.style.display != "block")
 		{
 			overlay.style.zIndex="6";
 			overlay.style.display ="block";
-			mailBox.style.display="block";
-			tabContact.style.display="none";			
+			tabContact.style.display="none";
+			overlayStack.push('mailBox');
 		}
-		else{closeMailBox();}		
+		mailBox.style.display="block";		
 	}
 	
 	function closeMailBox(){
 		if(mailBox.style.display!="none"){
-		mailBox.style.display="none";
-		closeOverlay();
-		overlay.style.zIndex="1";
-		tabContact.style.display="block";
-		return true;
+			overlay.style.display ="none";
+			overlay.style.zIndex="1";
+			tabContact.style.display="block";
 		}
-		else{return false;}
+		mailBox.style.display="none";
 	}
 	
 	function closePopBox(){
@@ -81,25 +83,23 @@
 	}	
 	
 	function openResponseHttp(){
-		if(responseHttp.style.display == "none")
+		if(responseHttp.style.display != "block")
 			{
-			overlay.style.zIndex="6";
-			overlay.style.display ="block";
-			responseHttp.style.display="block";
-			tabContact.style.display="none";
+				overlay.style.zIndex="6";
+				overlay.style.display ="block";
+				tabContact.style.display="none";
+				overlayStack.push('responseHttp');
 			}
-		//else{closeResponseHttp();}			
+			responseHttp.style.display="block";
 	}
 	
 	function closeResponseHttp(){
 		if(responseHttp.style.display!="none"){
-			responseHttp.style.display ="none";		
-			closeOverlay();
+			overlay.style.display ="none";
 			overlay.style.zIndex="1";
 			tabContact.style.display="block";
-			return true;
 		}
-		else{return false;}
+		responseHttp.style.display ="none";		
 	}
 	
 	function switchHideStatus(status1,status2){
@@ -107,25 +107,35 @@
 			if (hideable[i].style.display==status1){
 			hideable[i].style.display=status2;}
 		}
-	}		
+	}
+		
 	window.onclick = function(event) {
 		if(overlay.style.display != "none"){
 			if (event.target == overlay) {
-				if (dropMenu!=null){closeMenu();}
+						//body.innerHTML+="overlayStack: -"+overlayStack[overlayStack.length-1]+"-";
+				if (overlayStack[overlayStack.length-1]=='Menu'){if (dropMenu!=null){closeMenu();}}
+				if (overlayStack[overlayStack.length-1]!='Menu'){if (mailBox!=null ){closeMailBox();}}
+				if (overlayStack[overlayStack.length-1]!='Menu'){if (responseHttp!=null){closeResponseHttp();}}
+				if (overlayStack[overlayStack.length-1]!='Menu'){if (popBox!=null){closePopBox();}}
+				if (overlayStack.length>2){overlayStack.pop();}
+				/*if (dropMenu!=null){closeMenu();}
 				if (mailBox!=null ){closeMailBox();}
 				if (responseHttp!=null){closeResponseHttp();}
-				if (popBox!=null){closePopBox();}
-				// switchHideStatus("block","none");
+				if (popBox!=null){closePopBox();}*/
 			}
 			else if (event.target == wrapper) {
+				/*if (overlayStack[overlayStack.length-1]=="Menu"){if (dropMenu!=null){closeMenu();}}
+				if (overlayStack[overlayStack.length-1]!="Menu"){if (mailBox!=null ){closeMailBox();}}
+				if (overlayStack[overlayStack.length-1]!="Menu"){if (responseHttp!=null){closeResponseHttp();}}
+				if (overlayStack[overlayStack.length-1]!="Menu"){if (popBox!=null){closePopBox();}}*/
 				if (dropMenu!=null){closeMenu();}
 				if (mailBox!=null ){closeMailBox();}
 				if (responseHttp!=null){closeResponseHttp();}
 				if (popBox!=null){closePopBox();}
-				// switchHideStatus("block","none");
 			}
 		}
 	}
+	
 	window.onload = function(){
 		var maxwidth=Math.min(900,window.innerWidth);
 		wrapper.style.width=maxwidth+"px"; 

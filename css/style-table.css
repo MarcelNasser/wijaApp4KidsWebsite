@@ -26,6 +26,27 @@
   100% {background-color: #f2f2f2;}
 }
 
+.blueBeatFont {
+  -webkit-animation-name: bluebeatfont; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 9s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinite;
+  animation-name: bluebeatfont;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bluebeatfont {
+  0%   {color: #f2f2f2;}
+  50%  {color: dodgerblue;}
+  100% {color: #f2f2f2;}
+}
+
+@keyframes bluebeatfont {
+  0%   {color: #f2f2f2;}
+  50%  {color: dodgerblue;}
+  100% {color: #f2f2f2;}
+}
+
 .redBeat {
   -webkit-animation-name: redbeat; /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 12s; /* Safari 4.0 - 8.0 */

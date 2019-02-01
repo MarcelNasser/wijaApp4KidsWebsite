@@ -14,12 +14,12 @@ h3 {margin:10px 0 15px 0;text-align:center; padding:20px 0;
             font-weight:normal;}
 
 h4 {margin:15px 0 5px 0;text-align:center; padding:0;
-            font-size:125%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
-            font-weight:italic;}
+            font-size:135%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
+            font-weight:italic; line-height:1.2em;}
 			
 p {margin:5px 0 5px 0;text-align:center; padding:0 0;
-            font-size:100%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
-            font-weight:normal;}
+            font-size:120%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
+            font-weight:normal;line-height:1.2em;}
 			
 a {text-decoration:none;font-weight:normal;font-size:175%;}
 
@@ -27,9 +27,12 @@ a:link {color:black}
 
 a:visited {color:black}
 
-ul {list-style-type:none;padding: 0; margin:0;}
+ul {list-style-type:none;padding: 0; margin:0;line-height:200%;}
 			
-body{background-color: #c2c4d8;}
+body{background-color: #c2c4d8; font-size:16px;}
+
+html{font-size:90%;} 
+@media(min-width:60em){html{font-size: 120%}}
 
 .hideable {display:none}
 
@@ -48,7 +51,7 @@ body{background-color: #c2c4d8;}
 	transform: scale(1.05); 
 }
 
-.menuButton {color:black;z-index:5;display:inline-block; padding:0 0 0 0;background-color:#f9f9f9;
+.menuButton {color:black;z-index:5;display:inline-block; padding:0 0 0 0;background-color:white;
 position:relative;top:5px}
 
 .menuButton:hover{color:red}
@@ -56,10 +59,10 @@ position:relative;top:5px}
 .heartBeat {
   -webkit-animation-name: blueheart; /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: 10;
   animation-name: blueheart;
   animation-duration: 4s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 10;
 }
 
 @-webkit-keyframes blueheart {
@@ -96,11 +99,11 @@ position:relative;top:5px}
 .spinable {
     -webkit-animation-name: spin;
     -webkit-animation-duration: 6000ms;
-    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: 10;
     -webkit-animation-timing-function: linear;
     animation-name: spin;
     animation-duration: 6000ms;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 10;
     animation-timing-function: linear;
 }
 
@@ -119,7 +122,7 @@ position:relative;top:5px}
 	}
 }
 
-#topnav{width:100%; z-index:5;}
+#topnav{width:100%; z-index:5; background-color:white;}
 
 #menuIconWrapper{background-color:white;z-index:5;width:auto;border: 2px solid #f3f3f3;display:inline-block;}
 

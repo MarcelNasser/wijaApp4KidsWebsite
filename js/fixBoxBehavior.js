@@ -50,9 +50,24 @@ function showDivContent(obj){
 	// box.body.style.visibility="hidden";
 	//overlay.style.zIndex="1";
 	//popBox.style.zIndex="5";
-	overlay.style.display ="block";
-	popBox.style.display ="inline-block";
-	popBox.classList.add("fadein");
+	if (obj.classList.contains("front")){
+		overlay.style.display ="block";
+		popBox.style.display ="inline-block";
+		popBox.classList.add("fadein");
+	} 
+	if (obj.classList.contains("right")){
+		//...
+	} 
+	if (obj.classList.contains("back")){
+		overlay.style.display ="block";
+		popBox.style.display ="inline-block";
+		popBox.classList.add("fadein");
+	}
+	if (obj.classList.contains("left")){
+		//...
+	}
+
+	
 	//popBox.style.width=(int)(wrapper.style.width/3);
 }
 
