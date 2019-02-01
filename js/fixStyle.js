@@ -76,10 +76,8 @@
 	function closePopBox(){
 		if(popBox.style.display!="none"){
 			overlay.style.display ="none";
-			popBox.style.display ="none";
-			return true;
 		}
-		else{return false;}
+		popBox.style.display ="none";
 	}	
 	
 	function openResponseHttp(){
@@ -110,21 +108,20 @@
 			hideable[i].style.display=status2;}
 		}
 	}		
-	var closeStack=false;
 	window.onclick = function(event) {
 		if(overlay.style.display != "none"){
 			if (event.target == overlay) {
-				if (dropMenu!=null){closeStack=closeMenu();}
-				if (mailBox!=null ){closeStack=closeMailBox();}
-				if (responseHttp!=null){closeStack=closeResponseHttp();}
-				if (popBox!=null){closeStack=closePopBox();}
+				if (dropMenu!=null){closeMenu();}
+				if (mailBox!=null ){closeMailBox();}
+				if (responseHttp!=null){closeResponseHttp();}
+				if (popBox!=null){closePopBox();}
 				// switchHideStatus("block","none");
 			}
 			else if (event.target == wrapper) {
-				if (dropMenu!=null){closeStack=closeMenu();}
-				if (mailBox!=null ){closeStack=closeMailBox();}
-				if (responseHttp!=null){closeStack=closeResponseHttp();}
-				if (popBox!=null){closeStack=closePopBox();}
+				if (dropMenu!=null){closeMenu();}
+				if (mailBox!=null ){closeMailBox();}
+				if (responseHttp!=null){closeResponseHttp();}
+				if (popBox!=null){closePopBox();}
 				// switchHideStatus("block","none");
 			}
 		}

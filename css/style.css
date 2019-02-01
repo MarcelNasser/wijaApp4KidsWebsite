@@ -74,6 +74,25 @@ position:relative;top:5px}
   100% {color: black;}
 }
 
+.fadeinWidth {
+  -webkit-animation-name: widthEnlargement; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: 1;
+  animation-name: widthEnlargement;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+
+@-webkit-keyframes widthEnlargement {
+  from   {width:0;}
+  to  {width:0.3;}
+}
+
+@keyframes widthEnlargement {
+  from   {width:0;}
+  to  {width:0.3;}
+}
+
 .spinable {
     -webkit-animation-name: spin;
     -webkit-animation-duration: 6000ms;
