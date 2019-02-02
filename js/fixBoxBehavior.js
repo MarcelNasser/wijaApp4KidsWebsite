@@ -1,12 +1,5 @@
 var jobInfo = document.getElementById("responseLine");
-var storyW=document.getElementById("storyW");
 var overlay=document.getElementById("overlay");
-var popBox=document.getElementsByClassName("popBox")[0];
-
-function openStoryW(){
-	// overlay.style.display ="block";
-	// storyW.style.display ="block";	
-}
 
 // overlay.onclick = function(event) {
 	// overlay.style.display ="none";
@@ -26,12 +19,6 @@ for (var face in box.faces){
 	box.faces[face].onclick=function() {showDivContent(this)};
 	box.faces[face].ondblclick=function() {fadeOut2(this)};	
 }
-// overlay.onclick=function(){closeDiv()};
-
-function closeDiv(){
-	overlay.style.display ="none";
-	popBox.style.display ="none";
-}
 
 function fadeOut(obj){
 	if (obj.classList.contains("fadeable")){		
@@ -46,29 +33,16 @@ function fadeOut2(obj){
 }
 
 function showDivContent(obj){
-	var face=obj.innerHTML;
-	// box.body.style.visibility="hidden";
-	//overlay.style.zIndex="1";
-	//popBox.style.zIndex="5";
-	if (obj.classList.contains("front")){
-		overlay.style.display ="block";
-		popBox.style.display ="inline-block";
-		popBox.classList.add("fadein");
-	} 
-	if (obj.classList.contains("right")){
-		//...
-	} 
-	if (obj.classList.contains("back")){
-		overlay.style.display ="block";
-		popBox.style.display ="inline-block";
-		popBox.classList.add("fadein");
-	}
-	if (obj.classList.contains("left")){
-		//...
-	}
-
-	
-	//popBox.style.width=(int)(wrapper.style.width/3);
+	var faceName,poBox;	
+	var faceName=obj.innerHTML;
+	var popBox=document.getElementById("wijaBox_"+faceName);		
+	overlay.style.display ="block";
+	popBox.style.display ="block";
+	popBox.classList.add("fadein");
+	popBox.style.transform="translateX("+Math.random()*25+"em) "+"translateY("+Math.random()*5+"em)";
+	/*if (popBox.classList.contains("fadein")){		
+		popBox.classList.remove("fadein");
+	} else {popBox.classList.add("fadein");}*/		
 }
 
 function stopSpin(obj){

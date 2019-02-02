@@ -94,7 +94,7 @@
 }
 
 .fadeout {
-	animation: fadeout 1s;
+	animation: fadeout 2s;
 }
 
 @keyframes fadeout  {
@@ -121,15 +121,23 @@
   to  {opacity:1;}
 }
 .popBox {display:none;z-index:2;
-		margin:20px 20px; position:absolute;
-		background-color:white;
+		margin:20px 20px; 
+		position:absolute;
 		padding:20px;
         border-radius: 8px;
-		width:25%;
+		width:22.5em;
+		min-height:11.25em;
 		font-size:100%;
+		box-shadow:inset 0px 0px 30px dodgerblue;
 }
 
 .popBox a{font-size:125%;}
+
+#wijaBox_W {background-color:white;}
+#wijaBox_I {background-color:white;transform:translateX(25em)}
+#wijaBox_J {background-color:white;transform:translateY(10em);}
+#wijaBox_A {background-color:white;transform:translateX(25em) translateY(10em);}
+
 
 .wijaSlide {
 	height:400px;width:200px;
@@ -181,7 +189,4 @@
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
-}
-
-#storyW {display:none;	box-shadow:inset 0px 0px 30px dodgerblue;width:300px;margin:0 auto;
 }

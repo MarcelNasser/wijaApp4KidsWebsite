@@ -1,6 +1,6 @@
 	var body=document.getElementsByTagName("body")[0];
 	var hideable=document.getElementsByClassName("hideable");
-	var popBox=document.getElementsByClassName("popBox")[0];
+	var popBox=document.getElementsByClassName("popBox");
 	var androidBadge=document.getElementById("androidBadge");
 	var wrapper=document.getElementById("wrapper");
 	var overlay=document.getElementById("overlay");
@@ -8,7 +8,6 @@
 	var dropMenu=document.getElementById("topnavDropMenu");
 	var dropMenuList=document.getElementById("dropMenuList");
 	var mailBox=document.getElementById("mailBox");
-	var wijaBox=document.getElementById("wijaBox");
 	var tabContact=document.getElementById("tableContact");
 	var menuList=document.getElementsByClassName("material-icons menuButton");
 	var colors=["blue","green","red"];
@@ -41,7 +40,11 @@
 	
 	function closeOverlay(){
 		if (popBox!=null){
-			if (popBox.style.display=="none"){overlay.style.display ="none";}
+			var tocloseOverlay=true;
+			for(var i=0;i<popBox.length;i++){
+					if (popBox[i].style.display!="none"){tocloseOverlay=false;}
+				}
+			if (tocloseOverlay){overlay.style.display ="none";}
 		}
 		if (mailBox!=null){
 			if (mailBox.style.display=="none"){overlay.style.display ="none";}
@@ -75,11 +78,19 @@
 		mailBox.style.display="none";
 	}
 	
-	function closePopBox(){
-		if(popBox.style.display!="none"){
-			overlay.style.display ="none";
+	function closePopBox(){	
+//		for (var divName in popBox){
+		//wrapper.innerHTML+="popbox_len="+"-"+popBox.length+"-\n";
+		for(var i=0;i<popBox.length;i++){
+			if(popBox[i].style.display!="none"){
+				if (popBox[i].classList.contains("fadein")){	
+					popBox[i].classList.remove("fadein");				
+					popBox[i].classList.add("fadeout");
+				}
+				overlay.style.display ="none";
+			}
+			popBox[i].style.display ="none";
 		}
-		popBox.style.display ="none";
 	}	
 	
 	function openResponseHttp(){
@@ -112,6 +123,8 @@
 	window.onclick = function(event) {
 		if(overlay.style.display != "none"){
 			if (event.target == overlay) {
+						//wrapper.innerHTML+="popbox="+"-"+popBox+"-\n";
+
 						//body.innerHTML+="overlayStack: -"+overlayStack[overlayStack.length-1]+"-";
 				if (overlayStack[overlayStack.length-1]=='Menu'){if (dropMenu!=null){closeMenu();}}
 				if (overlayStack[overlayStack.length-1]!='Menu'){if (mailBox!=null ){closeMailBox();}}
@@ -124,14 +137,11 @@
 				if (popBox!=null){closePopBox();}*/
 			}
 			else if (event.target == wrapper) {
-				/*if (overlayStack[overlayStack.length-1]=="Menu"){if (dropMenu!=null){closeMenu();}}
-				if (overlayStack[overlayStack.length-1]!="Menu"){if (mailBox!=null ){closeMailBox();}}
-				if (overlayStack[overlayStack.length-1]!="Menu"){if (responseHttp!=null){closeResponseHttp();}}
-				if (overlayStack[overlayStack.length-1]!="Menu"){if (popBox!=null){closePopBox();}}*/
-				if (dropMenu!=null){closeMenu();}
-				if (mailBox!=null ){closeMailBox();}
-				if (responseHttp!=null){closeResponseHttp();}
-				if (popBox!=null){closePopBox();}
+				if (overlayStack[overlayStack.length-1]=='Menu'){if (dropMenu!=null){closeMenu();}}
+				if (overlayStack[overlayStack.length-1]!='Menu'){if (mailBox!=null ){closeMailBox();}}
+				if (overlayStack[overlayStack.length-1]!='Menu'){if (responseHttp!=null){closeResponseHttp();}}
+				if (overlayStack[overlayStack.length-1]!='Menu'){if (popBox!=null){closePopBox();}}
+				if (overlayStack.length>2){overlayStack.pop();}
 			}
 		}
 	}

@@ -122,9 +122,9 @@ position:relative;top:5px}
 	}
 }
 
-#topnav{width:100%; z-index:5; background-color:white;}
+#topnav{width:100%; z-index:5; background-color:white; overflow:hidden;}
 
-#menuIconWrapper{background-color:white;z-index:5;width:auto;border: 2px solid #f3f3f3;display:inline-block;}
+#menuIconWrapper{background-color:white;position:relative;z-index:5;width:auto;border: 2px solid #f3f3f3;display:inline-block;}
 
 #menuIcon {position:relative;z-index:5;color:black;}
 
