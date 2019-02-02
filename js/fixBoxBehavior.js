@@ -1,10 +1,4 @@
 var jobInfo = document.getElementById("responseLine");
-//var overlay=document.getElementById("overlay");
-
-// overlay.onclick = function(event) {
-	// overlay.style.display ="none";
-// }
-// jobInfo.innerHTML+="- coucou -\n";
 var box={body:null,faces:{front:null,right:null,back:null,left:null}};
 box.body=document.getElementsByClassName("slideBox")[0];
 box.faces.front=document.getElementsByClassName("front")[0];
@@ -29,7 +23,7 @@ function fadeOut2(obj){
 		obj.classList.add("fadeable");
 	}
 }
-
+var coor;
 function showDivContent(obj){
 	var faceName,poBox;	
 	var faceName=obj.innerHTML;
@@ -37,10 +31,22 @@ function showDivContent(obj){
 	overlay.style.display ="block";
 	popBox.style.display ="block";
 	popBox.classList.add("fadein");
-	popBox.style.transform="translateX("+Math.random()*25+"em) "+"translateY("+Math.random()*5+"em)";
+	coor=computeCoordinates(faceName);
+	popBox.style.transform="translateX("+coor[0]+"em) "+"translateY("+coor[1]+"em)";
 	/*if (popBox.classList.contains("fadein")){		
 		popBox.classList.remove("fadein");
 	} else {popBox.classList.add("fadein");}*/		
+}
+
+function computeCoordinates(txt){
+	if (txt=='W' || txt=='J'){
+		X=Math.random()*15;
+		Y=Math.random()*5;
+	}else {
+		X=20+Math.random()*15;
+		Y=Math.random()*5;
+	}
+	return [X,Y];
 }
 
 function stopSpin(obj){
