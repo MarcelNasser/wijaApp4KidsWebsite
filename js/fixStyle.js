@@ -15,6 +15,51 @@
 	var jobInfo = document.getElementById("responseLine");
 	var responseHttp= document.getElementById("responseContainer");
 	var overlayStack=['','overlay'];
+
+	overlay.onclick=function() {OnclickOverlay()};
+	function OnclickOverlay(){
+		if (overlayStack[overlayStack.length-1]=='Menu'){if (dropMenu!=null){closeMenu();}}
+		else if (overlayStack[overlayStack.length-1]!='Menu'){
+			if (mailBox!=null ){closeMailBox();}
+			if (responseHttp!=null){closeResponseHttp();}
+			if (popBox!=null){closePopBox();}
+		}
+		if (overlayStack.length>2){overlayStack.pop();}
+	}
+	
+	var stopPopBox=false;
+	slideBox=document.getElementsByClassName("slideBox")[0];
+	wijaSlidesWrapper=document.getElementById("wijaSlidesWrapper");
+	if (slideBox!=0){
+		slideBox.addEventListener("webkitAnimationEnd", refreshStop);
+		slideBox.addEventListener("animationend", refreshStop);
+		//slideBox.onclick=function() {restartPopBox()};
+		//wijaSlidesWrapper.onclick=function() {restartPopBox()};
+	}	
+	function refreshStop(){
+		/*if (restartPopBox) {
+			slideBox.classList.remove("spinableY");
+			slideBox.classList.add("spinableY");
+			restartPopBox=false;					
+			}*/	
+			stopPopBox=true;
+	}
+	
+	function restartPopBox(){
+		/*
+		var content=document.getElementById("content");
+		content.innerHTML+="/into restartBox : stop ="+stopPopBox+"\n"
+		slideBox.style.WebkitAnimation="spinY 3s 1";
+		slideBox.style.animation="spinY 3s 1";
+		slideBox.addEventListener("webkitAnimationEnd", refreshStop);
+		slideBox.addEventListener("animationend", refreshStop);
+		stopPopBox=false;*/
+		/*if (slideBox.classList.contains("spinableY")){	
+			slideBox.classList.remove("spinableY");
+			slideBox.classList.add("spinableY");
+			stopPopBox=false;
+		}*/
+	}
 	
 	function openMenu(){
 		if(dropMenu.style.display != "block")
@@ -55,32 +100,26 @@
 	}
 	
 	function openMailBox(){
-	/*	var overlay=document.getElementById("overlay");
-		var mailBox=document.getElementById("mailBox");
-		var tabContact=document.getElementById("tableContact");
-		jobInfo.innerHTML+="mailBox.style.display="+mailBox.style.display+"\n";*/
 		if(mailBox.style.display != "block")
 		{
 			overlay.style.zIndex="6";
 			overlay.style.display ="block";
 			tabContact.style.display="none";
-			overlayStack.push('mailBox');
+			//overlayStack.push('mailBox');
 		}
 		mailBox.style.display="block";		
 	}
 	
 	function closeMailBox(){
 		if(mailBox.style.display!="none"){
-			overlay.style.display ="none";
 			overlay.style.zIndex="1";
+			overlay.style.display ="none";
 			tabContact.style.display="block";
 		}
 		mailBox.style.display="none";
 	}
 	
 	function closePopBox(){	
-//		for (var divName in popBox){
-		//wrapper.innerHTML+="popbox_len="+"-"+popBox.length+"-\n";
 		for(var i=0;i<popBox.length;i++){
 			if(popBox[i].style.display!="none"){
 				if (popBox[i].classList.contains("fadein")){	
@@ -99,7 +138,7 @@
 				overlay.style.zIndex="6";
 				overlay.style.display ="block";
 				tabContact.style.display="none";
-				overlayStack.push('responseHttp');
+				//overlayStack.push('responseHttp');
 			}
 			responseHttp.style.display="block";
 	}
@@ -123,26 +162,20 @@
 	window.onclick = function(event) {
 		if(overlay.style.display != "none"){
 			if (event.target == overlay) {
-						//wrapper.innerHTML+="popbox="+"-"+popBox+"-\n";
-
-						//body.innerHTML+="overlayStack: -"+overlayStack[overlayStack.length-1]+"-";
-				if (overlayStack[overlayStack.length-1]=='Menu'){if (dropMenu!=null){closeMenu();}}
-				if (overlayStack[overlayStack.length-1]!='Menu'){if (mailBox!=null ){closeMailBox();}}
-				if (overlayStack[overlayStack.length-1]!='Menu'){if (responseHttp!=null){closeResponseHttp();}}
-				if (overlayStack[overlayStack.length-1]!='Menu'){if (popBox!=null){closePopBox();}}
-				if (overlayStack.length>2){overlayStack.pop();}
+				OnclickOverlay();
+//				if (slideBox!=null){restartPopBox();}
 				/*if (dropMenu!=null){closeMenu();}
 				if (mailBox!=null ){closeMailBox();}
 				if (responseHttp!=null){closeResponseHttp();}
 				if (popBox!=null){closePopBox();}*/
 			}
-			else if (event.target == wrapper) {
+			/*else if (event.target == wrapper) {
 				if (overlayStack[overlayStack.length-1]=='Menu'){if (dropMenu!=null){closeMenu();}}
 				if (overlayStack[overlayStack.length-1]!='Menu'){if (mailBox!=null ){closeMailBox();}}
 				if (overlayStack[overlayStack.length-1]!='Menu'){if (responseHttp!=null){closeResponseHttp();}}
 				if (overlayStack[overlayStack.length-1]!='Menu'){if (popBox!=null){closePopBox();}}
 				if (overlayStack.length>2){overlayStack.pop();}
-			}
+			}*/
 		}
 	}
 	

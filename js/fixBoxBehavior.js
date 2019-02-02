@@ -1,12 +1,10 @@
 var jobInfo = document.getElementById("responseLine");
-var overlay=document.getElementById("overlay");
+//var overlay=document.getElementById("overlay");
 
 // overlay.onclick = function(event) {
 	// overlay.style.display ="none";
 // }
 // jobInfo.innerHTML+="- coucou -\n";
-// var spinableY=document.getElementsByClassName("spinableY");
-// jobInfo.innerHTML+="-"+spinableY[0].style.animation+"-\n";
 var box={body:null,faces:{front:null,right:null,back:null,left:null}};
 box.body=document.getElementsByClassName("slideBox")[0];
 box.faces.front=document.getElementsByClassName("front")[0];
@@ -46,38 +44,9 @@ function showDivContent(obj){
 }
 
 function stopSpin(obj){
-	// box.body.classList.remove("spinableY");
-	// box.body.animate(
-		// [{ transform: 'rotateY(0)'},{ transform: 'rotateY(-360deg)' }],
-		// {duration:3,iterations:Infinity},
-	// );
-	// box.body.classList.add("spinableY");
-	// jobInfo.innerHTML+="- "+obj.className+" -\n";
-	// if (box.body.classList.contains("spinableY")){
-		// box.body.classList.remove("spinableY");
-		// if (obj.className=="left"){
-			// box.body.style.transform="rotateY(-270deg)";
-		// } else if (obj.className=="right"){
-			// box.body.style.transform="rotateY(-90deg)";
-		// } else if (obj.className=="back"){
-			// box.body.style.transform="rotateY(180deg)"; 	
-		// }
-	// }
+
 }
 
 function restartSpin(obj){
-	// box.body.animate(
-		// [{ transform: 'rotateY(0)'},{ transform: 'rotateY(-360deg)' }],
-		// {duration:30,iterations:Infinity},
-	// );
-	// if (!box.body.classList.contains("spinableY")){
-		// box.body.classList.add("spinableY");
-		// if (obj.className=="left"){
-			// box.body.style.transform="rotateY(-270deg)";
-		// } else if (obj.className=="right"){
-			// box.body.style.transform="rotateY(-90deg)";
-		// } else if (obj.className=="back"){
-			// box.body.style.transform="rotateY(180deg)"; 	
-		// }
-	// }		
+		
 }

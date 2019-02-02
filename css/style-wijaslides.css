@@ -14,6 +14,8 @@
 	position:relative;
 	width:200px;
 	transform-style: preserve-3d;
+	animation: spinY 3s 1 linear;
+	-webkit-animation: spinY 30s infinite linear;
 }
 
 .slideBox div{
@@ -73,8 +75,13 @@
 	to { transform: rotateY(-360deg); }
 }
 
+@-webkit-keyframes spinY  {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(-360deg); }
+}
+
 .spinableY {
-	animation: spinY 30s 10 linear;
+	animation: spinY 3s 1 linear;
 }
 	
 .fadeable {
@@ -121,17 +128,23 @@
   to  {opacity:1;}
 }
 .popBox {display:none;z-index:2;
-		margin:20px 20px; 
+		margin:1.2em; 
 		position:absolute;
-		padding:20px;
-        border-radius: 8px;
+		padding:1.2em;
+        border-radius: 0.5em;
 		width:22.5em;
 		min-height:11.25em;
-		font-size:100%;
+		font-size:90%;
+		font-family: Consolas, Georgia, "Times New Roman", Times, serif;
+        line-height:1.2em;
 		box-shadow:inset 0px 0px 30px dodgerblue;
 }
 
-.popBox a{font-size:125%;}
+p em{font-weight:bold;color:blue;}
+
+p strong{font-weight:bold;font-size:125%;}
+
+.popBox a{font-size:125%;text-decoration:underline;color:blue;}
 
 #wijaBox_W {background-color:white;}
 #wijaBox_I {background-color:white;transform:translateX(25em)}
