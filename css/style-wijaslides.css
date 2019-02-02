@@ -14,7 +14,7 @@
 	position:relative;
 	width:200px;
 	transform-style: preserve-3d;
-	animation: spinY 3s 1 linear;
+	animation: spinY 30s infinite linear;
 	-webkit-animation: spinY 30s infinite linear;
 }
 
@@ -49,25 +49,45 @@
 
 .back {
 	transform: translateZ(-100px) rotateY(180deg);
+	-ms-transform: translateZ(-100px) rotateY(180deg);
+	-webkit-transform: translateZ(-100px) rotateY(180deg);	
 }
 .right {
 	transform: rotateY(90deg) translateX(100px);
 	transform-origin: top right;
+	-ms-transform: rotateY(90deg) translateX(100px);
+	-ms-transform-origin: top right;
+	-webkit-transform: rotateY(90deg) translateX(100px);
+	-webkit-transform-origin: top right;
 }
 .left {
 	transform: rotateY(270deg) translateX(-100px);
 	transform-origin: center left;
+	-ms-transform: rotateY(270deg) translateX(-100px);
+	-ms-transform-origin: center left;
+	-webkit-transform: rotateY(270deg) translateX(-100px);
+	-webkit-transform-origin: center left;
 }
 .top {
 	transform: rotateX(-90deg) translateY(-100px);
 	transform-origin: top center;
+	-ms-transform: rotateX(-90deg) translateY(-100px);
+	-ms-transform-origin: top center;
+	-webkit-transform: rotateX(-90deg) translateY(-100px);
+	-webkit-transform-origin: top center;	
 }
 .bottom {
 	transform: rotateX(90deg) translateY(100px) translateZ(-200px);
 	transform-origin: bottom center;
+	-ms-transform: rotateX(90deg) translateY(100px) translateZ(-200px);
+	-ms-transform-origin: bottom center;
+	-webkit-transform: rotateX(90deg) translateY(100px) translateZ(-200px);
+	-webkit-transform-origin: bottom center;
 }
 .front {
 	transform: translateZ(100px);
+	-ms-transform: translateZ(100px);
+	-webkit-transform: translateZ(100px);
 }
 
 @keyframes spinY {
@@ -136,7 +156,7 @@
 		min-height:11.25em;
 		font-size:90%;
 		font-family: Consolas, Georgia, "Times New Roman", Times, serif;
-        line-height:1.2em;
+        line-height:1.5em;
 		box-shadow:inset 0px 0px 30px dodgerblue;
 }
 
@@ -164,6 +184,7 @@ p strong{font-weight:bold;font-size:125%;}
   -webkit-transform: rotateY(-45deg) translateX(-200px); /* Safari 3-8  */
   transform-style: preserve-3d;
   transform: rotateY(-45deg) translateX(-200px);
+  -ms-transform: rotateY(-45deg) translateX(-200px);
     opacity:0.8
 }
 
@@ -172,6 +193,7 @@ p strong{font-weight:bold;font-size:125%;}
   -webkit-transform: rotateY(45deg) translateX(200px); /* Safari 3-8  */
   transform-style: preserve-3d;
   transform: rotateY(45deg) translateX(200px);
+  -ms-transform: rotateY(45deg) translateX(200px);
   opacity:0.8
 }
 
