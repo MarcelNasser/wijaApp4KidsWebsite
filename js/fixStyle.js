@@ -159,25 +159,8 @@
 		}
 	}
 		
-	window.onclick = function(event) {
-		if(overlay.style.display != "none"){
-			if (event.target == overlay) {
-				OnclickOverlay();
-//				if (slideBox!=null){restartPopBox();}
-				/*if (dropMenu!=null){closeMenu();}
-				if (mailBox!=null ){closeMailBox();}
-				if (responseHttp!=null){closeResponseHttp();}
-				if (popBox!=null){closePopBox();}*/
-			}
-			/*else if (event.target == wrapper) {
-				if (overlayStack[overlayStack.length-1]=='Menu'){if (dropMenu!=null){closeMenu();}}
-				if (overlayStack[overlayStack.length-1]!='Menu'){if (mailBox!=null ){closeMailBox();}}
-				if (overlayStack[overlayStack.length-1]!='Menu'){if (responseHttp!=null){closeResponseHttp();}}
-				if (overlayStack[overlayStack.length-1]!='Menu'){if (popBox!=null){closePopBox();}}
-				if (overlayStack.length>2){overlayStack.pop();}
-			}*/
-		}
-	}
+/*	window.onclick = function(event) {
+	}*/
 	
 	window.onload = function(){
 		var maxwidth=Math.min(900,window.innerWidth);
