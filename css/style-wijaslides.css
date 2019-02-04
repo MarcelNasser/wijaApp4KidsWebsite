@@ -169,6 +169,17 @@ p em{font-weight:bold;color:blue;}
 
 .popBox a{font-size:125%;text-decoration:underline;color:blue;margin:1.2em 0 0 0;}
 
+.popBox p a{
+			margin:0 0 0 0;text-align:center; padding:0 0;
+            font-size:100%; color:black;
+            font-weight:normal;line-height:1.2em;}
+			
+.social_media_button{border-radius:50%;margin:0.5em auto; }
+
+.social_media_button:hover{background-color:dodgerblue;}
+
+.social_media_button:focus{  outline: none;}
+
 #wijaBox_W {background-color:white;}
 #wijaBox_I {background-color:white;transform:translateX(25em)}
 #wijaBox_J {background-color:white;transform:translateY(10em);}

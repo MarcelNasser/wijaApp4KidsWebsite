@@ -165,23 +165,28 @@
 			hideable[i].style.display=status2;}
 		}
 	}
-		
-/*	window.onclick = function(event) {
-	}*/
+	
+	var isMobileDevice=navigator.userAgent.match(/Android/i)
+					 || navigator.userAgent.match(/webOS/i)
+					 || navigator.userAgent.match(/iPhone/i)
+					 || navigator.userAgent.match(/iPad/i)
+					 || navigator.userAgent.match(/iPod/i)
+					 || navigator.userAgent.match(/BlackBerry/i)
+					 || navigator.userAgent.match(/Windows Phone/i);
+	
+	function computeWrapperDimensions(){
+		var maxwidth=Math.min(900,window.innerWidth);
+		maxwidth=Math.max(wrapper.style.minWidth,maxwidth);
+		return maxwidth;
+	}
 	
 	window.onload = function(){
-		var maxwidth=Math.min(900,window.innerWidth);
-		wrapper.style.width=maxwidth+"px"; 
-		//body.style.fontSize=((int)(maxwidth/10))+"px";
+		wrapper.style.maxWidth=computeWrapperDimensions()+"px"; 
+		if (isMobileDevice){wrapper.style.minHeight=window.innerHeight;}
 	}
 	window.onresize = function(){
-		var maxwidth=Math.min(900,window.innerWidth);
-		wrapper.style.width=maxwidth+"px"; 
-		//var body=document.getElementsByTagName("body")[0];
-		//jobInfo.innerHTML+=body.style.fontSize+"px";
-		//jobInfo.innerHTML+=androidBadge.style;
-		//androidBadge.style.maxHeight=((int)100*maxwidth/900)+"px";
-		//body.style.fontSize=((int)(maxwidth/40))+"px";
+		wrapper.style.maxWidth=computeWrapperDimensions()+"px"; 
+		if (isMobileDevice){wrapper.style.minHeight=window.innerHeight;}
 	}
 	
 	function turnRed(elt){		

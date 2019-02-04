@@ -11,6 +11,13 @@ for (var face in box.faces){
 	box.faces[face].onclick=function() {showDivContent(this)};
 	box.faces[face].ondblclick=function() {fadeOut2(this)};	
 }
+var isMobileDevice=navigator.userAgent.match(/Android/i)
+				 || navigator.userAgent.match(/webOS/i)
+				 || navigator.userAgent.match(/iPhone/i)
+				 || navigator.userAgent.match(/iPad/i)
+				 || navigator.userAgent.match(/iPod/i)
+				 || navigator.userAgent.match(/BlackBerry/i)
+				 || navigator.userAgent.match(/Windows Phone/i);
 
 function fadeOut(obj){
 	if (obj.classList.contains("fadeable")){		
@@ -38,11 +45,24 @@ function showDivContent(obj){
 
 function computeCoordinates(txt){
 	if (txt=='W' || txt=='J'){
-		X=Math.random()*15;
-		Y=Math.random()*5;
-	}else {
-		X=20+Math.random()*15;
-		Y=Math.random()*5;
+		if (isMobileDevice){
+			X=-6+Math.random()*1;
+			Y=Math.random()*2;			
+		}
+		else{
+			X=2+Math.random()*5;
+			Y=Math.random()*5;
+		}
+	}
+	else {
+		if (isMobileDevice){
+			X=-6+Math.random()*1;
+			Y=Math.random()*2;			
+		}
+		else{
+			X=25+Math.random()*5;
+			Y=Math.random()*5;
+		}
 	}
 	return [X,Y];
 }
@@ -54,6 +74,10 @@ function popBoxClicked(){
 			overlayStack.pop();
 		}
 	}
+}
+
+function socialMediaClicked(){
+	window.open("https://facebook.com");
 }
 
 function stopSpin(obj){
