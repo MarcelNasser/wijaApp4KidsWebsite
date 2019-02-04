@@ -18,16 +18,16 @@ h3 {margin:10px 0 15px 0;text-align:center; padding:20px 0;
             font-size:150%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
             font-weight:normal;line-height:1.2em;}
 
-h4 {margin:15px 0 5px 0;text-align:center; padding:0;
+h4 {margin:1em 0 0.5em 0;text-align:center; padding:0;
             font-size:125%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
             font-weight:italic; line-height:1.2em;}
 
-h5 {margin:1em 0 0 0;text-align:center; padding:0;
+h5 {margin:0 0 0.5em 0;text-align:center; padding:0;
             font-size:125%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
             font-weight:italic; line-height:1.2em;
 			text-align:center;}
 			
-p {margin:5px 0 5px 0;text-align:center; padding:0 0;
+p {margin:0 0 0 0;text-align:center; padding:0 0;
             font-size:120%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
             font-weight:normal;line-height:1.2em;
 			text-align: justify;
@@ -92,23 +92,23 @@ position:relative;top:5px}
   100% {color: black;}
 }
 
-.fadeinWidth {
-  -webkit-animation-name: widthEnlargement; /* Safari 4.0 - 8.0 */
+.fadeinBeat {
+  -webkit-animation-name: fadeinbeat; /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
   -webkit-animation-iteration-count: 1;
   animation-name: widthEnlargement;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
+  animation-duration: 2s;
+  animation-iteration-count: 5;
 }
 
-@-webkit-keyframes widthEnlargement {
-  from   {width:0;}
-  to  {width:0.3;}
+@-webkit-keyframes fadeinbeat {
+  from   {border-radius:0;}
+  to  {border-radius:0.5;}
 }
 
-@keyframes widthEnlargement {
-  from   {width:0;}
-  to  {width:0.3;}
+@keyframes fadeinbeat {
+  from   {border-radius:0;}
+  to  {border-radius:0.5;}
 }
 
 .spinable {

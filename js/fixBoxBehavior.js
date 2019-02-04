@@ -33,9 +33,7 @@ function showDivContent(obj){
 	popBox.classList.add("fadein");
 	coor=computeCoordinates(faceName);
 	popBox.style.transform="translateX("+coor[0]+"em) "+"translateY("+coor[1]+"em)";
-	/*if (popBox.classList.contains("fadein")){		
-		popBox.classList.remove("fadein");
-	} else {popBox.classList.add("fadein");}*/		
+	//popBox.onclick=function(){popBoxClicked();}
 }
 
 function computeCoordinates(txt){
@@ -49,10 +47,19 @@ function computeCoordinates(txt){
 	return [X,Y];
 }
 
-function stopSpin(obj){
+function popBoxClicked(){
+	if (dropMenu!=null){
+		if (dropMenu.style.display!="none"){
+			closeMenu();
+			overlayStack.pop();
+		}
+	}
+}
 
+function stopSpin(obj){
+	//
 }
 
 function restartSpin(obj){
-		
+	//
 }

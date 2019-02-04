@@ -14,6 +14,7 @@
 	position:relative;
 	width:200px;
 	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
 	animation: spinY 30s infinite linear;
 	-webkit-animation: spinY 30s infinite linear;
 }
@@ -30,8 +31,10 @@
 	box-shadow:inset 0px 0px 30px dodgerblue;
 	margin:0;
 	padding:0;
-	-moz-user-select: none; -webkit-user-select: none; 
-	-ms-user-select:none; user-select:none;
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select:none; 
+	user-select:none;
 	-o-user-select:none;
 	cursor:default;
 }
@@ -49,44 +52,45 @@
 
 .back {
 	transform: translateZ(-100px) rotateY(180deg);
-	-ms-transform: translateZ(-100px) rotateY(180deg);
+	-ms-transform: perspective(800px) translateZ(-100px) rotateY(180deg);
 	-webkit-transform: translateZ(-100px) rotateY(180deg);	
+	-moz-transform: translateZ(-100px) rotateY(180deg);	
 }
 .right {
 	transform: rotateY(90deg) translateX(100px);
 	transform-origin: top right;
-	-ms-transform: rotateY(90deg) translateX(100px);
-	-ms-transform-origin: top right;
+	-ms-transform: perspective(800px) rotateY(90deg) translateX(100px);
+	-ms-transform-origin: perspective(800px) top right;
 	-webkit-transform: rotateY(90deg) translateX(100px);
 	-webkit-transform-origin: top right;
 }
 .left {
 	transform: rotateY(270deg) translateX(-100px);
 	transform-origin: center left;
-	-ms-transform: rotateY(270deg) translateX(-100px);
-	-ms-transform-origin: center left;
+	-ms-transform: perspective(800px) rotateY(270deg) translateX(-100px);
+	-ms-transform-origin: perspective(800px) center left;
 	-webkit-transform: rotateY(270deg) translateX(-100px);
 	-webkit-transform-origin: center left;
 }
 .top {
 	transform: rotateX(-90deg) translateY(-100px);
 	transform-origin: top center;
-	-ms-transform: rotateX(-90deg) translateY(-100px);
-	-ms-transform-origin: top center;
+	-ms-transform: perspective(800px)  rotateX(-90deg) translateY(-100px);
+	-ms-transform-origin: perspective(800px)  top center;
 	-webkit-transform: rotateX(-90deg) translateY(-100px);
 	-webkit-transform-origin: top center;	
 }
 .bottom {
 	transform: rotateX(90deg) translateY(100px) translateZ(-200px);
 	transform-origin: bottom center;
-	-ms-transform: rotateX(90deg) translateY(100px) translateZ(-200px);
-	-ms-transform-origin: bottom center;
+	-ms-transform: perspective(800px) rotateX(90deg) translateY(100px) translateZ(-200px);
+	-ms-transform-origin: perspective(800px) bottom center;
 	-webkit-transform: rotateX(90deg) translateY(100px) translateZ(-200px);
 	-webkit-transform-origin: bottom center;
 }
 .front {
 	transform: translateZ(100px);
-	-ms-transform: translateZ(100px);
+	-ms-transform: perspective(800px) translateZ(100px);
 	-webkit-transform: translateZ(100px);
 }
 
@@ -150,7 +154,7 @@
 .popBox {display:none;z-index:2;
 		margin:1.2em; 
 		position:absolute;
-		padding:1.2em;
+		padding:2em;
         border-radius: 0.5em;
 		width:22.5em;
 		min-height:11.25em;
@@ -163,7 +167,7 @@
 p em{font-weight:bold;color:blue;}
 
 
-.popBox a{font-size:125%;text-decoration:underline;color:blue;}
+.popBox a{font-size:125%;text-decoration:underline;color:blue;margin:1.2em 0 0 0;}
 
 #wijaBox_W {background-color:white;}
 #wijaBox_I {background-color:white;transform:translateX(25em)}
@@ -184,7 +188,7 @@ p em{font-weight:bold;color:blue;}
   transform-style: preserve-3d;
   transform: rotateY(-45deg) translateX(-200px);
   -ms-transform: rotateY(-45deg) translateX(-200px);
-    opacity:0.8
+    opacity:0.8;
 }
 
 .rotateRight{
@@ -193,34 +197,5 @@ p em{font-weight:bold;color:blue;}
   transform-style: preserve-3d;
   transform: rotateY(45deg) translateX(200px);
   -ms-transform: rotateY(45deg) translateX(200px);
-  opacity:0.8
-}
-
-
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  /* margin-top: -22px; */
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  background-color: gray;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  opacity:0.8;
 }

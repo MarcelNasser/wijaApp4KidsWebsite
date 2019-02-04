@@ -1,8 +1,27 @@
-h2 {margin:10px 0 15px 0;text-align:center; padding:20px 0;
-            font-size:200%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
-            font-weight:bold;
-			border-bottom :1px gray solid; }
+html{font-size:90%;} 
+@media(min-width:60em){html{font-size: 120%}}
 
-#ballWrapper{background-color:white;width:auto;height:auto;display:inline-block;text-align:center;margin:0 auto;float:center;}
-			
-#ballWrapper img{max-height:200px;max-width:200px;vertical-align: middle;}
+body{font-size:16px;}
+
+#content {width:80%;margin:0 auto;}
+
+h4 {margin:2em 0 2Sem 0;text-align:center; padding:0;
+            font-size:200%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
+            font-weight:italic; line-height:1.2em;}
+
+h6 {margin:0 0 0.5em 0;padding:0.5em;
+            font-size:100%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
+            font-weight:italic; line-height:1.2em;
+			margin-left:2.4em;
+			background:black;color:white;}
+
+p {margin:0 0 0 0;text-align:center; padding:0 0;
+            font-size:120%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
+            font-weight:normal;line-height:2.5em;
+			text-align: justify;
+			text-justify: inter-word;
+			}
+
+ul {list-style-type:square;margin:0 5em 0 0;line-height:300%;}
+
+ul li {font-size:120%;font-family: Consolas, Georgia, "Times New Roman", Times, serif;margin-left:1.2em;}

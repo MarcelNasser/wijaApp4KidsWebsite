@@ -15,6 +15,7 @@
 	var jobInfo = document.getElementById("responseLine");
 	var responseHttp= document.getElementById("responseContainer");
 	var overlayStack=['','overlay'];
+	var mailBoxButton=document.getElementById("mailBoxButton");
 
 	overlay.onclick=function() {OnclickOverlay()};
 	function OnclickOverlay(){
@@ -25,6 +26,12 @@
 			if (popBox!=null){closePopBox();}
 		}
 		if (overlayStack.length>2){overlayStack.pop();}
+	}
+	
+	function dopopBoxWClicked(){
+		if (mailBoxButton!=null){
+			mailBoxButton.classList.add("fadeinBeat");
+		}
 	}
 	
 	var stopPopBox=false;
