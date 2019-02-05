@@ -228,8 +228,8 @@
 	}
 	
 	function unPackContent(){
+		menuIcon.style.display="inline-block";
 		androidBadge.style.display="inline-block";
-		menuIcon.style.display="block";
 		navbar.style.position="relative";
 		menuIcon.style.borderRadius="0%";
 		menuMobile.style.display="none";

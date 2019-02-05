@@ -53,7 +53,7 @@ ul {list-style-type:none;padding: 0; margin:0;line-height:200%;}
 background-color: white; 
 min-height:500px; 
 margin-bottom:0px; margin-top:0px;
-padding:10px 10px 10px 10px;
+padding:0;
 overflow: auto;
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
 min-width:550px;
@@ -218,4 +218,4 @@ animation: fadein 0.5s;
 
 #footer {clear:both; padding:2px 0;float:bottom; overflow:hidden;
          width:100%;text-align:center;margin-bottom:0;}
-#footer p{font-size:80%;font-weight:italic;margin-top:4em;text-align:center;}
+#footer p{font-size:80%;font-weight:italic;margin:4em auto 1em auto;text-align:center;}
