@@ -6,6 +6,8 @@
 	var overlay=document.getElementById("overlay");
 	var menuIcon=document.getElementById("menuIconWrapper");
 	var dropMenu=document.getElementById("topnavDropMenu");
+	var menuMobile=document.getElementById("topnavDropMenuMobile");
+	var navbar=document.getElementById("topnav");
 	var dropMenuList=document.getElementById("dropMenuList");
 	var mailBox=document.getElementById("mailBox");
 	var tabContact=document.getElementById("tableContact");
@@ -186,7 +188,7 @@
 	}
 	
 	window.onload = function(){
-		wrapper.style.width=computeWrapperDimensions()+"px"; 
+		wrapper.style.maxWidth=computeWrapperDimensions()+"px"; 
 		var overlayStack=['','overlay'];
 		if (isMobileDevice){wrapper.style.minHeight=window.innerHeight;}
 		if (isCrappyScreen()){packContent();}
@@ -204,8 +206,6 @@
 	function isCrappyScreen(){
 		var orientation = screen.msOrientation || (screen.orientation 
 							|| screen.mozOrientation || {}).type;
-		//wrapper.innerHTML+="orientation="+orientation+" | width,height="+
-			//window.innerWidth+","+window.innerHeight+"\n";
 		if (orientation == "portrait-secondary" || orientation == "portrait-primary" ||
 			(window.innerHeight>window.innerWidth) || (window.innerWidth<700)) {
 						//wrapper.innerHTML+="coucou Crappy\n"
@@ -219,12 +219,23 @@
 	function packContent(){
 		//wrapper.innerHTML+="coucou Pack\n"
 		androidBadge.style.display="none";
-		wrapper.style.width=(int)(window.innerWidth-wrapper.style.marginLeft-wrapper.style.marginRight)+"px";
-		
+		menuIcon.style.display="none";
+		menuMobile.style.display="inline-block";
+		wrapper.style.maxWidth=(int)(window.innerWidth-wrapper.style.marginLeft-wrapper.style.marginRight)+"px";
+		navbar.style.position="fixed";
+		//navbar.style.overflow="hidden";
+		//menuIcon.style.borderRadius="50%";
 	}
 	
 	function unPackContent(){
-		androidBadge.style.display="block";
+		androidBadge.style.display="inline-block";
+		menuIcon.style.display="block";
+		navbar.style.position="relative";
+		menuIcon.style.borderRadius="0%";
+		menuMobile.style.display="none";
+	}
+	
+	function openMenuMobile(){
 	}
 	
 	function turnRed(elt){		
