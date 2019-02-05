@@ -207,7 +207,7 @@
 		var orientation = screen.msOrientation || (screen.orientation 
 							|| screen.mozOrientation || {}).type;
 		if (orientation == "portrait-secondary" || orientation == "portrait-primary" ||
-			(window.innerHeight>window.innerWidth) || (window.innerWidth<700)) {
+			(window.innerHeight>window.innerWidth) || (window.innerWidth<750)) {
 						//wrapper.innerHTML+="coucou Crappy\n"
 			return true;
 		} else {
@@ -223,7 +223,7 @@
 		menuMobile.style.display="inline-block";
 		wrapper.style.maxWidth=(int)(window.innerWidth-wrapper.style.marginLeft-wrapper.style.marginRight)+"px";
 		navbar.style.position="fixed";
-		//navbar.style.overflow="hidden";
+		navbar.style.overflow="hidden";
 		//menuIcon.style.borderRadius="50%";
 	}
 	
