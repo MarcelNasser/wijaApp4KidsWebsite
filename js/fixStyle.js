@@ -181,12 +181,15 @@
 	}
 	
 	window.onload = function(){
-		wrapper.style.maxWidth=computeWrapperDimensions()+"px"; 
+		wrapper.style.width=computeWrapperDimensions()+"px"; 
 		if (isMobileDevice){wrapper.style.minHeight=window.innerHeight;}
 	}
 	window.onresize = function(){
 		wrapper.style.maxWidth=computeWrapperDimensions()+"px"; 
-		if (isMobileDevice){wrapper.style.minHeight=window.innerHeight;}
+		if (isMobileDevice){
+			wrapper.style.minHheight=window.innerHeight;
+			wrapper.style.maxWidth=window.innerWidth;
+		}
 	}
 	
 	function turnRed(elt){		

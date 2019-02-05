@@ -40,12 +40,13 @@ function showDivContent(obj){
 	popBox.classList.add("fadein");
 	coor=computeCoordinates(faceName);
 	popBox.style.transform="translateX("+coor[0]+"em) "+"translateY("+coor[1]+"em)";
+	popBox.style.webkitTransform="translateX("+coor[0]+"em) "+"translateY("+coor[1]+"em)";
 	//popBox.onclick=function(){popBoxClicked();}
 }
 
 function computeCoordinates(txt){
 	if (txt=='W' || txt=='J'){
-		if (isMobileDevice){
+		if (isMobileDevice & window.innerWidth<600){
 			X=-6+Math.random()*1;
 			Y=Math.random()*2;			
 		}
@@ -55,7 +56,7 @@ function computeCoordinates(txt){
 		}
 	}
 	else {
-		if (isMobileDevice){
+		if (isMobileDevice &window.innerWidth<600){
 			X=-6+Math.random()*1;
 			Y=Math.random()*2;			
 		}

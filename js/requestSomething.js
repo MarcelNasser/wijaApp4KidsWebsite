@@ -56,3 +56,17 @@ function requestSomething(){
 	xhttp.send(null);
 	return false;
 }
+
+function submitComment(obj){
+	var xhttp;
+	if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+	xhttp.open("POST","https://inh6ay75eg.execute-api.eu-west-3.amazonaws.com/pre-prod/WijaLambda",true);
+	xhttp.send(null);
+}

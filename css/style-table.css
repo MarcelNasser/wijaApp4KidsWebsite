@@ -1,9 +1,12 @@
-#tableContact {width:50%; text-align:center; text-size:150%;margin:0px auto; display:block}
+#tableContact {width:50%; margin:0px auto; display:block;}
 #tableContact tr:nth-child(odd){background-color: #f2f2f2;}
 #tableContact tr:nth-child(even){background-color: #f2f2f2;}
 #tableContact td {width:50%}
 #tableContact img {max-height:75px; padding:10px;}
 #tableContact div{padding:20px 20px 20px 20px;}
+
+#mailBox{text-align:left;}
+label{color:black;width:100%;}
 
 .blueBeat {
   -webkit-animation-name: bluebeat; /* Safari 4.0 - 8.0 */
