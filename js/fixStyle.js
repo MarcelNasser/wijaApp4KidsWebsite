@@ -80,30 +80,36 @@
 				}
 			overlayStack.push('Menu');
 			}
-		else {closeMenu();}
+		else {closeMenu();overlayStack.pop();}
 	}
 	
 	function closeMenu(){
-		if (dropMenu.style.display!="none"){
-		closeOverlay();
+		if (overlayStack[overlayStack.length-1]=='Menu'){
+			if (dropMenu.style.display!="none"){
+				closeOverlay();
+			}
+			dropMenu.style.display="none";
 		}
-		dropMenu.style.display="none";
 	}
 	
 	function closeOverlay(){
+		var tocloseOverlay=true;
 		if (popBox!=null){
-			var tocloseOverlay=true;
 			for(var i=0;i<popBox.length;i++){
-					if (popBox[i].style.display!="none"){tocloseOverlay=false;}
+					if (popBox[i].style.display!="none"&popBox[i].style.display!="")
+						{tocloseOverlay=false;}
 				}
-			if (tocloseOverlay){overlay.style.display ="none";}
+			if (tocloseOverlay){overlay.style.display ="none";}	
 		}
 		if (mailBox!=null){
-			if (mailBox.style.display=="none"){overlay.style.display ="none";}
+			if (mailBox.style.display!="none"){tocloseOverlay=false;}
+			else {overlay.style.display ="none";}
 		}
 		if (responseHttp!=null){
-			if (responseHttp.style.display=="none"){overlay.style.display ="none";}
+			if (responseHttp.style.display!="none"){tocloseOverlay=false;}
+			else {overlay.style.display ="none";}
 		}
+		if (tocloseOverlay){overlay.style.display ="none";}
 	}
 	
 	function openMailBox(){
@@ -131,7 +137,6 @@
 			if(popBox[i].style.display!="none"){
 				if (popBox[i].classList.contains("fadein")){	
 					popBox[i].classList.remove("fadein");				
-					popBox[i].classList.add("fadeout");
 				}
 				overlay.style.display ="none";
 			}
@@ -182,14 +187,44 @@
 	
 	window.onload = function(){
 		wrapper.style.width=computeWrapperDimensions()+"px"; 
+		var overlayStack=['','overlay'];
 		if (isMobileDevice){wrapper.style.minHeight=window.innerHeight;}
+		if (isCrappyScreen()){packContent();}
 	}
 	window.onresize = function(){
 		wrapper.style.maxWidth=computeWrapperDimensions()+"px"; 
 		if (isMobileDevice){
-			wrapper.style.minHheight=window.innerHeight;
+			wrapper.style.minHeight=window.innerHeight;
 			wrapper.style.maxWidth=window.innerWidth;
 		}
+		if (isCrappyScreen()){packContent();}
+		else {unPackContent();}
+	}
+	
+	function isCrappyScreen(){
+		var orientation = screen.msOrientation || (screen.orientation 
+							|| screen.mozOrientation || {}).type;
+		//wrapper.innerHTML+="orientation="+orientation+" | width,height="+
+			//window.innerWidth+","+window.innerHeight+"\n";
+		if (orientation == "portrait-secondary" || orientation == "portrait-primary" ||
+			(window.innerHeight>window.innerWidth) || (window.innerWidth<700)) {
+						//wrapper.innerHTML+="coucou Crappy\n"
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+	
+	function packContent(){
+		//wrapper.innerHTML+="coucou Pack\n"
+		androidBadge.style.display="none";
+		wrapper.style.width=(int)(window.innerWidth-wrapper.style.marginLeft-wrapper.style.marginRight)+"px";
+		
+	}
+	
+	function unPackContent(){
+		androidBadge.style.display="block";
 	}
 	
 	function turnRed(elt){		

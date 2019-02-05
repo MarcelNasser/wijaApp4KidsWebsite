@@ -5,7 +5,9 @@
 #tableContact img {max-height:75px; padding:10px;}
 #tableContact div{padding:20px 20px 20px 20px;}
 
-#mailBox{text-align:left;}
+#mailBox{
+	text-align:left;
+	animation: fadein 1s;}
 label{color:black;width:100%;}
 
 .blueBeat {

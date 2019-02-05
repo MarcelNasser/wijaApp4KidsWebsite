@@ -1,4 +1,3 @@
-var jobInfo = document.getElementById("responseLine");
 var box={body:null,faces:{front:null,right:null,back:null,left:null}};
 box.body=document.getElementsByClassName("slideBox")[0];
 box.faces.front=document.getElementsByClassName("front")[0];
@@ -46,9 +45,9 @@ function showDivContent(obj){
 
 function computeCoordinates(txt){
 	if (txt=='W' || txt=='J'){
-		if (isMobileDevice & window.innerWidth<600){
-			X=-6+Math.random()*1;
-			Y=Math.random()*2;			
+		if (isCrappyScreen()){
+			X=2+Math.random()*1;
+			Y=Math.random()*5;			
 		}
 		else{
 			X=2+Math.random()*5;
@@ -56,9 +55,9 @@ function computeCoordinates(txt){
 		}
 	}
 	else {
-		if (isMobileDevice &window.innerWidth<600){
-			X=-6+Math.random()*1;
-			Y=Math.random()*2;			
+		if (isCrappyScreen()){
+			X=10+Math.random()*1;
+			Y=Math.random()*5;			
 		}
 		else{
 			X=25+Math.random()*5;
