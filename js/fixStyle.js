@@ -234,8 +234,25 @@
 		menuIcon.style.borderRadius="0%";
 		menuMobile.style.display="none";
 	}
-	
+	var menuBtnMobile=document.getElementsByClassName("material-icons menuButtonMobile");
+	var notMenuMobileOpen=false;
 	function openMenuMobile(){
+		if (notMenuMobileOpen){
+			for (var i = 0; i < menuBtnMobile.length; i++) {
+				menuBtnMobile[i].classList.add("animatedButton");
+				menuBtnMobile[i].classList.add("heartBeat");
+				menuBtnMobile[i].style.opacity="1";
+			}
+			notMenuMobileOpen=false;
+		}
+		else{
+			for (var i = 0; i < menuBtnMobile.length; i++) {
+				menuBtnMobile[i].classList.remove("animatedButton");
+				menuBtnMobile[i].classList.remove("heartBeat");
+				menuBtnMobile[i].style.opacity="0.3";
+			}
+			notMenuMobileOpen=true;
+		}
 	}
 	
 	function turnRed(elt){		
