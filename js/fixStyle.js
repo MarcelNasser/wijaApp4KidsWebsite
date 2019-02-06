@@ -196,8 +196,8 @@
 	window.onresize = function(){
 		wrapper.style.maxWidth=computeWrapperDimensions()+"px"; 
 		if (isMobileDevice){
-			wrapper.style.minHeight=window.innerHeight;
-			wrapper.style.maxWidth=window.innerWidth;
+			wrapper.style.minHeight=window.innerHeight+"px";
+			wrapper.style.maxWidth=window.innerWidth+"px";
 		}
 		if (isCrappyScreen()){packContent();}
 		else {unPackContent();}
@@ -222,6 +222,7 @@
 		menuIcon.style.display="none";
 		menuMobile.style.display="inline-block";
 		wrapper.style.maxWidth=(int)(window.innerWidth-wrapper.style.marginLeft-wrapper.style.marginRight)+"px";
+		wrapper.style.minHeight=window.innerHeight+"px";
 		navbar.style.position="fixed";
 		navbar.style.overflow="hidden";
 		//menuIcon.style.borderRadius="50%";
@@ -234,22 +235,28 @@
 		menuIcon.style.borderRadius="0%";
 		menuMobile.style.display="none";
 	}
+	var animationBeats=["greenPulse","yellowPulse","redPulse","bluePulse"];
 	var menuBtnMobile=document.getElementsByClassName("material-icons menuButtonMobile");
 	var notMenuMobileOpen=false;
 	function openMenuMobile(){
 		if (notMenuMobileOpen){
 			for (var i = 0; i < menuBtnMobile.length; i++) {
 				menuBtnMobile[i].classList.add("animatedButton");
-				menuBtnMobile[i].classList.add("heartBeat");
-				menuBtnMobile[i].style.opacity="1";
+				icolo=Math.floor(Math.random()*animationBeats.length);
+				menuBtnMobile[i].classList.add(animationBeats[icolo%animationBeats.length]);
+				//menuBtnMobile[i].classList.add("heartBeat");
+				menuBtnMobile[i].classList.remove("disabledButton");
 			}
 			notMenuMobileOpen=false;
 		}
 		else{
 			for (var i = 0; i < menuBtnMobile.length; i++) {
 				menuBtnMobile[i].classList.remove("animatedButton");
-				menuBtnMobile[i].classList.remove("heartBeat");
-				menuBtnMobile[i].style.opacity="0.3";
+				for (var j = 0; j < menuBtnMobile.length; j++){
+					menuBtnMobile[i].classList.remove(animationBeats[j]);
+				}
+				//menuBtnMobile[i].classList.remove("heartBeat");
+				menuBtnMobile[i].classList.add("disabledButton");
 			}
 			notMenuMobileOpen=true;
 		}
