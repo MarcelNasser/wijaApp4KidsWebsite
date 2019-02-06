@@ -67,8 +67,9 @@
 			</div>
 			<div id="content">
 				<h2 style="	border-bottom :1px gray solid;"> Connect With Us </h2>
+
 				<div id="mailBox" class="hideable">
-				  <form >
+				  <form>
 					<label for="fname">First Name</label>
 					<input type="text" id="fname" name="firstname" placeholder="Your name..">
 					<label for="lname">Last Name</label>
@@ -77,9 +78,10 @@
 					<input type="text" id="lname" name="e-mail" placeholder="Your e-mail please..">
 					<label for="country">Comment</label>
 					<textarea> </textarea>				  
-					<input type="submit" value="Submit" onclick="submitComment(this)">
+					<button onclick="submitComment(this)"> Submit </button>
 				  </form>
 				</div>
+
 				<div id="responseWrapper" >				
 					<div id="responseContainer" onclick="requestSomething()" >
 						<p id="responseLine"><br>-- Click here to contact the Webmaster --<br><br></p>

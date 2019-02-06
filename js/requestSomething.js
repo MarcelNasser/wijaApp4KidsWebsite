@@ -58,7 +58,12 @@ function requestSomething(){
 }
 
 function submitComment(obj){
+	var footer=document.getElementById("footer");
 	var xhttp;
+	footer.innerHTML+=obj+"\n";
+	var data;
+	data.firstname="bob";
+	data.lastname="mande";
 	if (window.XMLHttpRequest)
     {// code for IE7+, Firefox, Chrome, Opera, Safari
         xhttp=new XMLHttpRequest();
@@ -67,6 +72,26 @@ function submitComment(obj){
     {// code for IE6, IE5
         xhttp=new ActiveXObject("Microsoft.XMLHTTP");
     }
+		xhttp.onreadystatechange=function(){
+		var state=xhttp.readyState;
+		var statut;
+		switch (state){
+			case 0: break;
+			case 1: break;
+			case 2: break;
+			case 3: break;
+			case 4: 
+				statut=xhttp.status;
+				if(statut==200){
+					footer.innerHTML+=xhttp.reponseText+"\n";
+				}
+				else{
+					/* do something */														
+				}
+				break;
+		}	
+	}
 	xhttp.open("POST","https://inh6ay75eg.execute-api.eu-west-3.amazonaws.com/pre-prod/WijaLambda",true);
-	xhttp.send(null);
+	xhttp.setRequestHeader("Access-Control-Allow-Origin", "*")
+	xhttp.send(JSON.stringify(data));
 }

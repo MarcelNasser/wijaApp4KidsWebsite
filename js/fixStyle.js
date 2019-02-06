@@ -219,11 +219,19 @@
 	
 	window.onload = function(){
 		//refreshVar();
-		wrapper.style.maxWidth=computeWrapperDimensions()+"px"; 
+		wrapper.style.maxWidth=computeWrapperDimensions()+"px";
+	}
+	
+	body.onload=function(){onloadBody();}
+	
+	function onloadBody(){
+		//wrapper.innerHTML+="coucou onload\n"
 		var overlayStack=['','overlay'];
 		if (isMobileDevice){wrapper.style.minHeight=window.innerHeight;}
 		if (isCrappyScreen()){packContent();}
 	}
+	
+	
 	window.onresize = function(){
 		wrapper.style.maxWidth=computeWrapperDimensions()+"px"; 
 		if (isMobileDevice){
@@ -254,7 +262,7 @@
 		menuIcon.style.display="none";
 		menuMobile.style.display="inline-block";
 		wrapper.style.maxWidth=(int)(window.innerWidth-wrapper.style.marginLeft-wrapper.style.marginRight)+"px";
-		wrapper.style.minHeight=window.innerHeight+"px";
+		//wrapper.style.minHeight=window.innerHeight+"px";
 		//navbar.style.position="fixed";
 		navbar.style.overflow="hidden";
 		//menuIcon.style.borderRadius="50%";
