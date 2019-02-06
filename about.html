@@ -3,6 +3,7 @@
 	<head>
 		<script src="js/requestSomething.js"></script>
 		<link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="css/style-mobile.css" rel="stylesheet" type="text/css" media="screen">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<title>wiJa/About us</title>
 	</head>
@@ -14,7 +15,7 @@
 				<div id="topnav">
 					<div id="menuIconWrapper">
 						<a onclick="openMenu()" href="javascript:void(0);" id="menuIcon">
-						<i class="material-icons resizable" style="font-size:250%;background-color:white;color:grey;">menu</i>
+						<i class="material-icons resizable" style="font-size:250%;background-color:white;color:black;">menu</i>
 						</a>
 					</div>
 					<div id="topnavDropMenu" class="hideable">
@@ -42,14 +43,24 @@
 					<div id="androidBadge" class="resizable">
 						<a href="https://play.google.com/store" target="_blank"><img src="icons/google-play-badge.png" /></a>
 					</div>	
+					<div id="topnavDropMenuMobile">
+						<div id="dropMenu-content-Mobile">
+						<ul id="dropMenuListMobile">
+						<li><a onclick="openMenuMobile()" href="javascript:void(0);" id="menuIconMobile">
+							<i class="material-icons animatedButton" style="font-size:250%;color:black;">menu</i>
+						</a></li>
+						<li><a href="index.html"  onclick="closeMenu()">
+							<i class="material-icons menuButtonMobile disabledButton" style="font-size:225%;color:black;">home</i></a></li>			
+						<li><a href="https://play.google.com/store" target="_blank" onclick="closeMenu()">
+							<i class="material-icons menuButtonMobile disabledButton"style="font-size:225%;color:black;">android</i></a></li>
+						<li><a href="contact.html" onclick="closeMenu()" >
+							<i class="material-icons menuButtonMobile disabledButton" style="font-size:225%;color:black;">group_add</i></a></li>
+						<li><a href="about.html" onclick="closeMenu()" >
+							<i class="material-icons menuButtonMobile disabledButton" style="font-size:225%;color:black;">business</i></a></li>
+						</ul>
+						</div>
+					</div>
 				</div>
-				<!--<div id="workWrapper">
-				<img src="icons/working_icon.png"/>
-				</div>-->
-
-				<!--<div id="logoWrapper">
-				<img src="icons/wija-icon2.png" />
-				</div>-->
 			</div>
 			<div id="content">
 			<h2 style="	border-bottom :1px gray solid;"> About Us </h2>

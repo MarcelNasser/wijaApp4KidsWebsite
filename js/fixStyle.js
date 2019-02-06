@@ -1,3 +1,4 @@
+	
 	var body=document.getElementsByTagName("body")[0];
 	var hideable=document.getElementsByClassName("hideable");
 	var popBox=document.getElementsByClassName("popBox");
@@ -18,6 +19,35 @@
 	var responseHttp= document.getElementById("responseContainer");
 	var overlayStack=['','overlay'];
 	var mailBoxButton=document.getElementById("mailBoxButton");
+	var animationBeats=["greenPulse","yellowPulse","redPulse","bluePulse"];
+	var menuBtnMobile=document.getElementsByClassName("material-icons menuButtonMobile");
+	var notMenuMobileOpen=false;
+	
+	function refreshVar(){
+		var body=document.getElementsByTagName("body")[0];
+		var hideable=document.getElementsByClassName("hideable");
+		var popBox=document.getElementsByClassName("popBox");
+		var androidBadge=document.getElementById("androidBadge");
+		var wrapper=document.getElementById("wrapper");
+		var overlay=document.getElementById("overlay");
+		var menuIcon=document.getElementById("menuIconWrapper");
+		var dropMenu=document.getElementById("topnavDropMenu");
+		var menuMobile=document.getElementById("topnavDropMenuMobile");
+		var navbar=document.getElementById("topnav");
+		var dropMenuList=document.getElementById("dropMenuList");
+		var mailBox=document.getElementById("mailBox");
+		var tabContact=document.getElementById("tableContact");
+		var menuList=document.getElementsByClassName("material-icons menuButton");
+		var colors=["blue","green","red"];
+		var icolo=0;
+		var jobInfo = document.getElementById("responseLine");
+		var responseHttp= document.getElementById("responseContainer");
+		var overlayStack=['','overlay'];
+		var mailBoxButton=document.getElementById("mailBoxButton");
+		var animationBeats=["greenPulse","yellowPulse","redPulse","bluePulse"];
+		var menuBtnMobile=document.getElementsByClassName("material-icons menuButtonMobile");
+		var notMenuMobileOpen=false;
+	}
 
 	overlay.onclick=function() {OnclickOverlay()};
 	function OnclickOverlay(){
@@ -188,6 +218,7 @@
 	}
 	
 	window.onload = function(){
+		//refreshVar();
 		wrapper.style.maxWidth=computeWrapperDimensions()+"px"; 
 		var overlayStack=['','overlay'];
 		if (isMobileDevice){wrapper.style.minHeight=window.innerHeight;}
@@ -218,12 +249,13 @@
 	
 	function packContent(){
 		//wrapper.innerHTML+="coucou Pack\n"
+		closeMenu();
 		androidBadge.style.display="none";
 		menuIcon.style.display="none";
 		menuMobile.style.display="inline-block";
 		wrapper.style.maxWidth=(int)(window.innerWidth-wrapper.style.marginLeft-wrapper.style.marginRight)+"px";
 		wrapper.style.minHeight=window.innerHeight+"px";
-		navbar.style.position="fixed";
+		//navbar.style.position="fixed";
 		navbar.style.overflow="hidden";
 		//menuIcon.style.borderRadius="50%";
 	}
@@ -231,13 +263,15 @@
 	function unPackContent(){
 		menuIcon.style.display="inline-block";
 		androidBadge.style.display="inline-block";
-		navbar.style.position="relative";
-		menuIcon.style.borderRadius="0%";
+		/*navbar.style.position="relative";
+		dropMenu.style.position="absolute";		
+		dropMenu.style.zIndex="5";
+		overlay.style.zIndex="1";
+		navbar.style.overflow="none";
+		menuIcon.style.borderRadius="0%";*/
 		menuMobile.style.display="none";
 	}
-	var animationBeats=["greenPulse","yellowPulse","redPulse","bluePulse"];
-	var menuBtnMobile=document.getElementsByClassName("material-icons menuButtonMobile");
-	var notMenuMobileOpen=false;
+
 	function openMenuMobile(){
 		if (notMenuMobileOpen){
 			for (var i = 0; i < menuBtnMobile.length; i++) {
