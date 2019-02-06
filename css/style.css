@@ -163,10 +163,10 @@ position:relative;top:5px;}
 
 #topnav{width:100%;background-color:white; overflow:hidden;}
 
-#menuIconWrapper{background-color:white;position:relative;z-index:5;width:auto;border: 2px solid #f3f3f3;
-				display:inline-block;margin-left:10px;margin-top:10px;}
+#menuIconWrapper{background-color:white;position:relative;z-index:5;width:auto;
+				display:inline-block;margin:10px 0 0 10px;padding:0;}
 
-#menuIconWrapper:hover{background-color:#f3f3f3;}
+/*#menuIconWrapper:hover{background-color:white;}*/
 
 #menuIcon {position:relative;z-index:5;color:black;}
 
@@ -213,7 +213,7 @@ animation: fadein 0.5s;
 
 #androidBadge img{max-height:90px;}
 
-#firstPost {float:left; margin-right:50px;margin-left:20px;padding:20x 20px;}
+#firstPost {float:left; margin:2em 3em;padding:20x 20px;}
 #firstPost p{text-align:left; font-size:100%}
 
 #footer {clear:both; padding:2px 0;float:bottom; overflow:hidden;
