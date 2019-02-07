@@ -341,4 +341,5 @@ animation: fadein 0.5s;
 }
 
 .disabledBtn{background-color:darkgrey;}
+
 .disabledBtn:hover{}

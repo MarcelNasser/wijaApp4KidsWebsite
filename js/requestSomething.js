@@ -62,6 +62,7 @@ function submitComment(obj){
 	notificationBox.style.display="block";
 	notificationBox.innerHTML="<h5>** info **</h5>";
 	notificationBox.innerHTML+="<p>> sending comment to host...</p>";
+	disableButton(submitButton);
 	var data={firstname:null,lastname:null,'e-mail':null,'comment':null};
 	var formData=formMailBox.elements;
 	/*data.firstname="bob";
@@ -110,6 +111,7 @@ function submitComment(obj){
 }
 
 function sweetCloseMailbox(){
+	
 	notificationBox.classList.add("slowFadeOut");
 	notificationBox.onanimationend = function(event) {
 		notificationBox.style.display="none";

@@ -24,6 +24,14 @@
 	var menuBtnMobile=document.getElementsByClassName("material-icons menuButtonMobile");
 	var notMenuMobileOpen=false;
 	var notificationBox=document.getElementsByClassName("notificationBox")[0];
+	var submitButton=document.getElementById("submitButton");
+
+	function disableButton(btn){
+		btn.style.backgroundColor="darkgrey";
+		btn.style.cursor="default";
+		btn.onmouseover=null;
+		btn.onclick=null;
+	}
 	
 	overlay.onclick=function() {OnclickOverlay()};
 	function OnclickOverlay(){
