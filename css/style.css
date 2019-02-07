@@ -322,6 +322,7 @@ animation: fadein 0.5s;
 
 .slowFadeOut {
 	animation: slowfadeout 7s;
+	-webkit-animation: slowfadeout 7s;
 }
 
 @keyframes slowfadeout  {

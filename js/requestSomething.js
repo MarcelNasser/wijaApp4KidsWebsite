@@ -106,15 +106,17 @@ function submitComment(obj){
 	}
 	xhttp.open("POST","https://inh6ay75eg.execute-api.eu-west-3.amazonaws.com/pre-prod/WijaLambda",true);
 	xhttp.responseType="json";
-	//xhttp.setRequestHeader("Access-Control-Allow-Origin", "*")
+	xhttp.setRequestHeader("Access-Control-Allow-Origin", "*")
 	xhttp.send(JSON.stringify(data));
 }
 
 function sweetCloseMailbox(){
-	
 	notificationBox.classList.add("slowFadeOut");
-	notificationBox.onanimationend = function(event) {
-		notificationBox.style.display="none";
-		closeMailBox();
-	};
+	notificationBox.addEventListener("webkitAnimationEnd", doAfterMailing);
+	notificationBox.addEventListener("animationend", doAfterMailing);
 }
+
+function doAfterMailing(event) {
+	notificationBox.style.display="none";
+	closeMailBox();
+};
