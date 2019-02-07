@@ -1,7 +1,7 @@
 #responseWrapper {width:100%;}
 			
 #responseContainer {
-	min-height:250px;
+	min-height:500px;
 	display:none;
 	z-index:7;position:relative;
 	margin:0 auto; float:center;

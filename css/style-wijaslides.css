@@ -1,7 +1,7 @@
 #wijaSlidesWrapper{
 	perspective: 800px;
 	perspective-origin: 50% 100px;
-	height:450px;
+	height:550px;
 	z-index:0;
 	margin:2em auto;
 	}
