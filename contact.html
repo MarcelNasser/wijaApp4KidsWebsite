@@ -78,7 +78,7 @@
 					<input type="text" id="lname" name="e-mail" placeholder="Your e-mail please..">
 					<label for="country">Comment</label>
 					<textarea> </textarea>				  
-					<button onclick="submitComment(this)"> Submit </button>
+					<input type="button" onclick="submitComment(this)" value="submit">
 				  </form>
 				</div>
 
@@ -88,7 +88,7 @@
 					</div>
 				</div>
 
-				<table id="tableContact" class="hideable">
+				<table id="tableContact" class="hideable" onsubmit="" action="php/post_comment.php">
 					<tr>
 						<td>
 							<div class="blueBeat">
@@ -126,7 +126,9 @@
 						</td>
 					</tr>
 				</table>
-
+				<div class="notificationBox">
+					<p>coucou!</p>
+				</div>
 			</div>
 			
 			<div id="footer">
@@ -137,6 +139,5 @@
 	</body>
 	
 	<script src="js/fixStyle.js"></script>
-
 
 </html>
