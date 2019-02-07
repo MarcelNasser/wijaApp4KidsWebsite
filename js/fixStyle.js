@@ -22,6 +22,7 @@
 	var animationBeats=["greenPulse","yellowPulse","redPulse","bluePulse"];
 	var menuBtnMobile=document.getElementsByClassName("material-icons menuButtonMobile");
 	var notMenuMobileOpen=false;
+	var footer= document.getElementById("footer");	
 	
 	function refreshVar(){
 		var body=document.getElementsByTagName("body")[0];
@@ -219,17 +220,27 @@
 	
 	window.onload = function(){
 		//refreshVar();
-		wrapper.style.maxWidth=computeWrapperDimensions()+"px"; 
-		var overlayStack=['','overlay'];
-		if (isMobileDevice){wrapper.style.minHeight=window.innerHeight;}
+		onloadAction();
+	}
+	
+	//document.onload=function(){onloadAction();}
+	
+	function onloadAction(){
+		//wrapper.innerHTML+="coucou onload\n"
+		//var overlayStack=['','overlay'];
+		//if (isMobileDevice){wrapper.style.minHeight=window.innerHeight;}
+		wrapper.style.maxWidth=computeWrapperDimensions()+"px";
 		if (isCrappyScreen()){packContent();}
 	}
+	
+	//document.addEventListener('DOMContentLoaded', function() {onloadAction();}, false);
+	
 	window.onresize = function(){
 		wrapper.style.maxWidth=computeWrapperDimensions()+"px"; 
-		if (isMobileDevice){
+/*		if (isMobileDevice){
 			wrapper.style.minHeight=window.innerHeight+"px";
 			wrapper.style.maxWidth=window.innerWidth+"px";
-		}
+		}*/
 		if (isCrappyScreen()){packContent();}
 		else {unPackContent();}
 	}
@@ -237,30 +248,37 @@
 	function isCrappyScreen(){
 		var orientation = screen.msOrientation || (screen.orientation 
 							|| screen.mozOrientation || {}).type;
+		//wrapper.innerHTML+="coucou Crappy : orientation="+orientation+"|width="+window.innerWidth+"\n";
 		if (orientation == "portrait-secondary" || orientation == "portrait-primary" ||
-			(window.innerHeight>window.innerWidth) || (window.innerWidth<750)) {
-						//wrapper.innerHTML+="coucou Crappy\n"
+			window.innerHeight>window.innerWidth || window.innerWidth<750 ||isMobileDevice) {
+			//wrapper.innerHTML+="coucou Crappy : "+true+"\n";
 			return true;
 		} else {
+			//wrapper.innerHTML+="coucou Crappy : "+false+"\n";
 			return false;
 		}
 
 	}
 	
 	function packContent(){
-		//wrapper.innerHTML+="coucou Pack\n"
-		closeMenu();
+		//wrapper.innerHTML+="coucou Pack / font-size="+body.style.fontSize+"\n";
+		while (overlayStack.length>2){OnclickOverlay();}
+		//var newFont=(int)(body.style.fontSize*1.5);
+		body.style.fontSize="18px";
 		androidBadge.style.display="none";
 		menuIcon.style.display="none";
 		menuMobile.style.display="inline-block";
 		wrapper.style.maxWidth=(int)(window.innerWidth-wrapper.style.marginLeft-wrapper.style.marginRight)+"px";
-		wrapper.style.minHeight=window.innerHeight+"px";
+		footer.style.marginTop=(int)(footer.style.marginTop+4)+"em";
+		//wrapper.style.minHeight=window.innerHeight+"px";
 		//navbar.style.position="fixed";
 		navbar.style.overflow="hidden";
 		//menuIcon.style.borderRadius="50%";
 	}
 	
 	function unPackContent(){
+		while (overlayStack.length>2){OnclickOverlay();}
+		body.style.fontSize="16px";
 		menuIcon.style.display="inline-block";
 		androidBadge.style.display="inline-block";
 		/*navbar.style.position="relative";

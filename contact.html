@@ -8,10 +8,10 @@
 		<link href="css/style-mailbox.css" rel="stylesheet" type="text/css" media="screen">
 		<link href="css/style-responseHttp.css" rel="stylesheet" type="text/css" media="screen">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<title>wiJa/Follow us</title>
+		<title>Follow wiJa</title>
 	</head>
 	
-	<body>
+	<body onload="onloadAction()">
 		<div id="wrapper">
 			<div id="overlay" class="hideable"></div>
 			<div id="wijaInfo">
@@ -67,8 +67,9 @@
 			</div>
 			<div id="content">
 				<h2 style="	border-bottom :1px gray solid;"> Connect With Us </h2>
+
 				<div id="mailBox" class="hideable">
-				  <form >
+				  <form>
 					<label for="fname">First Name</label>
 					<input type="text" id="fname" name="firstname" placeholder="Your name..">
 					<label for="lname">Last Name</label>
@@ -77,14 +78,16 @@
 					<input type="text" id="lname" name="e-mail" placeholder="Your e-mail please..">
 					<label for="country">Comment</label>
 					<textarea> </textarea>				  
-					<input type="submit" value="Submit" onclick="submitComment(this)">
+					<button onclick="submitComment(this)"> Submit </button>
 				  </form>
 				</div>
+
 				<div id="responseWrapper" >				
 					<div id="responseContainer" onclick="requestSomething()" >
 						<p id="responseLine"><br>-- Click here to contact the Webmaster --<br><br></p>
 					</div>
 				</div>
+
 				<table id="tableContact" class="hideable">
 					<tr>
 						<td>
@@ -110,7 +113,20 @@
 							</div>
 						</td>
 					</tr>
+					<tr>
+						<td>
+							<div class="blueBeat" >
+								<a href="javascript:void(0);"><div class="focusable"><img src="icons/work.png" /></div></a>
+							</div>
+						</td>
+						<td>
+							<div class="redBeat" >
+								<a href="javascript:void(0);"><div class="focusable"><img src="icons/work.png" /></div></a>
+							</div>
+						</td>
+					</tr>
 				</table>
+
 			</div>
 			
 			<div id="footer">

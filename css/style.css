@@ -41,7 +41,7 @@ div{
 	text-justify: inter-word;
 }
 	
-a {text-decoration:none;font-weight:normal;font-size:175%;line-height:1.2em;font-family: Consolas, Georgia, "Times New Roman", Times, serif;}
+a {text-decoration:none;font-weight:italic;font-size:170%;line-height:1.2em;font-family: Consolas, Georgia, "Times New Roman", Times, serif;}
 
 a:link {color:black}
 
@@ -51,13 +51,14 @@ ul {list-style-type:none;padding: 0; margin:0;line-height:200%;}
 
 #wrapper{float:center; margin:0px auto; width:900px;
 background-color: white; 
-min-height:500px; 
+min-height:900px; 
 margin-bottom:0px; margin-top:0px;
 padding:0;
 overflow: auto;
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
 min-width:550px;
 }
+#content {padding:0 2em; margin:1em 0 2em 0;}
 			
 .hideable {display:none}
 
@@ -163,22 +164,22 @@ position:relative;top:5px;}
 
 #topnav{width:100%;background-color:white; overflow:hidden;}
 
-#menuIconWrapper{background-color:white;position:relative;z-index:5;width:auto;border: 2px solid #f3f3f3;
-				display:inline-block;margin-left:10px;margin-top:10px;}
+#menuIconWrapper{background-color:white;position:relative;z-index:5;width:auto;
+				display:inline-block;margin:10px 0 0 10px;padding:0;}
 
-#menuIconWrapper:hover{background-color:#f3f3f3;}
+/*#menuIconWrapper:hover{background-color:white;}*/
 
 #menuIcon {position:relative;z-index:5;color:black;}
 
 #topnavDropMenu{
 background-color:white;z-index:5;display:none;border: 2px solid #f3f3f3;position:absolute;
-box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2); min-width:30em;min-height:350px;
+box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2); min-width:25em;min-height:20em;
 animation: fadein 0.5s;
 }
 
 #dropMenu-content{z-index:5;animation: fadein 1.5s;}
 
-#dropMenu-content ul a{display:block;padding:8px 16px 8px 16px;line-height:120%;}
+#dropMenu-content ul a{display:block;padding:8px 16px 8px 16px;line-height:130%;}
 
 /*#dropMenu-content a:hover {background-color: #f1f1f1;}*/
 
@@ -213,12 +214,14 @@ animation: fadein 0.5s;
 
 #androidBadge img{max-height:90px;}
 
-#firstPost {float:left; margin-right:50px;margin-left:20px;padding:20x 20px;}
+#firstPost {float:left; margin:2em 3em;padding:20x 20px;}
 #firstPost p{text-align:left; font-size:100%}
 
-#footer {clear:both; padding:2px 0;float:bottom; overflow:hidden;
-         width:100%;text-align:center;margin-bottom:0;}
-#footer p{font-size:80%;font-weight:italic;margin:4em auto 1em auto;text-align:center;}
+#footer {clear:both; overflow:hidden;
+    display:inline-block;
+    vertical-align:bottom;
+         width:100%;text-align:center;margin:4em auto 1em auto;}
+#footer p{font-size:80%;font-weight:italic;text-align:center;}
 
 .greenPulse {
   -webkit-animation-name: greenpulse; /* Safari 4.0 - 8.0 */
