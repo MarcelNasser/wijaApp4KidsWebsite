@@ -1,20 +1,21 @@
 #mailBox{
-	display:none;z-index:7;position:relative;background-color:white;padding:20px 40px;
+	display:none;z-index:7;position:relative;background-color:white;padding:1em 2em;
 	font-family: Consolas, Georgia, "Times New Roman", Times, serif;
 	font-size:100%;
+	margin:2em auto 2em auto;
 }
 
 #mailBox textarea{
 	width:100%;z-index:7;position:relative;
-	height: 150px;
+	height: 300px;
 	border: 1px solid #ccc;
     border-radius: 4px;
 } 
 
 #mailBox input[type=text]{
   width:100%;z-index:7;
-  padding: 5px 10px;
-  margin: 4px 0;
+  padding: 0.4em 1.2em;
+  margin: 0 0 0.5em 0;
   /* display: inline-block; */
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -24,7 +25,7 @@
   width:100%;z-index:7;
   background-color: #45a049;
   color: white;
-  padding: 14px 20px;
+  padding: 1em 1.5em;
   margin: 8px 0;
   border: none;
   border-radius: 8px;
@@ -33,3 +34,15 @@
 #mailBox  input[type=submit]:hover {
   background-color: #ff8000;
 }
+
+#mailBox button {
+	background-color:#45a049;
+	  color: white;
+	  padding: 1em 1.5em;
+	  margin: 8px 0;
+	  border: none;
+	  border-radius: 8px;
+	  cursor: pointer;
+	}
+
+#mailBox button:hover {background-color: #ff8000;}
