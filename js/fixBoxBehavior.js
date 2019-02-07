@@ -7,7 +7,7 @@ box.faces.left=document.getElementsByClassName("left")[0];
 for (var face in box.faces){
 	box.faces[face].onmouseover=function() {fadeOut(this)};
 	box.faces[face].onmouseout=function() {restartSpin(this)};
-	box.faces[face].onclick=function() {showDivContent(this)};
+	box.faces[face].onclick=function() {openPopBox(this)};
 	box.faces[face].ondblclick=function() {fadeOut2(this)};	
 }
 var isMobileDevice=navigator.userAgent.match(/Android/i)
@@ -30,13 +30,14 @@ function fadeOut2(obj){
 	}
 }
 var coor;
-function showDivContent(obj){
+function openPopBox(obj){
 	var faceName,poBox;	
 	var faceName=obj.innerHTML;
 	var popBox=document.getElementById("wijaBox_"+faceName);		
 	overlay.style.display ="block";
 	popBox.style.display ="block";
 	popBox.classList.add("fadein");
+	overlayStack.push("popbox");
 	coor=computeCoordinates(faceName);
 	popBox.style.transform="translateX("+coor[0]+"em) "+"translateY("+coor[1]+"em)";
 	popBox.style.webkitTransform="translateX("+coor[0]+"em) "+"translateY("+coor[1]+"em)";
@@ -46,7 +47,7 @@ function showDivContent(obj){
 function computeCoordinates(txt){
 	if (txt=='W' || txt=='J'){
 		if (isCrappyScreen()){
-			X=2+Math.random()*1;
+			X=0;
 			Y=Math.random()*5;			
 		}
 		else{
@@ -56,7 +57,7 @@ function computeCoordinates(txt){
 	}
 	else {
 		if (isCrappyScreen()){
-			X=10+Math.random()*1;
+			X=2+Math.random()*5;
 			Y=Math.random()*5;			
 		}
 		else{

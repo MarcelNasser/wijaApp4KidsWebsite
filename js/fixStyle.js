@@ -262,7 +262,7 @@
 	
 	function packContent(){
 		//wrapper.innerHTML+="coucou Pack / font-size="+body.style.fontSize+"\n";
-		closeMenu();
+		while (overlayStack.length>2){OnclickOverlay();}
 		//var newFont=(int)(body.style.fontSize*1.5);
 		body.style.fontSize="18px";
 		androidBadge.style.display="none";
@@ -277,6 +277,7 @@
 	}
 	
 	function unPackContent(){
+		while (overlayStack.length>2){OnclickOverlay();}
 		body.style.fontSize="16px";
 		menuIcon.style.display="inline-block";
 		androidBadge.style.display="inline-block";
