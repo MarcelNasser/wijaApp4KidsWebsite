@@ -23,32 +23,6 @@
 	var menuBtnMobile=document.getElementsByClassName("material-icons menuButtonMobile");
 	var notMenuMobileOpen=false;
 	var footer= document.getElementById("footer");	
-	
-	function refreshVar(){
-		var body=document.getElementsByTagName("body")[0];
-		var hideable=document.getElementsByClassName("hideable");
-		var popBox=document.getElementsByClassName("popBox");
-		var androidBadge=document.getElementById("androidBadge");
-		var wrapper=document.getElementById("wrapper");
-		var overlay=document.getElementById("overlay");
-		var menuIcon=document.getElementById("menuIconWrapper");
-		var dropMenu=document.getElementById("topnavDropMenu");
-		var menuMobile=document.getElementById("topnavDropMenuMobile");
-		var navbar=document.getElementById("topnav");
-		var dropMenuList=document.getElementById("dropMenuList");
-		var mailBox=document.getElementById("mailBox");
-		var tabContact=document.getElementById("tableContact");
-		var menuList=document.getElementsByClassName("material-icons menuButton");
-		var colors=["blue","green","red"];
-		var icolo=0;
-		var jobInfo = document.getElementById("responseLine");
-		var responseHttp= document.getElementById("responseContainer");
-		var overlayStack=['','overlay'];
-		var mailBoxButton=document.getElementById("mailBoxButton");
-		var animationBeats=["greenPulse","yellowPulse","redPulse","bluePulse"];
-		var menuBtnMobile=document.getElementsByClassName("material-icons menuButtonMobile");
-		var notMenuMobileOpen=false;
-	}
 
 	overlay.onclick=function() {OnclickOverlay()};
 	function OnclickOverlay(){
@@ -219,7 +193,6 @@
 	}
 	
 	window.onload = function(){
-		//refreshVar();
 		onloadAction();
 	}
 	

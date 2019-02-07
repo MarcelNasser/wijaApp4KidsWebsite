@@ -1,5 +1,3 @@
-load_Menu();
-
 function load_Menu(){
 	var xhttp;
 	if (window.XMLHttpRequest)

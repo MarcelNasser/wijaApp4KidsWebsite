@@ -60,12 +60,15 @@ function requestSomething(){
 function submitComment(obj){
 	closeMailBox();
 	var xhttp;
-	var data;
+	var data={firstname:null,lastname:null,'e-mail':null};;
 	data.firstname="bob";
 	data.lastname="mande";
+	data['e-mail']="bob.mande@wijaapp4kids.com";
 	var notificationBox=document.getElementsByClassName("notificationBox")[0];
 	notificationBox.style.display="block";
-	notificationBox.innerHTML="into request/";
+	notificationBox.innerHTML="<h5>** info **</h5>"
+	notificationBox.innerHTML+="<p>> sending comment to host...</p>"
+	//notificationBox.innerHTML+="into request/"+JSON.stringify(data)+"\n";
 	if (window.XMLHttpRequest)
     {// code for IE7+, Firefox, Chrome, Opera, Safari
         xhttp=new XMLHttpRequest();
@@ -84,7 +87,12 @@ function submitComment(obj){
 			case 3: break;
 			case 4: 
 				statut=xhttp.status;
-				notificationBox.innerHTML+="<p>"+xhttp.reponseText+"<\p>";
+				notificationBox.innerHTML+="<p>> response Text: "+xhttp.reponseText+"<\p>";
+				notificationBox.innerHTML+="<p>> response Json: "+xhttp.reponseJSON+"<\p>";
+				notificationBox.classList.add("slowFadeOut");
+				notificationBox.onanimationend = function(event) {
+					notificationBox.style.display="none";
+				};
 				if(statut==200){
 					/* do something */																			
 				}
@@ -95,6 +103,7 @@ function submitComment(obj){
 		}	
 	}
 	xhttp.open("POST","https://inh6ay75eg.execute-api.eu-west-3.amazonaws.com/pre-prod/WijaLambda",true);
+	xhttp.responseType="json";
 	//xhttp.setRequestHeader("Access-Control-Allow-Origin", "*")
 	xhttp.send(JSON.stringify(data));
 }
