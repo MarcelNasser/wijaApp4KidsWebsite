@@ -11,6 +11,7 @@
 	var navbar=document.getElementById("topnav");
 	var dropMenuList=document.getElementById("dropMenuList");
 	var mailBox=document.getElementById("mailBox");
+	var formMailBox=document.getElementById("formMailBox");
 	var tabContact=document.getElementById("tableContact");
 	var menuList=document.getElementsByClassName("material-icons menuButton");
 	var colors=["blue","green","red"];
@@ -22,8 +23,8 @@
 	var animationBeats=["greenPulse","yellowPulse","redPulse","bluePulse"];
 	var menuBtnMobile=document.getElementsByClassName("material-icons menuButtonMobile");
 	var notMenuMobileOpen=false;
-	var footer= document.getElementById("footer");	
-
+	var notificationBox=document.getElementsByClassName("notificationBox")[0];
+	
 	overlay.onclick=function() {OnclickOverlay()};
 	function OnclickOverlay(){
 		if (overlayStack[overlayStack.length-1]=='Menu'){if (dropMenu!=null){closeMenu();}}

@@ -78,9 +78,12 @@ min-width:550px;
 }
 
 .notificationBox {
+	z-index:99;
+	position:relative;
 	border-radius:0.5em;border: 2px solid #f3f3f3;
 	background-color:dodgerblue;
-	width:75%;color:white;margin:0 auto;
+	width:75%;
+	color:white;margin:0 auto;
 	padding:1.2em;
 	display:none;
 	}
@@ -318,14 +321,14 @@ animation: fadein 0.5s;
 }
 
 .slowFadeOut {
-	animation: slowfadeout 5s;
+	animation: slowfadeout 7s;
 }
 
 @keyframes slowfadeout  {
   0%   {opacity:1;}
   25%  {opacity:0.90;}
   50%  {opacity:0.85;}
-  75%  {opacity:0.50;}
+  75%  {opacity:0.75;}
   100% {opacity:0;}
 }
 
@@ -333,6 +336,9 @@ animation: fadein 0.5s;
   0%   {opacity:1;}
   25%  {opacity:0.90;}
   50%  {opacity:0.85;}
-  75%  {opacity:0.50;}
+  75%  {opacity:0.75;}
   100% {opacity:0;}
 }
+
+.disabledBtn{background-color:darkgrey;}
+.disabledBtn:hover{}

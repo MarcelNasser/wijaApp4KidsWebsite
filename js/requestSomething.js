@@ -58,17 +58,21 @@ function requestSomething(){
 }
 
 function submitComment(obj){
-	closeMailBox();
 	var xhttp;
-	var data={firstname:null,lastname:null,'e-mail':null};;
-	data.firstname="bob";
-	data.lastname="mande";
-	data['e-mail']="bob.mande@wijaapp4kids.com";
-	var notificationBox=document.getElementsByClassName("notificationBox")[0];
 	notificationBox.style.display="block";
-	notificationBox.innerHTML="<h5>** info **</h5>"
-	notificationBox.innerHTML+="<p>> sending comment to host...</p>"
-	//notificationBox.innerHTML+="into request/"+JSON.stringify(data)+"\n";
+	notificationBox.innerHTML="<h5>** info **</h5>";
+	notificationBox.innerHTML+="<p>> sending comment to host...</p>";
+	var data={firstname:null,lastname:null,'e-mail':null,'comment':null};
+	var formData=formMailBox.elements;
+	/*data.firstname="bob";
+	data.lastname="mande";
+	data['e-mail']="bob.mande@wijaapp4kids.com";*/
+	for(var i=0;i<formData.length;i++){
+		if(data.hasOwnProperty(formData[i].name)){
+			data[formData[i].name]=formData[i].value;
+		}
+	}
+	//notificationBox.innerHTML+="> into request/"+JSON.stringify(data)+"\n";
 	if (window.XMLHttpRequest)
     {// code for IE7+, Firefox, Chrome, Opera, Safari
         xhttp=new XMLHttpRequest();
@@ -81,18 +85,15 @@ function submitComment(obj){
 		var state=xhttp.readyState;
 		var statut;
 		switch (state){
-			case 0: break;
-			case 1: break;
-			case 2: break;
-			case 3: break;
+			case 0: sweetCloseMailbox();break;
+			case 1: sweetCloseMailbox();break;
+			case 2: sweetCloseMailbox();break;
+			case 3: sweetCloseMailbox();break;
 			case 4: 
 				statut=xhttp.status;
 				notificationBox.innerHTML+="<p>> response Text: "+xhttp.reponseText+"<\p>";
 				notificationBox.innerHTML+="<p>> response Json: "+xhttp.reponseJSON+"<\p>";
-				notificationBox.classList.add("slowFadeOut");
-				notificationBox.onanimationend = function(event) {
-					notificationBox.style.display="none";
-				};
+				sweetCloseMailbox();
 				if(statut==200){
 					/* do something */																			
 				}
@@ -106,4 +107,12 @@ function submitComment(obj){
 	xhttp.responseType="json";
 	//xhttp.setRequestHeader("Access-Control-Allow-Origin", "*")
 	xhttp.send(JSON.stringify(data));
+}
+
+function sweetCloseMailbox(){
+	notificationBox.classList.add("slowFadeOut");
+	notificationBox.onanimationend = function(event) {
+		notificationBox.style.display="none";
+		closeMailBox();
+	};
 }
