@@ -27,10 +27,28 @@
 	var submitButton=document.getElementById("submitButton");
 
 	function disableButton(btn){
-		btn.style.backgroundColor="darkgrey";
-		btn.style.cursor="default";
-		btn.onmouseover=null;
+		btn.classList.remove("enabledBtn");
+		btn.classList.add("disabledBtn");
 		btn.onclick=null;
+	}
+	
+	function resetForm(formX,args){
+		//formX.innerHTML+=formX+"\n";
+		var formData=formX.elements;
+		for(var i=0;i<formData.length;i++){
+		if(args.includes(formData[i].name)){
+			//formX.innerHTML+=formData[i].type+"\n";
+			if (formData[i].type=="textarea"){
+				//formX.innerHTML+=formData[i]+"\n";
+				formData[i].value="";
+			}
+			if (formData[i].type=="button"){
+				formData[i].classList.remove("disabledBtn");
+				formData[i].classList.add("enabledBtn");
+				formData[i].onclick=function() {submitComment();}
+			}
+		}
+	}
 	}
 	
 	overlay.onclick=function() {OnclickOverlay()};
@@ -134,7 +152,8 @@
 			overlay.style.zIndex="6";
 			overlay.style.display ="block";
 			tabContact.style.display="none";
-			//overlayStack.push('mailBox');
+			overlayStack.push('mailBox');
+			if (formMailBox!=null){resetForm(formMailBox,['comment','submitButton']);}
 		}
 		mailBox.style.display="block";		
 	}

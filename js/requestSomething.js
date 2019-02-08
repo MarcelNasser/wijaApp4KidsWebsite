@@ -57,11 +57,11 @@ function requestSomething(){
 	return false;
 }
 
-function submitComment(obj){
+function submitComment(){
 	var xhttp;
 	notificationBox.style.display="block";
 	notificationBox.innerHTML="<h5>** info **</h5>";
-	notificationBox.innerHTML+="<p>> sending comment to host...</p>";
+	notificationBox.innerHTML+="<p>>>> sending comment to host...</p>";
 	disableButton(submitButton);
 	var data={firstname:null,lastname:null,'e-mail':null,'comment':null};
 	var formData=formMailBox.elements;
@@ -92,8 +92,10 @@ function submitComment(obj){
 			case 3: sweetCloseMailbox();break;
 			case 4: 
 				statut=xhttp.status;
-				notificationBox.innerHTML+="<p>> response Text: "+xhttp.reponseText+"<\p>";
-				notificationBox.innerHTML+="<p>> response Json: "+xhttp.reponseJSON+"<\p>";
+				notificationBox.innerHTML+="<p>>>> response received from host: <\p>";
+				notificationBox.innerHTML+="<p>-- Summary --<\p>";
+				notificationBox.innerHTML+="<p>--> response Text: "+xhttp.reponseText+"<\p>";
+				notificationBox.innerHTML+="<p>--> response Json: "+xhttp.reponseJSON+"<\p>";
 				sweetCloseMailbox();
 				if(statut==200){
 					/* do something */																			

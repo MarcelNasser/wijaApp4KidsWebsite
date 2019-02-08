@@ -321,8 +321,8 @@ animation: fadein 0.5s;
 }
 
 .slowFadeOut {
-	animation: slowfadeout 7s;
-	-webkit-animation: slowfadeout 7s;
+	animation: slowfadeout 5s;
+	-webkit-animation: slowfadeout 5s;
 }
 
 @keyframes slowfadeout  {
@@ -341,6 +341,17 @@ animation: fadein 0.5s;
   100% {opacity:0;}
 }
 
-.disabledBtn{background-color:darkgrey;}
+.disabledBtn{
+	background-color:darkgrey;
+	cursor: default;
+	}
 
 .disabledBtn:hover{}
+
+.enabledBtn{
+	background-color:#45a049;
+	color: white;
+	cursor: pointer;
+}
+
+.enabledBtn:hover{background-color: #ff8000;}

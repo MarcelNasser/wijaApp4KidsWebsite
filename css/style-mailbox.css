@@ -10,6 +10,7 @@
 	height: 300px;
 	border: 1px solid #ccc;
     border-radius: 4px;
+	padding:0.4em 1.2em;
 } 
 
 #mailBox input[type=text]{
@@ -23,26 +24,16 @@
 
 #mailBox input[type=button]{
   width:100%;z-index:7;
-  background-color: #45a049;
+  /*background-color: #45a049;
   color: white;
+  cursor: pointer;*/
   padding: 1em 1.5em;
   margin: 8px 0;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;}
+  border-radius: 8px;}
   
-#mailBox input[type=button]:hover {
+/*#mailBox input[type=button]:hover {
   background-color: #ff8000;
-}
+}*/
 
-#mailBox button {
-	background-color:#45a049;
-	  color: white;
-	  padding: 1em 1.5em;
-	  margin: 8px 0;
-	  border: none;
-	  border-radius: 8px;
-	  cursor: pointer;
-	}
 	
-#mailBox button:hover {background-color: #ff8000;}
