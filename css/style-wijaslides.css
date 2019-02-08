@@ -3,7 +3,7 @@
 	perspective-origin: 50% 100px;
 	height:550px;
 	z-index:0;
-	margin:2em auto;
+	margin:3em auto 0 auto;
 	}
 
 .slideBox{

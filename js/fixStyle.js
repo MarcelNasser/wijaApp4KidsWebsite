@@ -243,9 +243,8 @@
 	}
 	
 	function packContent(){
-		//wrapper.innerHTML+="coucou Pack / font-size="+body.style.fontSize+"\n";
 		while (overlayStack.length>2){OnclickOverlay();}
-		//var newFont=(int)(body.style.fontSize*1.5);
+		if(wijaSlidesWrapper!=null){wijaSlidesWrapper.style.marginTop="6em";}
 		body.style.fontSize="18px";
 		androidBadge.style.display="none";
 		menuIcon.style.display="none";
@@ -254,7 +253,7 @@
 		footer.style.marginTop=(int)(footer.style.marginTop+4)+"em";
 		//wrapper.style.minHeight=window.innerHeight+"px";
 		//navbar.style.position="fixed";
-		navbar.style.overflow="hidden";
+		//navbar.style.overflow="hidden";
 		//menuIcon.style.borderRadius="50%";
 	}
 	
@@ -263,12 +262,14 @@
 		body.style.fontSize="16px";
 		menuIcon.style.display="inline-block";
 		androidBadge.style.display="inline-block";
+		if(wijaSlidesWrapper!=null){wijaSlidesWrapper.style.marginTop="3em";}
 		/*navbar.style.position="relative";
 		dropMenu.style.position="absolute";		
 		dropMenu.style.zIndex="5";
 		overlay.style.zIndex="1";
 		navbar.style.overflow="none";
 		menuIcon.style.borderRadius="0%";*/
+		//navbar.style.position="relative";
 		menuMobile.style.display="none";
 	}
 
