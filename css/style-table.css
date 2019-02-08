@@ -1,4 +1,4 @@
-#tableContact {width:50%; margin:3em auto 2em auto; display:block;}
+#tableContact {width:50%; margin:4em auto 4em auto; display:block;}
 #tableContact tr:nth-child(odd){background-color: #f2f2f2;}
 #tableContact tr:nth-child(even){background-color: #f2f2f2;}
 #tableContact td {width:50%}

@@ -218,11 +218,11 @@
 	//document.addEventListener('DOMContentLoaded', function() {onloadAction();}, false);
 	
 	window.onresize = function(){
+		onResizeAction();
+	}
+	
+	function onResizeAction(){
 		wrapper.style.maxWidth=computeWrapperDimensions()+"px"; 
-/*		if (isMobileDevice){
-			wrapper.style.minHeight=window.innerHeight+"px";
-			wrapper.style.maxWidth=window.innerWidth+"px";
-		}*/
 		if (isCrappyScreen()){packContent();}
 		else {unPackContent();}
 	}
