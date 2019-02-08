@@ -45,25 +45,19 @@ function openPopBox(obj){
 }
 
 function computeCoordinates(txt){
+	var maxwidth=computeWrapperDimensions();
+	var a,b;
 	if (txt=='W' || txt=='J'){
-		if (isCrappyScreen()){
-			X=0;
-			Y=Math.random()*5;			
-		}
-		else{
-			X=2+Math.random()*5;
-			Y=Math.random()*5;
-		}
+		a=(2-0)/(900-550);
+		b=(2*550-0*900)/(550-900);
+		X=(maxwidth*a+b)+Math.random()*5;
+		Y=Math.random()*5;	
 	}
 	else {
-		if (isCrappyScreen()){
-			X=2+Math.random()*5;
-			Y=Math.random()*5;			
-		}
-		else{
-			X=25+Math.random()*5;
-			Y=Math.random()*5;
-		}
+		a=(25-2)/(900-550);
+		b=(25*550-2*900)/(550-900);
+		X=(maxwidth*a+b)+Math.random()*5;
+		Y=Math.random()*5;			
 	}
 	return [X,Y];
 }
