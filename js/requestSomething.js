@@ -94,8 +94,10 @@ function submitComment(){
 				statut=xhttp.status;
 				notificationBox.innerHTML+="<p>>>> response received from host: <\p>";
 				notificationBox.innerHTML+="<p>-- Summary --<\p>";
-				notificationBox.innerHTML+="<p>--> response Text: "+xhttp.reponseText+"<\p>";
-				notificationBox.innerHTML+="<p>--> response Json: "+xhttp.reponseJSON+"<\p>";
+				notificationBox.innerHTML+="<p>--> response Status: "+statut+"<\p>";
+				notificationBox.innerHTML+="<p>--> response value : "+xhttp.response+"<\p>";
+				notificationBox.innerHTML+="<p>--> response Text  : "+xhttp.reponseText+"<\p>";
+				notificationBox.innerHTML+="<p>--> response Json  : "+xhttp.reponseJSON+"<\p>";
 				sweetCloseMailbox();
 				if(statut==200){
 					/* do something */																			
@@ -109,7 +111,11 @@ function submitComment(){
 	xhttp.open("POST","https://inh6ay75eg.execute-api.eu-west-3.amazonaws.com/pre-prod/WijaLambda",true);
 	xhttp.responseType="json";
 	xhttp.setRequestHeader("Access-Control-Allow-Origin", "*")
-	xhttp.send(JSON.stringify(data));
+	try {
+		xhttp.send(JSON.stringify(data));
+	} catch(err) {
+		notificationBox.innerHTML += "<p>XMLHttprequest error: " + err.description+"<\p>";
+	}
 }
 
 function sweetCloseMailbox(){
