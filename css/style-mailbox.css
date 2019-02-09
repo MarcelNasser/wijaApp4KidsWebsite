@@ -6,7 +6,7 @@
 }
 
 #mailBox textarea{
-	width:100%;z-index:7;position:relative;
+	width:100%;z-index:7;
 	height: 300px;
 	border: 1px solid #ccc;
     border-radius: 4px;

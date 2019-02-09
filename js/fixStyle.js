@@ -26,7 +26,8 @@
 	var notMenuMobileOpen=false;
 	var notificationBox=document.getElementsByClassName("notificationBox")[0];
 	var submitButton=document.getElementById("submitButton");
-
+	var mailBoxItems=document.getElementsByClassName("mailBoxItem");
+	
 	function disableButton(btn){
 		btn.classList.remove("enabledBtn");
 		btn.classList.add("disabledBtn");
@@ -73,8 +74,8 @@
 	slideBox=document.getElementsByClassName("slideBox")[0];
 	wijaSlidesWrapper=document.getElementById("wijaSlidesWrapper");
 	if (slideBox!=0){
-		slideBox.addEventListener("webkitAnimationEnd", refreshStop);
-		slideBox.addEventListener("animationend", refreshStop);
+		//slideBox.addEventListener("webkitAnimationEnd", refreshStop);
+		//slideBox.addEventListener("animationend", refreshStop);
 		//slideBox.onclick=function() {restartPopBox()};
 		//wijaSlidesWrapper.onclick=function() {restartPopBox()};
 	}	
@@ -299,6 +300,12 @@
 				//menuBtnMobile[i].classList.add("heartBeat");
 				menuBtnMobile[i].classList.remove("disabledButton");
 			}
+			if (mailBoxItems!=null){
+				for (var j = 0; j < mailBoxItems.length; j++){
+					if (j%4<2){mailBoxItems[j].classList.add("blueBeat");}
+					else{mailBoxItems[j].classList.add("redBeat");}
+				}
+			} 			
 			notMenuMobileOpen=false;
 		}
 		else{
@@ -311,6 +318,12 @@
 				//menuBtnMobile[i].classList.remove("heartBeat");
 				menuBtnMobile[i].classList.add("disabledButton");
 			}
+			if (mailBoxItems!=null){
+				for (var j = 0; j < mailBoxItems.length; j++){
+					if (j%2==0){mailBoxItems[j].classList.remove("blueBeat");}
+					else{mailBoxItems[j].classList.remove("redBeat");}
+				}
+			} 
 			notMenuMobileOpen=true;
 		}
 	}
