@@ -22,6 +22,7 @@
 	var mailBoxButton=document.getElementById("mailBoxButton");
 	var animationBeats=["greenPulse","yellowPulse","redPulse","bluePulse"];
 	var menuBtnMobile=document.getElementsByClassName("material-icons menuButtonMobile");
+	var switchBtnMobile=document.getElementsByClassName("material-icons animatedButton")[0];
 	var notMenuMobileOpen=false;
 	var notificationBox=document.getElementsByClassName("notificationBox")[0];
 	var submitButton=document.getElementById("submitButton");
@@ -108,8 +109,7 @@
 			overlay.style.display ="block";
 			dropMenu.style.display="block";
 			for (var i = 0; i < menuList.length; i++) {
-					icolo=Math.floor(Math.random()*colors.length);
-					menuList[i].style.color=colors[icolo%colors.length];
+					menuList[i].style.color=computeRandomValue(colors);
 					menuList[i].style.fontSize="110%";
 				}
 			overlayStack.push('Menu');
@@ -268,8 +268,6 @@
 		androidBadge.style.display="none";
 		menuIcon.style.display="none";
 		menuMobile.style.display="inline-block";
-		wrapper.style.maxWidth=(int)(window.innerWidth-wrapper.style.marginLeft-wrapper.style.marginRight)+"px";
-		footer.style.marginTop=(int)(footer.style.marginTop+4)+"em";
 		//wrapper.style.minHeight=window.innerHeight+"px";
 		//navbar.style.position="fixed";
 		//navbar.style.overflow="hidden";
@@ -295,9 +293,9 @@
 	function openMenuMobile(){
 		if (notMenuMobileOpen){
 			for (var i = 0; i < menuBtnMobile.length; i++) {
+				switchBtnMobile.style.color="green";
 				menuBtnMobile[i].classList.add("animatedButton");
-				icolo=Math.floor(Math.random()*animationBeats.length);
-				menuBtnMobile[i].classList.add(animationBeats[icolo%animationBeats.length]);
+				menuBtnMobile[i].classList.add(computeRandomValue(animationBeats));
 				//menuBtnMobile[i].classList.add("heartBeat");
 				menuBtnMobile[i].classList.remove("disabledButton");
 			}
@@ -305,6 +303,7 @@
 		}
 		else{
 			for (var i = 0; i < menuBtnMobile.length; i++) {
+				switchBtnMobile.style.color="red";
 				menuBtnMobile[i].classList.remove("animatedButton");
 				for (var j = 0; j < menuBtnMobile.length; j++){
 					menuBtnMobile[i].classList.remove(animationBeats[j]);
@@ -314,6 +313,32 @@
 			}
 			notMenuMobileOpen=true;
 		}
+	}
+	
+	var tmp_array=[];
+	function computeRandomValue(tab){
+		var toResetArray=true;
+		//console.log(tmp_array);
+		if (tmp_array!=null){
+			var allintab=true;
+			for (var j = 0; j < tmp_array.length; j++){
+				if (!tab.includes(tmp_array[j])){
+						allintab=false; break;
+					}
+			}
+			if (allintab & tmp_array.length>0){toResetArray=false;}
+		}
+		if (toResetArray){
+			tmp_array=[];
+			for (var i= 0; i < tab.length; i++){tmp_array.push(tab[i]);}
+		}
+		//console.log(tmp_array);
+		//wrapper.innerHTML+=tmp_array+"\n";
+		var irand;
+		irand=Math.floor(Math.random()*tmp_array.length);
+		out=tmp_array[irand%tmp_array.length];
+		tmp_array.splice(irand,1);
+		return out;
 	}
 	
 	function turnRed(elt){		
