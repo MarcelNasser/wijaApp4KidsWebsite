@@ -270,7 +270,7 @@
 	
 	function packContent(){
 		while (overlayStack.length>2){OnclickOverlay();}
-		if(wijaSlidesWrapper!=null){wijaSlidesWrapper.style.marginTop="6em";}
+		if(wijaSlidesWrapper!=null){wijaSlidesWrapper.style.marginTop="3em";}
 		body.style.fontSize="18px";
 		androidBadge.style.display="none";
 		menuIcon.style.display="none";
