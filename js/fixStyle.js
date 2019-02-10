@@ -30,6 +30,7 @@
 	var notificationBox=document.getElementsByClassName("notificationBox")[0];
 	var submitButton=document.getElementById("submitButton");
 	var mailBoxItems=document.getElementsByClassName("mailBoxItem");
+	var previousStateOfScreen;
 	
 	function disableButton(btn){
 		btn.classList.remove("enabledBtn");
@@ -235,7 +236,8 @@
 		//var overlayStack=['','overlay'];
 		//if (isMobileDevice){wrapper.style.minHeight=window.innerHeight;}
 		wrapper.style.maxWidth=computeWrapperDimensions()+"px";
-		if (isCrappyScreen()){packContent();}
+		previousStateOfScreen=isCrappyScreen();
+		if (previousStateOfScreen){packContent();}
 	}
 	
 	//document.addEventListener('DOMContentLoaded', function() {onloadAction();}, false);
@@ -246,8 +248,12 @@
 	
 	function onResizeAction(){
 		wrapper.style.maxWidth=computeWrapperDimensions()+"px"; 
-		if (isCrappyScreen()){packContent();}
-		else {unPackContent();}
+		var nextStateOfScreen=isCrappyScreen();
+		if (previousStateOfScreen!=nextStateOfScreen){
+			if (nextStateOfScreen){packContent();}
+			else {unPackContent();}
+			previousStateOfScreen=nextStateOfScreen;
+		}
 	}
 	
 	function isCrappyScreen(){
@@ -267,7 +273,7 @@
 	
 	function packContent(){
 		while (overlayStack.length>2){OnclickOverlay();}
-		if(wijaSlidesWrapper!=null){wijaSlidesWrapper.style.marginTop="6em";}
+		if(wijaSlidesWrapper!=null){wijaSlidesWrapper.style.marginTop="3em";}
 		body.style.fontSize="18px";
 		androidBadge.style.display="none";
 		menuIcon.style.display="none";
@@ -295,7 +301,6 @@
 	}
 
 	function openMenuMobile(){
-		//notMenuMobileOpen=sessionStorage.menuMobileStatus;
 		if (sessionStorage.menuMobileStatus=="hidden"){
 			for (var i = 0; i < menuBtnMobile.length; i++) {
 				switchBtnMobile.style.color="green";

@@ -51,13 +51,13 @@ function computeCoordinates(txt){
 		a=(0.5-(0))/(900-550);
 		b=(0.5*550-(0)*900)/(550-900);
 		X=(maxwidth*a+b)+Math.random()*5;
-		Y=Math.random()*5;	
+		Y=2.5+Math.random()*5;	
 	}
 	else {
 		a=(22-(1.5))/(900-550);
 		b=(22*550-(1.5)*900)/(550-900);
 		X=(maxwidth*a+b)+Math.random()*5;
-		Y=Math.random()*5;			
+		Y=2.5+Math.random()*5;			
 	}
 	return [X,Y];
 }
