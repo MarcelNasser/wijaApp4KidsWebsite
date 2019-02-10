@@ -407,9 +407,11 @@
 			if (eltBtn[i].style.color=="black"){
 				icolo=Math.floor(Math.random()*colors.length);
 				eltBtn[i].style.color=colors[icolo%colors.length];
+				eltBtn[i].style.backgroundColor=color1;
 			}
 			else{
 				eltBtn[i].style.color=color2;
+				eltBtn[i].style.backgroundColor=color1;
 			}
 		}		
 	}
