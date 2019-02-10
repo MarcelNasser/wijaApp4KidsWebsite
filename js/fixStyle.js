@@ -24,6 +24,9 @@
 	var menuBtnMobile=document.getElementsByClassName("material-icons menuButtonMobile");
 	var switchBtnMobile=document.getElementsByClassName("material-icons animatedButton")[0];
 	var notMenuMobileOpen=false;
+	if (!sessionStorage.getItem("menuMobileStatus")){
+		sessionStorage.setItem("menuMobileStatus", "hidden");
+	}
 	var notificationBox=document.getElementsByClassName("notificationBox")[0];
 	var submitButton=document.getElementById("submitButton");
 	var mailBoxItems=document.getElementsByClassName("mailBoxItem");
@@ -292,7 +295,8 @@
 	}
 
 	function openMenuMobile(){
-		if (notMenuMobileOpen){
+		//notMenuMobileOpen=sessionStorage.menuMobileStatus;
+		if (sessionStorage.menuMobileStatus=="hidden"){
 			for (var i = 0; i < menuBtnMobile.length; i++) {
 				switchBtnMobile.style.color="green";
 				menuBtnMobile[i].classList.add("animatedButton");
@@ -307,6 +311,7 @@
 				}
 			} 			
 			notMenuMobileOpen=false;
+			sessionStorage.menuMobileStatus="visible";
 		}
 		else{
 			for (var i = 0; i < menuBtnMobile.length; i++) {
@@ -325,7 +330,10 @@
 				}
 			} 
 			notMenuMobileOpen=true;
+			sessionStorage.menuMobileStatus="hidden";
 		}
+		//sessionStorage.removeItem("menuMobileStatus");
+				
 	}
 	
 	var tmp_array=[];

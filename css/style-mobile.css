@@ -14,8 +14,10 @@ box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
 
 #topnavDropMenuMobile ul a{
 	padding:0;
-	line-height:150%;
+	line-height:162%;
 }
+
+.animatedButton{}
 
 .animatedButton:hover{
 	color:red;
