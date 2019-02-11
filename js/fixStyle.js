@@ -14,6 +14,7 @@
 	var formMailBox=document.getElementById("formMailBox");
 	var tabContact=document.getElementById("tableContact");
 	var menuList=document.getElementsByClassName("material-icons menuButton");
+	var content=document.getElementById("content");
 	var colors=["blue","green","red"];
 	var icolo=0;
 	var jobInfo = document.getElementById("responseLine");
@@ -278,6 +279,18 @@
 		androidBadge.style.display="none";
 		menuIcon.style.display="none";
 		menuMobile.style.display="inline-block";
+		pElements=content.getElementsByTagName("p");
+		if (pElements!=null){
+			for(var i=0;i<pElements.length;i++){
+				pElements[i].style.fontSize="135%";
+			}
+		}
+		h5Elements=content.getElementsByTagName("h5");
+		if (pElements!=null){
+			for(var i=0;i<h5Elements.length;i++){
+				h5Elements[i].style.fontSize="145%";
+			}
+		}
 		//wrapper.style.minHeight=window.innerHeight+"px";
 		//navbar.style.position="fixed";
 		//navbar.style.overflow="hidden";
@@ -290,6 +303,18 @@
 		menuIcon.style.display="inline-block";
 		androidBadge.style.display="inline-block";
 		if(wijaSlidesWrapper!=null){wijaSlidesWrapper.style.marginTop="3em";}
+		pElements=content.getElementsByTagName("p");
+		if (pElements!=null){
+			for(var i=0;i<pElements.length;i++){
+				pElements[i].style.fontSize="120%";
+			}
+		}
+		h5Elements=content.getElementsByTagName("h5");
+		if (pElements!=null){
+			for(var i=0;i<h5Elements.length;i++){
+				h5Elements[i].style.fontSize="125%";
+			}
+		}
 		/*navbar.style.position="relative";
 		dropMenu.style.position="absolute";		
 		dropMenu.style.zIndex="5";
