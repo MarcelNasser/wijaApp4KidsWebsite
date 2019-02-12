@@ -362,3 +362,5 @@ animation: fadein 0.5s;
 .textBox span{display: inline;float:right;vertical-align:middle;}
 
 .textBox a{color:blue;text-align:right;font-size:90%;}
+
+.textBox p a{color:blue;text-align:right;font-size:90%;}
