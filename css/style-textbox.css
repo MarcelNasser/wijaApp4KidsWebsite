@@ -1,4 +1,6 @@
-.textBox{border :2px gray solid;border-radius:0.5em;padding:0.5em 1em;margin:1.2em auto;}
+#firstPost {float:left; margin:1.2em;padding:1.2em;}
+
+.textBox{border :2px gray solid;border-radius:1.2em;padding:1.2em 1.2em;margin:0 auto 3.6em auto;}
 
 .textBox span img{display: inline;float:right;vertical-align:middle;}
 
@@ -8,7 +10,7 @@
 
 .textBox p a{color:dodgerblue;text-align:right;font-size:90%;cursor: pointer;}
 
-.textBox p {margin:1.2em 0;line-height:1.2em;}
+.textBox p {margin:1.2em 0;}
 
 .textBox span img:hover{
 	animation: flipY 1s ease;

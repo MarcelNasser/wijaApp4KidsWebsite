@@ -293,6 +293,7 @@
 		if (pElements!=null){
 			for(var i=0;i<pElements.length;i++){
 				pElements[i].style.fontSize="135%";
+				pElements[i].style.lineHeight="1.8em";
 			}
 		}
 		h5Elements=content.getElementsByTagName("h5");
@@ -302,7 +303,7 @@
 			}
 		}
 		//wrapper.style.minHeight=window.innerHeight+"px";
-		//navbar.style.position="fixed";
+		//navbar.style.position="absolute";
 		//navbar.style.overflow="hidden";
 		//menuIcon.style.borderRadius="50%";
 	}
@@ -317,12 +318,13 @@
 		if (pElements!=null){
 			for(var i=0;i<pElements.length;i++){
 				pElements[i].style.fontSize="120%";
+				pElements[i].style.lineHeight="1.2em";
 			}
 		}
 		h5Elements=content.getElementsByTagName("h5");
 		if (pElements!=null){
 			for(var i=0;i<h5Elements.length;i++){
-				h5Elements[i].style.fontSize="125%";
+				h5Elements[i].style.fontSize="130%";
 			}
 		}
 		/*navbar.style.position="relative";
@@ -331,7 +333,9 @@
 		overlay.style.zIndex="1";
 		navbar.style.overflow="none";
 		menuIcon.style.borderRadius="0%";*/
+		//navbar.style.zIndex="5";
 		//navbar.style.position="relative";
+		//navbar.style.overflow="auto";
 		menuMobile.style.display="none";
 	}
 

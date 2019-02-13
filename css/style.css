@@ -1,7 +1,7 @@
 html{font-size:90%;} 
 @media(min-width:60em){html{font-size: 120%}}
 
-body{background-color: #c2c4d8; font-size:16px;}
+body{background-color: #c2c4d8;font-size:16px;padding:0;}
 
 h1 {
     font-family: Consolas, Georgia, "Times New Roman", Times, serif;
@@ -19,11 +19,11 @@ h3 {margin:10px 0 15px 0;text-align:center; padding:20px 0;
             font-weight:normal;line-height:1.2em;}
 
 h4 {margin:1em 0 0.5em 0;text-align:center; padding:0;
-            font-size:130%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
+            font-size:135%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
             font-weight:italic; line-height:1.2em;}
 
 h5 {margin:0 0 0.5em 0;text-align:center; padding:0;
-            font-size:125%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
+            font-size:130%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
             font-weight:italic; line-height:1.2em;
 			text-align:center;}
 			
@@ -31,14 +31,14 @@ p {margin:0 0 0 0;text-align:center; padding:0 0;
             font-size:120%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
             font-weight:normal;line-height:1.2em;
 			text-align: justify;
-			text-justify: inter-word;
+			text-justify: auto;
 			}
 
 strong{font-weight:bold;font-size:150%;}
 
 div{
 	text-align: justify;
-	text-justify: inter-word;
+	text-justify: auto;
 }
 	
 a {text-decoration:none;font-weight:italic;font-size:162%;line-height:1.2em;font-family: Consolas, Georgia, "Times New Roman", Times, serif;}
@@ -53,7 +53,6 @@ ul {list-style-type:none;padding: 0; margin:0;line-height:200%;}
 background-color: white; 
 min-height:728px; 
 padding:0;
-overflow: auto;
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
 min-width:728px;
 }
@@ -227,13 +226,11 @@ animation: fadein 0.5s;
 
 #androidBadge img{max-height:90px;}
 
-#firstPost {float:left; margin:2em 3em;padding:20x 20px;}
-#firstPost p{text-align:left; font-size:100%}
 
 #footer {clear:both;
 		 display:absolute;
-		 bottom:2em;
-		 margin:2em auto;
+		 bottom:4em;
+		 margin:4em auto;
          width:100%;text-align:center;}
 #footer p{font-size:80%;font-weight:italic;text-align:center;}
 
