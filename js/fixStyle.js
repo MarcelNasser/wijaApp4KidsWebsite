@@ -31,6 +31,16 @@
 	var notificationBox=document.getElementsByClassName("notificationBox")[0];
 	var submitButton=document.getElementById("submitButton");
 	var mailBoxItems=document.getElementsByClassName("mailBoxItem");
+	for (var j = 0; j < mailBoxItems.length; j++){
+		mailBoxItems[j].onmouseenter=function(){
+		this.classList.remove("flipableY");
+		this.classList.add("flipableY");
+		}
+	}
+	/*function flipY(obj){
+		//obj.classList.remove("flipableY");
+		obj.classList.add("flipableY");
+	}*/
 	var previousStateOfScreen;
 	
 	function disableButton(btn){

@@ -356,11 +356,3 @@ animation: fadein 0.5s;
 }
 
 .enabledBtn:hover{background-color: #ff8000;}
-
-.textBox{border :2px gray solid;border-radius:0.5em;padding:0.5em 1em;margin:1.2em auto;}
-
-.textBox span{display: inline;float:right;vertical-align:middle;}
-
-.textBox a{color:blue;text-align:right;font-size:90%;}
-
-.textBox p a{color:blue;text-align:right;font-size:90%;}

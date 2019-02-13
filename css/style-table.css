@@ -9,19 +9,20 @@
 	text-align:left;
 	animation: fadein 1s;}
 
-#tableContact td:hover{
-	animation: flip 1s ease;
+.flipableY{
+	animation: flipY 1s ease;
+	-webkit-animation: flipY 1s ease;
 }
 
 
-@keyframes flip  {
-	from { transform: rotateX(0); }
-	to { transform: rotateX(-360deg); }
+@keyframes flipY  {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(-360deg); }
 }
 
-@-webkit-keyframes flip  {
-	from { transform: rotateX(0); }
-	to { transform: rotateX(-360deg); }
+@-webkit-keyframes flipY  {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(-360deg); }
 }
 
 label{color:black;width:100%;}
