@@ -1,0 +1,27 @@
+.textBox{border :2px gray solid;border-radius:0.5em;padding:0.5em 1em;margin:1.2em auto;}
+
+.textBox span img{display: inline;float:right;vertical-align:middle;}
+
+.textBox a{color:dodgerblue;text-align:right;font-size:90%;}
+
+.textBox span a{display: inline;float:right;padding:0.2em;}
+
+.textBox p a{color:dodgerblue;text-align:right;font-size:90%;cursor: pointer;}
+
+.textBox p {margin:1.2em 0;line-height:1.2em;}
+
+.textBox span img:hover{
+	animation: flipY 1s ease;
+	-webkit-animation: flipY 1s ease;
+}
+
+
+@keyframes flipY  {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(-360deg); }
+}
+
+@-webkit-keyframes flipY  {
+	from { transform: rotateY(0); }
+	to { transform: rotateY(-360deg); }
+}
