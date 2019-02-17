@@ -311,6 +311,7 @@
 		wrapper.style.paddingRight="0px";
 		navbar.style.overflow="hidden";
 		navbar.style.zIndex="99";
+		content.style.marginTop="110px";
 		//wrapper.style.minHeight=window.innerHeight+"px";
 		//menuIcon.style.borderRadius="50%";
 	}
@@ -342,9 +343,10 @@
 		menuIcon.style.borderRadius="0%";*/
 		navbar.style.position="relative";
 		navbar.style.zIndex="5";
-		wrapper.style.minHeight="728px";
+		//wrapper.style.minHeight="728px";
 		//navbar.style.overflow="auto";
 		menuMobile.style.display="none";
+		content.style.marginTop="0px";
 	}
 
 	function openMenuMobile(){
