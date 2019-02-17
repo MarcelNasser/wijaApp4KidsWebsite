@@ -96,8 +96,6 @@ function submitComment(){
 				notificationBox.innerHTML+="<p>-- Summary --<\p>";
 				notificationBox.innerHTML+="<p>--> response Status: "+statut+"<\p>";
 				notificationBox.innerHTML+="<p>--> response value : "+xhttp.response+"<\p>";
-				notificationBox.innerHTML+="<p>--> response Text  : "+xhttp.reponseText+"<\p>";
-				notificationBox.innerHTML+="<p>--> response Json  : "+xhttp.reponseJSON+"<\p>";
 				sweetCloseMailbox();
 				if(statut==200){
 					/* do something */																			

@@ -307,8 +307,11 @@
 		//navbar.style.maxWidth=computeWrapperDimensions()+"px";
 		//var exactWidth=wrapper.style.width-wrapper.style.marginLeft-wrapper.style.marginRight;
 		navbar.style.width=wrapper.style.width+"px";
-		wrapper.style.paddingLeft="0px";
-		wrapper.style.paddingRight="0px";
+		//wrapper.style.margin="0px";
+		wrapper.style.padding="0px";
+		//wrapper.style.width=window.innerWidth+"px";
+		body.style.width="100%";
+		//wrapper.style.maxWidth=window.innerWidth+"px";
 		navbar.style.overflow="hidden";
 		navbar.style.zIndex="99";
 		content.style.marginTop="110px";
@@ -336,7 +339,7 @@
 			}
 		}
 		//navbar.style.position="relative";
-		/*dropMenu.style.position="absolute";		
+		/*dropMenu.style.position="absolute";
 		dropMenu.style.zIndex="5";
 		overlay.style.zIndex="1";
 		navbar.style.overflow="none";
