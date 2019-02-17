@@ -303,8 +303,15 @@
 			}
 		}
 		//wrapper.style.minHeight=window.innerHeight+"px";
-		//navbar.style.position="absolute";
-		//navbar.style.overflow="hidden";
+		navbar.style.position="fixed";
+		//navbar.style.maxWidth=computeWrapperDimensions()+"px";
+		//var exactWidth=wrapper.style.width-wrapper.style.marginLeft-wrapper.style.marginRight;
+		navbar.style.width=wrapper.style.width+"px";
+		wrapper.style.paddingLeft="0px";
+		wrapper.style.paddingRight="0px";
+		navbar.style.overflow="hidden";
+		navbar.style.zIndex="99";
+		//wrapper.style.minHeight=window.innerHeight+"px";
 		//menuIcon.style.borderRadius="50%";
 	}
 	
@@ -327,14 +334,15 @@
 				h5Elements[i].style.fontSize="130%";
 			}
 		}
-		/*navbar.style.position="relative";
-		dropMenu.style.position="absolute";		
+		//navbar.style.position="relative";
+		/*dropMenu.style.position="absolute";		
 		dropMenu.style.zIndex="5";
 		overlay.style.zIndex="1";
 		navbar.style.overflow="none";
 		menuIcon.style.borderRadius="0%";*/
-		//navbar.style.zIndex="5";
-		//navbar.style.position="relative";
+		navbar.style.position="relative";
+		navbar.style.zIndex="5";
+		wrapper.style.minHeight="728px";
 		//navbar.style.overflow="auto";
 		menuMobile.style.display="none";
 	}

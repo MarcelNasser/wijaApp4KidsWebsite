@@ -60,7 +60,7 @@ function requestSomething(){
 function submitComment(){
 	var xhttp;
 	notificationBox.style.display="block";
-	notificationBox.innerHTML="<h5>** info **</h5>";
+	notificationBox.innerHTML="<h5>-- info --</h5>";
 	notificationBox.innerHTML+="<p>>>> sending comment to host...</p>";
 	disableButton(submitButton);
 	var data={firstname:null,lastname:null,'e-mail':null,'comment':null};
@@ -86,8 +86,8 @@ function submitComment(){
 		var state=xhttp.readyState;
 		var statut;
 		switch (state){
-			case 0: sweetCloseMailbox();break;
-			case 1: sweetCloseMailbox();break;
+			case 0: notificationBox.innerHTML+="<p>-->  ... </p>";break;
+			case 1: notificationBox.innerHTML+="<p>-->  Connection established </p>";break;
 			case 2: sweetCloseMailbox();break;
 			case 3: sweetCloseMailbox();break;
 			case 4: 
@@ -109,8 +109,8 @@ function submitComment(){
 		}	
 	}
 	xhttp.open("POST","https://inh6ay75eg.execute-api.eu-west-3.amazonaws.com/pre-prod/WijaLambda",true);
-	xhttp.responseType="json";
-	xhttp.setRequestHeader("Access-Control-Allow-Origin", "*")
+	//xhttp.responseType="json";
+	//xhttp.setRequestHeader("Access-Control-Allow-Origin", "*")
 	try {
 		xhttp.send(JSON.stringify(data));
 	} catch(err) {

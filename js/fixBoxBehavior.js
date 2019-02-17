@@ -48,14 +48,14 @@ function computeCoordinates(txt){
 	var maxwidth=computeWrapperDimensions();
 	var a,b;
 	if (txt=='W' || txt=='J'){
-		a=(0.5-(0))/(900-550);
-		b=(0.5*550-(0)*900)/(550-900);
+		a=(-1.5-(0))/(900-550);
+		b=(-1.5*550-(0)*900)/(550-900);
 		X=(maxwidth*a+b)+Math.random()*5;
 		Y=2.5+Math.random()*5;	
 	}
 	else {
-		a=(22-(1.5))/(900-550);
-		b=(22*550-(1.5)*900)/(550-900);
+		a=(22-(-0.5))/(900-550);
+		b=(22*550-(-0.5)*900)/(550-900);
 		X=(maxwidth*a+b)+Math.random()*5;
 		Y=2.5+Math.random()*5;			
 	}

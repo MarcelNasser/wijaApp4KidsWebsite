@@ -22,10 +22,7 @@
 
 .slideBox{
 	z-index:0;
-	margin-top:2.61em;
-	margin-bottom:2.61em; 
-	margin-right:auto;
-	margin-left:auto;
+	margin:2.61em auto;
 	position:relative;
 	width:var(--main-width);
 	transform-style: preserve-3d;
