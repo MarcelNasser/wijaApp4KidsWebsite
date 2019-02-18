@@ -281,7 +281,8 @@
 		}
 
 	}
-	
+	var idealInline="1.8em";
+	if (isMobileDevice){idealInline="2.4em";}
 	function packContent(){
 		while (overlayStack.length>2){OnclickOverlay();}
 		if(wijaSlidesWrapper!=null){wijaSlidesWrapper.style.marginTop="3em";}
@@ -293,7 +294,7 @@
 		if (pElements!=null){
 			for(var i=0;i<pElements.length;i++){
 				pElements[i].style.fontSize="135%";
-				pElements[i].style.lineHeight="1.8em";
+				pElements[i].style.lineHeight=idealInline;
 			}
 		}
 		h5Elements=content.getElementsByTagName("h5");
@@ -302,21 +303,14 @@
 				h5Elements[i].style.fontSize="145%";
 			}
 		}
-		//wrapper.style.minHeight=window.innerHeight+"px";
 		navbar.style.position="fixed";
-		//navbar.style.maxWidth=computeWrapperDimensions()+"px";
-		//var exactWidth=wrapper.style.width-wrapper.style.marginLeft-wrapper.style.marginRight;
 		navbar.style.width=wrapper.style.width+"px";
-		//wrapper.style.margin="0px";
-		wrapper.style.padding="0px";
-		//wrapper.style.width=window.innerWidth+"px";
-		body.style.width="100%";
-		//wrapper.style.maxWidth=window.innerWidth+"px";
-		navbar.style.overflow="hidden";
 		navbar.style.zIndex="99";
-		content.style.marginTop="110px";
-		//wrapper.style.minHeight=window.innerHeight+"px";
-		//menuIcon.style.borderRadius="50%";
+		wrapper.style.margin="0px -3em";
+		wrapper.style.padding="0 4em 0 3em";
+		body.style.width="100%";
+		navbar.style.overflow="hidden";
+		content.style.marginTop="11.2em";
 	}
 	
 	function unPackContent(){
@@ -338,16 +332,10 @@
 				h5Elements[i].style.fontSize="130%";
 			}
 		}
-		//navbar.style.position="relative";
-		/*dropMenu.style.position="absolute";
-		dropMenu.style.zIndex="5";
-		overlay.style.zIndex="1";
-		navbar.style.overflow="none";
-		menuIcon.style.borderRadius="0%";*/
-		navbar.style.position="relative";
+		navbar.style.position="initial";
 		navbar.style.zIndex="5";
-		//wrapper.style.minHeight="728px";
-		//navbar.style.overflow="auto";
+		wrapper.style.margin="0px auto";
+		wrapper.style.padding="0";
 		menuMobile.style.display="none";
 		content.style.marginTop="0px";
 	}

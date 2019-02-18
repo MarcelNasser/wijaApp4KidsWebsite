@@ -1,6 +1,6 @@
 /* mobile CSS*/
 #topnavDropMenuMobile{float:left;display:none;z-index:99;
-background-color: lightgrey;width:100%; padding:0 0 0 0;
+background-color: lightgrey;width:100%; padding:1.2em;
 margin:0 0 0 0; overflow:hidden;
 box-shadow: 0 0 8px 0 rgba(0,0,0,0.2); 
 }

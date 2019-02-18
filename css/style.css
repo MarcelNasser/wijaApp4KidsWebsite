@@ -78,16 +78,22 @@ min-width:500px;
 
 .notificationBox {
 	z-index:99;
-	position:relative;
 	border-radius:0.5em;border: 2px solid #f3f3f3;
 	background-color:dodgerblue;
-	width:75%;
+	width:30em;
 	color:white;margin:0 auto;
 	padding:1.2em;
 	display:none;
+	position:absolute;
+    top: 80%;
+    left: 50%;	
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
 	}
 	
-.notificationBox p{font-size:110%;}
+.notificationBox p{font-size:100%;}
 
 .menuButton {color:black;z-index:5;display:inline-block; padding:0 0 0 0;background-color:white;
 position:relative;top:5px;}
@@ -180,8 +186,6 @@ position:relative;top:5px;}
 				display:inline-block;margin:10px 0 0 10px;padding:0;
 				background-color: rgba(0,0,0,0.4);height:2.5em;
 				}
-
-/*#menuIconWrapper:hover{background-color:white;}*/
 
 #menuIcon {position:relative;z-index:5;color:black;}
 
