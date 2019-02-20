@@ -12,17 +12,17 @@
 }
 
 #wijaSlidesWrapper{
-	perspective: 1178px;
+	perspective: 728px;
 	perspective-origin: 50% var(--main-half-width);
-	height:728px;
+	height:685px;
 	z-index:0;
-	padding:3em 0 0 0;
-	margin:1.62em auto 1.62em auto;
+	padding:2.4em 0 0 0;
+	margin:1.62em auto 0 auto;
 	}
 
 .slideBox{
 	z-index:0;
-	margin:2.61em auto;
+	margin:1.62em auto;
 	position:relative;
 	width:var(--main-width);
 	transform-style: preserve-3d;

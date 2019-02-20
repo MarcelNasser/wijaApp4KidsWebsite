@@ -80,9 +80,12 @@
 	}
 	
 	function dopopBoxWClicked(){
-		if (mailBoxButton!=null){
-			mailBoxButton.classList.add("fadeinBeat");
-		}
+		// if (mailBoxButton!=null){
+			// mailBoxButton.classList.add("fadeinBeat");
+		// }
+		//window.scrollBy(0, 200);
+		showHiddenText('Text011');
+		//closePopBox();
 	}
 	
 	var stopPopBox=false;
@@ -282,7 +285,7 @@
 
 	}
 	var idealInline="1.8em";
-	if (isMobileDevice){idealInline="2.4em";}
+	if (isMobileDevice){idealInline="1.8em";}
 	function packContent(){
 		while (overlayStack.length>2){OnclickOverlay();}
 		if(wijaSlidesWrapper!=null){wijaSlidesWrapper.style.marginTop="3em";}

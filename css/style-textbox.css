@@ -1,6 +1,8 @@
 #firstPost {float:left; margin:1.2em;padding:1.2em;}
 
-.textBox{border :2px gray solid;border-radius:1.2em;padding:1.2em 1.2em;margin:0 auto 3.6em auto;}
+.textBox{border :2px gray solid;
+border-radius:1.2em;padding:1.2em 1.2em;
+margin:0 auto 3.6em auto;}
 
 .textBox span img{display: inline;float:right;vertical-align:middle;}
 

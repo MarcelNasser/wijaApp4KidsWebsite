@@ -2,8 +2,11 @@
 <html>
 	<head>
 		<script src="js/requestSomething.js"></script>
+		<script src="js/appendText.js"></script>
 		<link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
 		<link href="css/style-mobile.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="css/style-textbox.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="css/style-arrow.css" rel="stylesheet" type="text/css" media="screen">
 		<link href="css/style-wijaslides.css" rel="stylesheet" type="text/css" media="screen">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<title>wiJa's Story</title>
@@ -98,7 +101,7 @@
 				}
 				</p>
 				<div class="heartBeat" style="width:100%; text-align:center;margin-top:1.2em;">
-					<a href="contact.html" onclick="dopopBoxWClicked()">Get into Wija's Story</a>
+					<a onclick="dopopBoxWClicked()">Get into Wija's Story</a>
 				</div>
 			</div>
 			
@@ -152,8 +155,75 @@
 					<div class="top">&nbsp</div>
 					<div class="bottom">&nbsp</div>
 				</div>
-
 			</div>
+			<div id="arrowDropTextWrapper">
+			<h5> Dashboard </h5>
+			<div class="arrowOuter">
+				<div class="arrowLine">
+				</div>
+				<div class="arrowDropText" onclick="showHiddenText('Text011')">
+				</div>
+				<div class="hiddenText" id='Text011'>
+				<p> We build this project with goodwill and a lot of sweat. 
+				Starting from the ground, we implemented a simple, robust and elegant app for our beloved kids.<br>
+				Then, we decided to release the app to general audience to share the educational material with the community.<br>
+				We will like to thank the dev team {MN, HP, FR} as well as benovolant testers. 
+				MN will like to dedicate wiJa to his wife for the Amazing support to the project 
+				and the sacrifice of sparetimes with him.
+				</p>
+				</div>
+			</div>
+			<div class="arrowOuter">
+				<div class="arrowLine">
+				</div>
+				<div class="arrowDropText" onclick="showHiddenText('Text012')">
+				</div>
+				<div class="hiddenText" id='Text012'>
+				<p> WiJa is designed like a simplified Android Phone GUI. <br>
+				The concept here is to build a environnement where kids can focus on one single task at a time. 
+				The UI channels the child into one activity with one main task and nothing else to do. This learning method is proven and widely used in schools.<br>
+				The progress of your child is assessed according to the accomplissement of the main task.
+				<em>Moving one step at a time</em>, your kid is learning vocabulary basics for his future life.<br>
+				Others apps are multitasking in order to trap kids in the GUI. Thus, their educational performance cannot be assessed precisely.
+				</p>
+				</div>
+			</div>
+			<div class="arrowOuter">
+				<!-- <p>Learn more about wiJa right here >></p> -->
+				<div class="arrowLine">
+				</div>
+				<div class="arrowDropText" onclick="showHiddenText('Text013')">
+				</div>
+				<div class="hiddenText" id='Text013'>
+				<p> 
+				Following the concept of <em>single tasking the learning content</em>, we overrided firstly the Android default keyboard.
+				we designed a personnalized keyboard with the minimal number of keys for activities. <br>
+				It improve kid interaction the learning experience, instead of relying on overcomplex multilayered default Android's keyboard.  
+				WiJa's app features a responsive keyboard to fit its educational purpose.  
+				</p>
+				</div>
+			</div>
+			<div class="arrowOuter" onclick="showHiddenText('Text014')">
+				<div class="arrowLine">
+				</div>
+				<div class="arrowDropText">
+				</div>
+				<div class="hiddenText" id='Text014'>
+				<p> 
+				WiJa features a language decoding Artificial Intelligence named <em>A.L.I.</em> to improve the User Experience. An interface to this AI is embeded within the SMS activity.<br>
+				A.L.I. is assessing the child vocabulary and suggest work sessions to the child. But, A.L.I. is designed to do much more ...<br>
+				AI can actually understand human language and decide how to respond accordingly. A.L.I. is implementing advanced mathematical model to parse human language.
+				We will publish the model and licence its usage, when funds to substain the project will be available. 
+				</p>
+				</div>
+			</div>
+			</div>
+			<!-- <div class="textBox"> -->
+			<!-- <h5> - wiJa's design - </h5> -->
+			<!-- <p id="textBox011"> The project wiJa is to improve learning skills of kids while they are having fun. We are regular parents and we design our Android App with perfect content for children. -->
+			<!-- wiJa App is designed as a simplified Android Phone GUI. WiJa deploys a safe environnement where kids can focus on one single task at a time.  -->
+			<!-- <br><span><a id="textBox001_more" onclick="hideText('textBox011')"> close this x</a></span></p> -->
+			<!-- </div> -->
 			</div>
 			<div id="footer">
 				<p>&copy; Copyright 2019.</p>

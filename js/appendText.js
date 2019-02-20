@@ -11,3 +11,11 @@ function hideText(id_target){
 	if (next!=null){next.style.display="none";}
 	if (more!=null){more.style.display="inline-block";}
 }
+
+function showHiddenText(id_target){
+	var textDiv=document.getElementById(id_target);
+	//wrapper.innerHTML+=textDiv;
+	if ("none"!=textDiv.style.display){
+		textDiv.style.display="none";
+	} else { textDiv.style.display="block";}		
+}
