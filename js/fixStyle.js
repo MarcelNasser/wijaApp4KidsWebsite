@@ -83,9 +83,17 @@
 		// if (mailBoxButton!=null){
 			// mailBoxButton.classList.add("fadeinBeat");
 		// }
-		//window.scrollBy(0, 200);
+		window.scrollBy(0, 400);
 		showHiddenText('Text011');
-		//closePopBox();
+		closePopBox();
+	}
+	
+	function dopopBoxJClicked(){
+		window.scrollBy(0, 600);
+		showHiddenText('Text012');
+		showHiddenText('Text013');
+		showHiddenText('Text014');
+		closePopBox();
 	}
 	
 	var stopPopBox=false;
@@ -138,6 +146,7 @@
 	
 	function closeMenu(){
 		if (overlayStack[overlayStack.length-1]=='Menu'){
+			if(dropMenu.style.display===undefined|dropMenu.style.display==""){dropMenu.style.display="none";}
 			if (dropMenu.style.display!="none"){
 				closeOverlay();
 			}
@@ -344,6 +353,7 @@
 	}
 
 	function openMenuMobile(){
+		if (sessionStorage.menuMobileStatus===undefined|sessionStorage.menuMobileStatus==""){sessionStorage.menuMobileStatus="hidden";}
 		if (sessionStorage.menuMobileStatus=="hidden"){
 			for (var i = 0; i < menuBtnMobile.length; i++) {
 				switchBtnMobile.style.color="green";
