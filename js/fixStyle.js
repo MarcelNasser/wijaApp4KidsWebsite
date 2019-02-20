@@ -25,9 +25,10 @@
 	var menuBtnMobile=document.getElementsByClassName("material-icons menuButtonMobile");
 	var switchBtnMobile=document.getElementsByClassName("material-icons animatedButton")[0];
 	var notMenuMobileOpen=false;
-	if (!sessionStorage.getItem("menuMobileStatus")){
-		sessionStorage.setItem("menuMobileStatus", "hidden");
+	if (sessionStorage==null||sessionStorage===undefined){
+		sessionStorage=new Storage();
 	}
+	sessionStorage.setItem("menuMobileStatus", "hidden");
 	var notificationBox=document.getElementsByClassName("notificationBox")[0];
 	var submitButton=document.getElementById("submitButton");
 	var mailBoxItems=document.getElementsByClassName("mailBoxItem");
@@ -70,6 +71,7 @@
 	
 	overlay.onclick=function() {OnclickOverlay()};
 	function OnclickOverlay(){
+		if (overlayStack==null){overlayStack=['','overlay'];}
 		if (overlayStack[overlayStack.length-1]=='Menu'){if (dropMenu!=null){closeMenu();}}
 		else if (overlayStack[overlayStack.length-1]!='Menu'){
 			if (mailBox!=null ){closeMailBox();}

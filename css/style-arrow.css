@@ -1,0 +1,52 @@
+#arrowDropTextWrapper{
+	border :2px gray solid;
+	border-radius:1.2em;
+	padding:1.2em 1.2em;
+	width:85%;
+	margin:0 auto;
+}
+
+#arrowDropTextWrapper h5{margin:0;font-size:150%;font-weight:normal;}
+
+.hiddenText{display:none;background-color:white;
+padding:2em;margin:1em 2em 0 1em;
+box-shadow:0 0 0.5em dodgerblue;
+}
+
+.arrowOuter{
+	margin:2em auto 2em auto;
+	width:85%;
+}
+
+.arrowOuter p{
+	/* text-align:center; */
+	/* font-style: italic; */
+	font-size:110%;
+	color:black;
+}
+
+.arrowOuter p em{
+	/* text-align:center; */
+	/* font-style: italic; */
+	font-style:normal;
+}
+
+.arrowDropText{
+	height:1.2em;
+	width:1.2em;
+	border-left:1px dodgerblue solid;
+	border-bottom:1px dodgerblue solid;
+	transform: rotate(-45deg) translateY(0);
+	display:inline-block;
+	margin:0 0; padding:0;
+	cursor: pointer;
+}
+
+.arrowLine{
+	cursor: default;
+	height:0.6em;
+	width:95%;
+	border-top:1px dodgerblue solid;
+	display:inline-block;
+	margin:0 0; padding:0;
+}

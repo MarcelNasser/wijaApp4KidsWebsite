@@ -6,7 +6,7 @@ box.faces.right=document.getElementsByClassName("right")[0];
 box.faces.left=document.getElementsByClassName("left")[0];
 for (var face in box.faces){
 	box.faces[face].onmouseover=function() {fadeOut(this)};
-	box.faces[face].onmouseout=function() {restartSpin(this)};
+	//box.faces[face].onmouseout=function() {restartSpin(this)};
 	box.faces[face].onclick=function() {openPopBox(this)};
 	box.faces[face].ondblclick=function() {fadeOut2(this)};	
 }
