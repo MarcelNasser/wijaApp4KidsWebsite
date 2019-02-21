@@ -4,7 +4,7 @@
 border-radius:1.2em;padding:1.2em 1.2em;
 margin:0 auto 3.6em auto;}
 
-.textBox span img{display: inline;float:right;vertical-align:middle;}
+.textBox span img{display: inline;float:right;vertical-align:middle;max-height:50px;}
 
 .textBox a{color:dodgerblue;text-align:right;font-size:90%;}
 

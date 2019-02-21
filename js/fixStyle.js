@@ -24,10 +24,10 @@
 	var animationBeats=["greenPulse","yellowPulse","redPulse","bluePulse"];
 	var menuBtnMobile=document.getElementsByClassName("material-icons menuButtonMobile");
 	var switchBtnMobile=document.getElementsByClassName("material-icons animatedButton")[0];
-	var notMenuMobileOpen=false;
-	if (!sessionStorage.getItem("menuMobileStatus")){
-		sessionStorage.setItem("menuMobileStatus", "hidden");
-	}
+	var notMenuMobileOpen=true;
+	// if (!sessionStorage.getItem("menuMobileStatus")){
+		// sessionStorage.setItem("menuMobileStatus", "hidden");
+	// }
 	var notificationBox=document.getElementsByClassName("notificationBox")[0];
 	var submitButton=document.getElementById("submitButton");
 	var mailBoxItems=document.getElementsByClassName("mailBoxItem");
@@ -70,6 +70,7 @@
 	
 	overlay.onclick=function() {OnclickOverlay()};
 	function OnclickOverlay(){
+		if (overlayStack==null){overlayStack=['','overlay'];}
 		if (overlayStack[overlayStack.length-1]=='Menu'){if (dropMenu!=null){closeMenu();}}
 		else if (overlayStack[overlayStack.length-1]!='Menu'){
 			if (mailBox!=null ){closeMailBox();}
@@ -353,8 +354,11 @@
 	}
 
 	function openMenuMobile(){
-		if (sessionStorage.menuMobileStatus===undefined|sessionStorage.menuMobileStatus==""){sessionStorage.menuMobileStatus="hidden";}
-		if (sessionStorage.menuMobileStatus=="hidden"){
+		// if (sessionStorage.menuMobileStatus===undefined|sessionStorage.menuMobileStatus=="")
+		// {sessionStorage.menuMobileStatus="hidden";}
+		// if (sessionStorage.menuMobileStatus=="hidden"){
+		if (notMenuMobileOpen==null|notMenuMobileOpen===undefined){notMenuMobileOpen=false;}
+		if (notMenuMobileOpen){
 			for (var i = 0; i < menuBtnMobile.length; i++) {
 				switchBtnMobile.style.color="green";
 				menuBtnMobile[i].classList.add("animatedButton");
@@ -369,7 +373,7 @@
 				}
 			} 			
 			notMenuMobileOpen=false;
-			sessionStorage.menuMobileStatus="visible";
+			// sessionStorage.menuMobileStatus="visible";
 		}
 		else{
 			for (var i = 0; i < menuBtnMobile.length; i++) {
@@ -388,7 +392,7 @@
 				}
 			} 
 			notMenuMobileOpen=true;
-			sessionStorage.menuMobileStatus="hidden";
+			// sessionStorage.menuMobileStatus="hidden";
 		}
 		//sessionStorage.removeItem("menuMobileStatus");
 				
