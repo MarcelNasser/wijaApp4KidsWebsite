@@ -230,11 +230,19 @@
 	}
 	
 	function ballAnimation(){
+		if (isCrappyScreen()){
+		var deltaX=Math.floor(Math.min(computeWrapperDimensions()*0.6/(4*18),4));
+		}else {
+		var deltaX=Math.floor(Math.min(computeWrapperDimensions()*0.6/(4*16),6));
+		}
+		var deltaX3=deltaX*3;
+		var deltaXmoins=deltaX*-1;
+		var deltaX3moins=deltaX*-3;
 		var ball = document.createElement('div');
 		ball.classList.add("entryElementBall");
 		ball.classList.add("fadein");
 		ball.style.animationDelay="500ms";
-		ball.style.left="20%";
+		ball.style.transform="translateX("+deltaX3moins+"em)";
 		var tNew = document.createTextNode("W");
 		ball.appendChild(tNew);
 		body.appendChild(ball);
@@ -242,7 +250,7 @@
 		ball.classList.add("entryElementBall");
 		ball.classList.add("fadein");
 		ball.style.animationDelay="800ms";
-		ball.style.left="40%";
+		ball.style.transform="translateX("+deltaXmoins+"em)";
 		var tNew = document.createTextNode("I");
 		ball.appendChild(tNew);
 		body.appendChild(ball);
@@ -250,10 +258,19 @@
 		ball.classList.add("entryElementBall");
 		ball.classList.add("fadein");
 		ball.style.animationDelay="1200ms";
-		ball.style.left="60%";
+		ball.style.transform="translateX("+deltaX+"em)";
 		var tNew = document.createTextNode("J");
 		ball.appendChild(tNew);
 		body.appendChild(ball);
+		var ball = document.createElement('div');
+		ball.classList.add("entryElementBall");
+		ball.classList.add("fadein");
+		ball.style.animationDelay="1600ms";
+		ball.style.transform="translateX("+deltaX3+"em)";
+		var tNew = document.createTextNode("A");
+		ball.appendChild(tNew);
+		body.appendChild(ball);
+		overlay.style.zIndex="1";
 	}
 	
 	function hideElement(){
