@@ -393,10 +393,10 @@ animation: fadein 0.5s;
 
 .upwardMotion {
   -webkit-animation-name: upwardmotion; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 5s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
   -webkit-animation-iteration-count: 1;
   animation-name: upwardmotion;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-iteration-count: 1;
 }
 

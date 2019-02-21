@@ -290,8 +290,8 @@
 		this.addEventListener("webkitAnimationEnd", hideElement);
 		this.addEventListener("animationend", hideElement);
 	}
-	var animationTime=2000;
-	var bubbleRound=20;
+	var animationTime=6000;
+	var bubbleRound=40;
 	var countBubble=0;
 	function bubbleAnimation(){
 		var bubble,radius,posX,delay;
@@ -304,7 +304,7 @@
 			bubble.style.zIndex=zIndex;
 			bubble.classList.add("entryElementBubble");
 			bubble.classList.add("fadein");
-			radius=2+Math.random()*4;
+			radius=2+Math.random()*6;
 			posX=20+Math.floor(Math.random()*60);
 			delay=Math.floor(Math.random()*animationTime);
 			bubble.style.width=radius+"em";
