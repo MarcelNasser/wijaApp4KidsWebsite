@@ -97,37 +97,7 @@
 	var stopPopBox=false;
 	slideBox=document.getElementsByClassName("slideBox")[0];
 	wijaSlidesWrapper=document.getElementById("wijaSlidesWrapper");
-	if (slideBox!=0){
-		//slideBox.addEventListener("webkitAnimationEnd", refreshStop);
-		//slideBox.addEventListener("animationend", refreshStop);
-		//slideBox.onclick=function() {restartPopBox()};
-		//wijaSlidesWrapper.onclick=function() {restartPopBox()};
-	}	
-	function refreshStop(){
-		/*if (restartPopBox) {
-			slideBox.classList.remove("spinableY");
-			slideBox.classList.add("spinableY");
-			restartPopBox=false;					
-			}*/	
-			stopPopBox=true;
-	}
-	
-	function restartPopBox(){
-		/*
-		var content=document.getElementById("content");
-		content.innerHTML+="/into restartBox : stop ="+stopPopBox+"\n"
-		slideBox.style.WebkitAnimation="spinY 3s 1";
-		slideBox.style.animation="spinY 3s 1";
-		slideBox.addEventListener("webkitAnimationEnd", refreshStop);
-		slideBox.addEventListener("animationend", refreshStop);
-		stopPopBox=false;*/
-		/*if (slideBox.classList.contains("spinableY")){	
-			slideBox.classList.remove("spinableY");
-			slideBox.classList.add("spinableY");
-			stopPopBox=false;
-		}*/
-	}
-	
+
 	function openMenu(){
 		if(dropMenu.style.display != "block")
 			{
@@ -247,22 +217,96 @@
 	}
 	
 	window.onload = function(){
+		entryScene();
 		onloadAction();
 	}
 	
-	//document.onload=function(){onloadAction();}
+	function entryScene(){
+		overlay.style.display="block";
+		overlay.style.backgroundColor="rgba(0,0,0,0.9)";
+		overlay.style.zIndex="15";
+		overlay.classList.add('fadein');
+		bubbleAnimation();	
+	}
 	
+	function ballAnimation(){
+		var ball = document.createElement('div');
+		ball.classList.add("entryElementBall");
+		ball.classList.add("fadein");
+		ball.style.animationDelay="500ms";
+		ball.style.left="20%";
+		var tNew = document.createTextNode("W");
+		ball.appendChild(tNew);
+		body.appendChild(ball);
+		var ball = document.createElement('div');
+		ball.classList.add("entryElementBall");
+		ball.classList.add("fadein");
+		ball.style.animationDelay="800ms";
+		ball.style.left="40%";
+		var tNew = document.createTextNode("I");
+		ball.appendChild(tNew);
+		body.appendChild(ball);
+		var ball = document.createElement('div');
+		ball.classList.add("entryElementBall");
+		ball.classList.add("fadein");
+		ball.style.animationDelay="1200ms";
+		ball.style.left="60%";
+		var tNew = document.createTextNode("J");
+		ball.appendChild(tNew);
+		body.appendChild(ball);
+	}
+	
+	function hideElement(){
+		this.style.display="none";
+		body.removeChild(this);
+		countBubble++;
+		if (countBubble==bubbleRound){ballAnimation();}
+	}
+	function showElement(){
+		this.style.display="block";
+	}
+	function doUpMotion(){
+		this.style.opacity="1";
+		this.classList.remove("fadein");
+		this.classList.add("upwardMotion");
+		this.style.animationDelay="0ms";
+		this.addEventListener("webkitAnimationEnd", hideElement);
+		this.addEventListener("animationend", hideElement);
+	}
+	var animationTime=2000;
+	var bubbleRound=20;
+	var countBubble=0;
+	function bubbleAnimation(){
+		var bubble,radius,posX,delay;
+		var zIndex=19;
+		for (var i=0;i<bubbleRound;i++){
+			bubble=document.createElement('div');
+			body.appendChild(bubble);
+			bubble.style.opacity="0";
+			zIndex++;
+			bubble.style.zIndex=zIndex;
+			bubble.classList.add("entryElementBubble");
+			bubble.classList.add("fadein");
+			radius=2+Math.random()*4;
+			posX=20+Math.floor(Math.random()*60);
+			delay=Math.floor(Math.random()*animationTime);
+			bubble.style.width=radius+"em";
+			bubble.style.height=radius+"em";
+			bubble.style.left=posX+"%";
+			bubble.style.animationDelay=delay+"ms";
+			bubble.addEventListener("webkitAnimationStart", showElement);
+			bubble.addEventListener("animationStart", showElement);
+			bubble.addEventListener("webkitAnimationEnd", doUpMotion);
+			bubble.addEventListener("animationend", doUpMotion);
+		}
+	}
+
 	function onloadAction(){
-		//wrapper.innerHTML+="coucou onload\n"
-		//var overlayStack=['','overlay'];
-		//if (isMobileDevice){wrapper.style.minHeight=window.innerHeight;}
 		wrapper.style.maxWidth=computeWrapperDimensions()+"px";
 		previousStateOfScreen=isCrappyScreen();
 		if (previousStateOfScreen){packContent();}
 	}
-	
-	//document.addEventListener('DOMContentLoaded', function() {onloadAction();}, false);
-	
+		
 	window.onresize = function(){
 		onResizeAction();
 	}

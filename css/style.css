@@ -357,3 +357,56 @@ animation: fadein 0.5s;
 }
 
 .enabledBtn:hover{background-color: #ff8000;}
+
+.entryElementBall{
+	height:10em;
+	width:10em;
+	margin:0;
+	padding:0;
+	line-height:10em;
+	text-align:center;
+	/* font-size:2em; */
+	align-content: center;
+	border-radius:50%;
+	position:fixed;
+	top:40%;
+	left:25%;
+	z-index:19;
+	background-color:white;
+	background-color:white;
+	border: 1px solid dodgerblue;
+	box-shadow:0px 4px 8px 0px dodgerblue;
+}
+
+.entryElementBubble{
+	height:5em;
+	width:5em;
+	border-radius:50%;
+	position:fixed;
+	top:95%;
+	left:20%;
+	z-index:19;
+	background-color:white;
+	border: 1px solid dodgerblue;
+	box-shadow:0px 4px 8px 0px dodgerblue;
+}
+
+.upwardMotion {
+  -webkit-animation-name: upwardmotion; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 5s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: 1;
+  animation-name: upwardmotion;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+}
+
+@-webkit-keyframes upwardmotion {
+  0%   {top: 85%;}
+  100% {top: 0%;}
+}
+
+@keyframes upwardmotion {
+  0%   {top: 85%;}
+  100% {top: 0%;}
+}
+
