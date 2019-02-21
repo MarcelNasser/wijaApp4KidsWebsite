@@ -217,7 +217,7 @@
 	}
 	
 	window.onload = function(){
-		entryScene();
+		//entryScene();
 		onloadAction();
 	}
 	
