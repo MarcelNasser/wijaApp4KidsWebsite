@@ -1,47 +1,47 @@
 html{font-size:90%;} 
-@media(min-width:60em){html{font-size: 120%}}
+/* @media(min-width:60em){html{font-size: 120%}} */
 
 body{background-color: #c2c4d8;font-size:16px;padding:0;margin:0;}
 
 h1 {
     font-family: Consolas, Georgia, "Times New Roman", Times, serif;
-    font-size: 250%;
+    font-size: 2.5em;
 	text-align:center;
 	border-bottom :1px gray solid; line-height:1.2em;
 }
 
 h2 {margin:10px 0 15px 0;text-align:center; padding:20px 0;
-            font-size:200%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
+            font-size:2em; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
             font-weight:bold;line-height:1.2em;}
 			
 h3 {margin:10px 0 15px 0;text-align:center; padding:20px 0;
-            font-size:150%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
+            font-size:1.5em; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
             font-weight:normal;line-height:1.2em;}
 
 h4 {margin:1em 0 0.5em 0;text-align:center; padding:0;
-            font-size:135%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
+            font-size:1.35em; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
             font-weight:italic; line-height:1.2em;}
 
 h5 {margin:0 0 0.5em 0;text-align:center; padding:0;
-            font-size:130%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
+            font-size:1.3em; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
             font-weight:italic; line-height:1.2em;
 			text-align:center;}
 			
 p {margin:0 0 0 0;text-align:center; padding:0 0;
-            font-size:120%; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
+            font-size:1.2em; font-family: Consolas, Georgia, "Times New Roman", Times, serif;
             font-weight:normal;line-height:1.2em;
 			text-align: justify;
 			text-justify: auto;
 			}
 
-strong{font-weight:bold;font-size:150%;}
+strong{font-weight:bold;font-size:1.5em;}
 
 div{
 	text-align: justify;
 	text-justify: auto;
 }
 	
-a {text-decoration:none;font-weight:italic;font-size:162%;line-height:1.2em;font-family: Consolas, Georgia, "Times New Roman", Times, serif;}
+a {text-decoration:none;font-weight:italic;font-size:1.62em;line-height:1.2em;font-family: Consolas, Georgia, "Times New Roman", Times, serif;}
 
 a:link {color:black}
 
@@ -85,7 +85,7 @@ min-width:500px;
 	padding:1.2em;
 	display:none;
 	position:absolute;
-    top: 80%;
+    top: 50%;
     left: 50%;	
     -ms-transform: translate(-50%,-50%);
     -moz-transform:translate(-50%,-50%);
@@ -93,7 +93,7 @@ min-width:500px;
     transform: translate(-50%,-50%);
 	}
 	
-.notificationBox p{font-size:100%;}
+.notificationBox p{font-size:1em;}
 
 .menuButton {color:black;z-index:5;display:inline-block; padding:0 0 0 0;background-color:white;
 position:relative;top:5px;}
@@ -236,7 +236,7 @@ animation: fadein 0.5s;
 		 bottom:4em;padding:2em;
 		 margin:4em auto;
          width:100%;text-align:center;}
-#footer p{font-size:80%;font-weight:italic;text-align:center;}
+#footer p{font-size:0.8em;font-weight:italic;text-align:center;}
 
 .greenPulse {
   -webkit-animation-name: greenpulse; /* Safari 4.0 - 8.0 */
@@ -327,6 +327,11 @@ animation: fadein 0.5s;
 	-webkit-animation: slowfadeout 15s;
 }
 
+.quickFadeOut {
+	animation: quickfadeout 2s;
+	-webkit-animation: quickfadeout 2s;
+}
+
 @keyframes slowfadeout  {
   0%   {opacity:1;}
   25%  {opacity:0.90;}
@@ -340,6 +345,20 @@ animation: fadein 0.5s;
   25%  {opacity:0.90;}
   50%  {opacity:0.85;}
   75%  {opacity:0.75;}
+  100% {opacity:0;}
+}
+
+@keyframes quickfadeout  {
+  0%   {opacity:0.9;}
+  /* 25%  {opacity:0.5;} */
+  /* 50%  {opacity:0.25;}   */
+  100% {opacity:0;}
+}
+
+@-webkit-keyframes quickfadeout  {
+  0%   {opacity:0.9;}
+  /* 25%  {opacity:0.5;} */
+  /* 50%  {opacity:0.25;}   */
   100% {opacity:0;}
 }
 
@@ -409,4 +428,3 @@ animation: fadein 0.5s;
   0%   {top: 85%;}
   100% {top: 0%;}
 }
-

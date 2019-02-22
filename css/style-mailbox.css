@@ -1,7 +1,7 @@
 #mailBox{
 	display:none;z-index:7;position:relative;background-color:white;padding:1em 2em;
 	font-family: Consolas, Georgia, "Times New Roman", Times, serif;
-	font-size:100%;
+	font-size:1em;
 	margin:2em auto 2em auto;
 }
 
@@ -17,7 +17,7 @@
   width:100%;z-index:7;
   padding: 0.4em 1.2em;
   margin: 0 0 0.5em 0;
-  font-size:110%;
+  font-size:1.1em;
   /* display: inline-block; */
   border: 1px solid #ccc;
   border-radius: 4px;

@@ -216,9 +216,14 @@
 		return maxwidth;
 	}
 	
-	window.onload = function(){
-		//entryScene();
-		onloadAction();
+	// window.onload = function(){
+		// entryScene();
+		// onloadAction();
+	// }
+	
+	function animateOnloadAction(){
+		entryScene();
+		onloadAction();	
 	}
 	
 	function entryScene(){
@@ -273,12 +278,31 @@
 		overlay.style.zIndex="1";
 	}
 	
-	function hideElement(){
+	function vanishThenNext(){
 		this.style.display="none";
 		body.removeChild(this);
 		countBubble++;
-		if (countBubble==bubbleRound){ballAnimation();}
+		if (countBubble==bubbleRound){
+			//ballAnimation();
+			overlayFadeout();
+		}
 	}
+	
+	function overlayFadeout(){
+		overlay.classList.remove('fadein');
+		overlay.classList.add('quickFadeOut');
+		overlay.style.animationDelay="1800ms";
+		overlay.addEventListener("webkitAnimationEnd", afterFadeoutOverlay);
+		overlay.addEventListener("animationend", afterFadeoutOverlay);
+	}
+	
+	function afterFadeoutOverlay(){
+		overlay.classList.remove('quickFadeOut');
+		overlay.style.zIndex="1";
+		overlay.style.opacity="0.4";
+		closeOverlay();
+	}
+	
 	function showElement(){
 		this.style.display="block";
 	}
@@ -287,11 +311,11 @@
 		this.classList.remove("fadein");
 		this.classList.add("upwardMotion");
 		this.style.animationDelay="0ms";
-		this.addEventListener("webkitAnimationEnd", hideElement);
-		this.addEventListener("animationend", hideElement);
+		this.addEventListener("webkitAnimationEnd", vanishThenNext);
+		this.addEventListener("animationend", vanishThenNext);
 	}
-	var animationTime=6000;
-	var bubbleRound=40;
+	var animationTime=10000;
+	var bubbleRound=60;
 	var countBubble=0;
 	function bubbleAnimation(){
 		var bubble,radius,posX,delay;
@@ -304,7 +328,7 @@
 			bubble.style.zIndex=zIndex;
 			bubble.classList.add("entryElementBubble");
 			bubble.classList.add("fadein");
-			radius=2+Math.random()*6;
+			radius=0.5+Math.random()*3;
 			posX=20+Math.floor(Math.random()*60);
 			delay=Math.floor(Math.random()*animationTime);
 			bubble.style.width=radius+"em";
@@ -364,14 +388,14 @@
 		pElements=content.getElementsByTagName("p");
 		if (pElements!=null){
 			for(var i=0;i<pElements.length;i++){
-				pElements[i].style.fontSize="135%";
+				pElements[i].style.fontSize="1.35em";
 				pElements[i].style.lineHeight=idealInline;
 			}
 		}
 		h5Elements=content.getElementsByTagName("h5");
 		if (pElements!=null){
 			for(var i=0;i<h5Elements.length;i++){
-				h5Elements[i].style.fontSize="145%";
+				h5Elements[i].style.fontSize="1.45em";
 			}
 		}
 		navbar.style.position="fixed";
@@ -393,14 +417,14 @@
 		pElements=content.getElementsByTagName("p");
 		if (pElements!=null){
 			for(var i=0;i<pElements.length;i++){
-				pElements[i].style.fontSize="120%";
+				pElements[i].style.fontSize="1.2em";
 				pElements[i].style.lineHeight="1.2em";
 			}
 		}
 		h5Elements=content.getElementsByTagName("h5");
 		if (pElements!=null){
 			for(var i=0;i<h5Elements.length;i++){
-				h5Elements[i].style.fontSize="130%";
+				h5Elements[i].style.fontSize="1.3em";
 			}
 		}
 		navbar.style.position="initial";
