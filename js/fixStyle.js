@@ -216,11 +216,6 @@
 		return maxwidth;
 	}
 	
-	// window.onload = function(){
-		// entryScene();
-		// onloadAction();
-	// }
-	
 	function animateOnloadAction(){
 		entryScene();
 		onloadAction();	
