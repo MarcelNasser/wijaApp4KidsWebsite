@@ -217,7 +217,7 @@
 	}
 	
 	window.onload = function(){
-		//entryScene();
+		entryScene();
 		onloadAction();
 	}
 	
@@ -277,8 +277,20 @@
 		this.style.display="none";
 		body.removeChild(this);
 		countBubble++;
-		if (countBubble==bubbleRound){ballAnimation();}
+		if (countBubble==bubbleRound){
+			//ballAnimation();
+			overlayFadeout();
+		}
 	}
+	
+	function overlayFadeout(){
+		overlay.classList.remove('fadein');
+		overlay.classList.add("quickFadeOut");
+		overlay.style.animationDelay="800ms";
+		overlay.addEventListener("webkitAnimationEnd", closeOverlay);
+		overlay.addEventListener("animationend", closeOverlay);
+	}
+	
 	function showElement(){
 		this.style.display="block";
 	}

@@ -327,6 +327,11 @@ animation: fadein 0.5s;
 	-webkit-animation: slowfadeout 15s;
 }
 
+.quickFadeOut {
+	animation: quickfadeout 3s;
+	-webkit-animation: quickfadeout 3s;
+}
+
 @keyframes slowfadeout  {
   0%   {opacity:1;}
   25%  {opacity:0.90;}
@@ -340,6 +345,20 @@ animation: fadein 0.5s;
   25%  {opacity:0.90;}
   50%  {opacity:0.85;}
   75%  {opacity:0.75;}
+  100% {opacity:0;}
+}
+
+@keyframes quickfadeout  {
+  0%   {opacity:0.9;}
+  /* 25%  {opacity:0.5;} */
+  /* 50%  {opacity:0.25;}   */
+  100% {opacity:0;}
+}
+
+@-webkit-keyframes quickfadeout  {
+  0%   {opacity:0.9;}
+  /* 25%  {opacity:0.5;} */
+  /* 50%  {opacity:0.25;}   */
   100% {opacity:0;}
 }
 
