@@ -286,7 +286,7 @@
 	function overlayFadeout(){
 		overlay.classList.remove('fadein');
 		overlay.classList.add('quickFadeOut');
-		overlay.style.animationDelay="1800ms";
+		overlay.style.animationDelay="900ms";
 		overlay.addEventListener("webkitAnimationEnd", afterFadeoutOverlay);
 		overlay.addEventListener("animationend", afterFadeoutOverlay);
 	}
