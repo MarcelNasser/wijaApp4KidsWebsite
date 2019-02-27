@@ -17,6 +17,10 @@
 	var content=document.getElementById("content");
 	var colors=["blue","green","red"];
 	var icolo=0;
+	var countBubble=0;
+	var bubbleRound;
+	var animationTime;
+
 	var jobInfo = document.getElementById("responseLine");
 	var responseHttp= document.getElementById("responseContainer");
 	var overlayStack=['','overlay'];
@@ -222,11 +226,17 @@
 	}
 	
 	function entryScene(){
+		overlayFadein();
+		bubbleRound=60;
+		animationTime=10000;
+		bubbleAnimation(10000,60);	
+	}
+	
+	function overlayFadein(){
 		overlay.style.display="block";
 		overlay.style.backgroundColor="rgba(0,0,0,0.9)";
 		overlay.style.zIndex="15";
 		overlay.classList.add('fadein');
-		bubbleAnimation();	
 	}
 	
 	function ballAnimation(){
@@ -278,7 +288,6 @@
 		body.removeChild(this);
 		countBubble++;
 		if (countBubble==bubbleRound){
-			//ballAnimation();
 			overlayFadeout();
 		}
 	}
@@ -309,9 +318,6 @@
 		this.addEventListener("webkitAnimationEnd", vanishThenNext);
 		this.addEventListener("animationend", vanishThenNext);
 	}
-	var animationTime=10000;
-	var bubbleRound=60;
-	var countBubble=0;
 	function bubbleAnimation(){
 		var bubble,radius,posX,delay;
 		var zIndex=19;
@@ -448,7 +454,10 @@
 					if (j%4<2){mailBoxItems[j].classList.add("blueBeat");}
 					else{mailBoxItems[j].classList.add("redBeat");}
 				}
-			} 			
+			}
+			bubbleRound=600;
+			animationTime=100000;
+			bubbleAnimation();
 			notMenuMobileOpen=false;
 			// sessionStorage.menuMobileStatus="visible";
 		}
