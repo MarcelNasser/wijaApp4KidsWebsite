@@ -17,6 +17,10 @@
 	var content=document.getElementById("content");
 	var colors=["blue","green","red"];
 	var icolo=0;
+	var countBubble=0;
+	var bubbleRound;
+	var animationTime;
+
 	var jobInfo = document.getElementById("responseLine");
 	var responseHttp= document.getElementById("responseContainer");
 	var overlayStack=['','overlay'];
@@ -215,23 +219,24 @@
 		maxwidth=Math.max(wrapper.style.minWidth,maxwidth);
 		return maxwidth;
 	}
-	
-	// window.onload = function(){
-		// entryScene();
-		// onloadAction();
-	// }
-	
+
 	function animateOnloadAction(){
 		entryScene();
 		onloadAction();	
 	}
 	
 	function entryScene(){
+		overlayFadein();
+		bubbleRound=60;
+		animationTime=10000;
+		bubbleAnimation();	
+	}
+	
+	function overlayFadein(){
 		overlay.style.display="block";
 		overlay.style.backgroundColor="rgba(0,0,0,0.9)";
 		overlay.style.zIndex="15";
 		overlay.classList.add('fadein');
-		bubbleAnimation();	
 	}
 	
 	function ballAnimation(){
@@ -291,7 +296,7 @@
 	function overlayFadeout(){
 		overlay.classList.remove('fadein');
 		overlay.classList.add('quickFadeOut');
-		overlay.style.animationDelay="1800ms";
+		overlay.style.animationDelay="900ms";
 		overlay.addEventListener("webkitAnimationEnd", afterFadeoutOverlay);
 		overlay.addEventListener("animationend", afterFadeoutOverlay);
 	}
@@ -314,8 +319,6 @@
 		this.addEventListener("webkitAnimationEnd", vanishThenNext);
 		this.addEventListener("animationend", vanishThenNext);
 	}
-	var animationTime=10000;
-	var bubbleRound=60;
 	var countBubble=0;
 	function bubbleAnimation(){
 		var bubble,radius,posX,delay;
@@ -324,11 +327,12 @@
 			bubble=document.createElement('div');
 			body.appendChild(bubble);
 			bubble.style.opacity="0";
+			if (zIndex==98){zIndex=19};
 			zIndex++;
 			bubble.style.zIndex=zIndex;
 			bubble.classList.add("entryElementBubble");
 			bubble.classList.add("fadein");
-			radius=0.5+Math.random()*3;
+			radius=0.5+Math.random()*2.5;
 			posX=20+Math.floor(Math.random()*60);
 			delay=Math.floor(Math.random()*animationTime);
 			bubble.style.width=radius+"em";
@@ -388,14 +392,14 @@
 		pElements=content.getElementsByTagName("p");
 		if (pElements!=null){
 			for(var i=0;i<pElements.length;i++){
-				pElements[i].style.fontSize="135%";
+				pElements[i].style.fontSize="1.35em";
 				pElements[i].style.lineHeight=idealInline;
 			}
 		}
 		h5Elements=content.getElementsByTagName("h5");
 		if (pElements!=null){
 			for(var i=0;i<h5Elements.length;i++){
-				h5Elements[i].style.fontSize="145%";
+				h5Elements[i].style.fontSize="1.45em";
 			}
 		}
 		navbar.style.position="fixed";
@@ -417,14 +421,14 @@
 		pElements=content.getElementsByTagName("p");
 		if (pElements!=null){
 			for(var i=0;i<pElements.length;i++){
-				pElements[i].style.fontSize="120%";
+				pElements[i].style.fontSize="1.2em";
 				pElements[i].style.lineHeight="1.2em";
 			}
 		}
 		h5Elements=content.getElementsByTagName("h5");
 		if (pElements!=null){
 			for(var i=0;i<h5Elements.length;i++){
-				h5Elements[i].style.fontSize="130%";
+				h5Elements[i].style.fontSize="1.3em";
 			}
 		}
 		navbar.style.position="initial";
@@ -453,7 +457,10 @@
 					if (j%4<2){mailBoxItems[j].classList.add("blueBeat");}
 					else{mailBoxItems[j].classList.add("redBeat");}
 				}
-			} 			
+			}
+			bubbleRound=200;
+			animationTime=100000;
+			bubbleAnimation();
 			notMenuMobileOpen=false;
 			// sessionStorage.menuMobileStatus="visible";
 		}

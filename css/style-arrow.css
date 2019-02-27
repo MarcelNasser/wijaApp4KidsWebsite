@@ -45,7 +45,7 @@ box-shadow:0 0 0.5em dodgerblue;
 .arrowLine{
 	cursor: default;
 	height:0.6em;
-	width:95%;
+	width:100%;
 	border-top:1px dodgerblue solid;
 	display:inline-block;
 	margin:0 0; padding:0;
