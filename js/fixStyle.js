@@ -476,7 +476,7 @@
 			}
 			if (mailBoxItems!=null){
 				for (var j = 0; j < mailBoxItems.length; j++){
-					if (j%4<2){mailBoxItems[j].classList.remove("blueBeat");}
+					if (j%4==0|j%4==3){mailBoxItems[j].classList.remove("blueBeat");}
 					else{mailBoxItems[j].classList.remove("redBeat");}
 				}
 			} 
