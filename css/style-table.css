@@ -1,11 +1,12 @@
-#tableContact {width:50%; margin:4em auto 4em auto; display:block;}
+#tableContactWrapper {margin:4.5em auto;width:30em; min-height:30em;}
+#tableContact {width:100%; margin:0 auto; display:block;}
 #tableContact tr:nth-child(odd) td:nth-child(odd){background-color: dodgerblue;}
 #tableContact tr:nth-child(odd) td:nth-child(even){background-color: #ff8000;}
 #tableContact tr:nth-child(even) td:nth-child(odd){background-color: #ff8000;}
 #tableContact tr:nth-child(even) td:nth-child(even){background-color: dodgerblue;}
-#tableContact td {width:50%}
-#tableContact img {max-height:75px; padding:10px;}
-#tableContact div{padding:20px 20px 20px 20px;min-height:95px;min-width:95px;}
+#tableContact img {max-height:3em; margin:0 auto;}
+#tableContact td{padding:2em;width:33%;}
+/* #tableContact tr{padding:1em;height:33%;} */
 
 #mailBox{
 	text-align:left;

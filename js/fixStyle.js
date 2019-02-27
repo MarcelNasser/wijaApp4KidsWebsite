@@ -227,7 +227,7 @@
 	
 	function entryScene(){
 		overlayFadein();
-		bubbleRound=60;
+		bubbleRound=55;
 		animationTime=10000;
 		bubbleAnimation();	
 	}
@@ -296,7 +296,7 @@
 	function overlayFadeout(){
 		overlay.classList.remove('fadein');
 		overlay.classList.add('quickFadeOut');
-		overlay.style.animationDelay="900ms";
+		overlay.style.animationDelay="350ms";
 		overlay.addEventListener("webkitAnimationEnd", afterFadeoutOverlay);
 		overlay.addEventListener("animationend", afterFadeoutOverlay);
 	}
@@ -323,6 +323,7 @@
 	function bubbleAnimation(){
 		var bubble,radius,posX,delay;
 		var zIndex=19;
+		countBubble=0;
 		for (var i=0;i<bubbleRound;i++){
 			bubble=document.createElement('div');
 			body.appendChild(bubble);

@@ -1,23 +1,24 @@
 #mailBox{
 	display:none;z-index:7;position:relative;background-color:white;padding:1em 2em;
 	font-family: Consolas, Georgia, "Times New Roman", Times, serif;
-	font-size:1em;
+	font-size:1.1em;
 	margin:2em auto 2em auto;
 }
 
 #mailBox textarea{
-	width:100%;z-index:7;
+	width:95%;z-index:7;
 	height: 300px;
 	border: 1px solid #ccc;
     border-radius: 4px;
 	padding:0.4em 1.2em;
+	font-size:0.9em;
 } 
 
 #mailBox input[type=text]{
   width:100%;z-index:7;
   padding: 0.4em 1.2em;
   margin: 0 0 0.5em 0;
-  font-size:1.1em;
+  font-size:0.9em;
   /* display: inline-block; */
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -31,6 +32,7 @@
   padding: 1em 1.5em;
   margin: 8px 0;
   border: none;
+  font-size:0.9em;
   border-radius: 8px;}
   
 /*#mailBox input[type=button]:hover {
