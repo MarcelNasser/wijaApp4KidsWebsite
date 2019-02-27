@@ -18,5 +18,9 @@ function showHiddenText(id_target){
 	if(textDiv.style.display===undefined|textDiv.style.display==""){textDiv.style.display="none";}
 	if (textDiv.style.display=="none"){
 		textDiv.style.display="block";
+		if (isCrappyScreen()){
+			textDiv.style.fontSize="1.35em";
+			textDiv.style.lineHeight="1.8em";
+		}
 	} else { textDiv.style.display="none";}		
 }
