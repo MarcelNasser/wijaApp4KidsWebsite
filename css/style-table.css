@@ -1,4 +1,4 @@
-#tableContactWrapper {margin:4.5em auto;width:30em; min-height:30em;}
+#tableContactWrapper {margin:4.5em auto;max-width:30em; max-height:30em;}
 #tableContact {width:100%; margin:0 auto; display:block;}
 #tableContact tr:nth-child(odd) td:nth-child(odd){background-color: dodgerblue;}
 #tableContact tr:nth-child(odd) td:nth-child(even){background-color: #ff8000;}
