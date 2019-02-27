@@ -6,11 +6,11 @@ margin:0 auto 3.6em auto;}
 
 .textBox span img{display: inline;float:right;vertical-align:middle;max-height:50px;}
 
-.textBox a{color:dodgerblue;text-align:right;font-size:90%;}
+.textBox a{color:dodgerblue;text-align:right;font-size:0.9em;}
 
 .textBox span a{display: inline;float:right;padding:0.2em;}
 
-.textBox p a{color:dodgerblue;text-align:right;font-size:90%;cursor: pointer;}
+.textBox p a{color:dodgerblue;text-align:right;font-size:0.9em;cursor: pointer;}
 
 .textBox p {margin:1.2em 0;}
 

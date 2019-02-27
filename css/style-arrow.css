@@ -2,11 +2,11 @@
 	border :2px gray solid;
 	border-radius:1.2em;
 	padding:1.2em 1.2em;
-	width:85%;
+	width:75%;
 	margin:0 auto;
 }
 
-#arrowDropTextWrapper h5{margin:0;font-size:150%;font-weight:normal;}
+#arrowDropTextWrapper h5{margin:0;font-size:1.5em;font-weight:normal;}
 
 .hiddenText{display:none;background-color:white;
 padding:2em;margin:1em 2em 0 1em;
@@ -21,7 +21,7 @@ box-shadow:0 0 0.5em dodgerblue;
 .arrowOuter p{
 	/* text-align:center; */
 	/* font-style: italic; */
-	font-size:110%;
+	font-size:1.1em;
 	color:black;
 }
 
@@ -36,7 +36,7 @@ box-shadow:0 0 0.5em dodgerblue;
 	width:1.2em;
 	border-left:1px dodgerblue solid;
 	border-bottom:1px dodgerblue solid;
-	transform: rotate(-45deg) translateY(0);
+	transform: rotate(-45deg) translateX(0px) translateY(0px);
 	display:inline-block;
 	margin:0 0; padding:0;
 	cursor: pointer;
