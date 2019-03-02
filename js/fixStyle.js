@@ -222,13 +222,20 @@
 		entryScene();
 		onloadAction();	
 	}
-	
+	var isSessionStorageAvailable=(sessionStorage!=null && sessionStorage!=undefined);
 	function entryScene(){
-		overlayFadein();
 		bubbleRound=40;
 		animationTime=10000;
-		//if (isCrappyScreen()){openMenuMobile();}
-		bubbleAnimation();
+		isPlayed=false;
+		if (isSessionStorageAvailable){
+			isEntryPlayed=sessionStorage.getItem('isEntryPlayed');
+			if (isEntryPlayed!=null){isPlayed=isEntryPlayed;}
+		}
+		if (!isPlayed){
+			overlayFadein();
+			bubbleAnimation();
+			if (isSessionStorageAvailable){sessionStorage.setItem('isEntryPlayed',true);}
+		}
 	}
 	
 	function overlayFadein(){
