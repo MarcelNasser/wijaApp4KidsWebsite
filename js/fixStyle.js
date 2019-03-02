@@ -75,13 +75,13 @@
 			if (mailBox!=null ){closeMailBox();}
 			if (responseHttp!=null){closeResponseHttp();}
 			if (popBox!=null){closePopBox();}
-			if (overlayStack[overlayStack.length-1]=='fadeAnimation'){
+			if (overlayStack[overlayStack.length-1]=='fadeableAnimation'){
 				if (overlay.classList.contains("fadein")){	
 					overlay.classList.remove("fadein");				
 				}
 				overlay.style.zIndex="1";
 				overlay.style.opacity="0.4";
-				overlayStack.pop('fadeAnimation');
+				overlayStack.pop('fadeableAnimation');
 			}
 		}
 		if (overlayStack.length>2){overlayStack.pop();}
@@ -234,7 +234,10 @@
 		entryScene();
 		onloadAction();	
 	}
-	var isSessionStorageAvailable=(sessionStorage!=null && sessionStorage!=undefined);
+	try{
+		var isSessionStorageAvailable=(sessionStorage!=null && sessionStorage!=undefined);
+	} catch (error) { var isSessionStorageAvailable=false;}
+	
 	function entryScene(){
 		bubbleRound=40;
 		animationTime=10000;
@@ -251,7 +254,7 @@
 	}
 	
 	function overlayFadein(){
-		overlayStack.push('fadeAnimation');
+		overlayStack.push('fadeableAnimation');
 		overlay.style.display="block";
 		overlay.style.backgroundColor="rgba(0,0,0,0.9)";
 		overlay.style.zIndex="15";
@@ -313,11 +316,13 @@
 	}
 	
 	function overlayFadeout(){
-		overlay.classList.remove('fadein');
-		overlay.classList.add('quickFadeOut');
-		overlay.style.animationDelay="350ms";
-		overlay.addEventListener("webkitAnimationEnd", afterFadeoutOverlay);
-		overlay.addEventListener("animationend", afterFadeoutOverlay);
+		if (overlayStack[overlayStack.length-1]=='fadeableAnimation'){
+			overlay.classList.remove('fadein');
+			overlay.classList.add('quickFadeOut');
+			overlay.style.animationDelay="350ms";
+			overlay.addEventListener("webkitAnimationEnd", afterFadeoutOverlay);
+			overlay.addEventListener("animationend", afterFadeoutOverlay);
+		}
 	}
 	
 	function afterFadeoutOverlay(){
@@ -325,6 +330,7 @@
 		overlay.style.zIndex="1";
 		overlay.style.opacity="0.4";
 		closeOverlay();
+		overlayStack.pop('fadeableAnimation');
 	}
 	
 	function showElement(){
@@ -343,9 +349,7 @@
 		var bubble,radius,posX,delay;
 		var zIndex=19;
 		countBubble=0;
-		var testCrappyScreen=isCrappyScreen();
 		for (var i=0;i<bubbleRound;i++){
-			//if (testCrappyScreen&notMenuMobileOpen) {break;}
 			bubble=document.createElement('div');
 			body.appendChild(bubble);
 			bubble.style.opacity="0";
@@ -405,7 +409,9 @@
 	var idealInline="1.8em";
 	if (isMobileDevice){idealInline="1.8em";}
 	function packContent(){
-		while (overlayStack.length>2){OnclickOverlay();}
+		if (overlayStack[overlayStack.length-1]!='fadeableAnimation'){
+			while (overlayStack.length>2){OnclickOverlay();}
+		}
 		if(wijaSlidesWrapper!=null){wijaSlidesWrapper.style.marginTop="3em";}
 		body.style.fontSize="18px";
 		androidBadge.style.display="none";
