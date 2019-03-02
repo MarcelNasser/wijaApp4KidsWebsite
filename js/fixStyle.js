@@ -20,7 +20,6 @@
 	var countBubble=0;
 	var bubbleRound;
 	var animationTime;
-
 	var jobInfo = document.getElementById("responseLine");
 	var responseHttp= document.getElementById("responseContainer");
 	var overlayStack=['','overlay'];
@@ -42,8 +41,7 @@
 		//obj.classList.remove("flipableY");
 		obj.classList.add("flipableY");
 	}*/
-	var previousStateOfScreen;
-	
+	var previousStateOfScreen;	
 	function disableButton(btn){
 		btn.classList.remove("enabledBtn");
 		btn.classList.add("disabledBtn");
@@ -227,9 +225,10 @@
 	
 	function entryScene(){
 		overlayFadein();
-		bubbleRound=55;
+		bubbleRound=40;
 		animationTime=10000;
-		bubbleAnimation();	
+		//if (isCrappyScreen()){openMenuMobile();}
+		bubbleAnimation();
 	}
 	
 	function overlayFadein(){
@@ -324,7 +323,9 @@
 		var bubble,radius,posX,delay;
 		var zIndex=19;
 		countBubble=0;
+		var testCrappyScreen=isCrappyScreen();
 		for (var i=0;i<bubbleRound;i++){
+			//if (testCrappyScreen&notMenuMobileOpen) {break;}
 			bubble=document.createElement('div');
 			body.appendChild(bubble);
 			bubble.style.opacity="0";
@@ -333,7 +334,7 @@
 			bubble.style.zIndex=zIndex;
 			bubble.classList.add("entryElementBubble");
 			bubble.classList.add("fadein");
-			radius=0.5+Math.random()*2.5;
+			radius=0.25+Math.random()*1.5;
 			posX=20+Math.floor(Math.random()*60);
 			delay=Math.floor(Math.random()*animationTime);
 			bubble.style.width=radius+"em";
@@ -352,7 +353,7 @@
 		previousStateOfScreen=isCrappyScreen();
 		if (previousStateOfScreen){packContent();}
 	}
-		
+	
 	window.onresize = function(){
 		onResizeAction();
 	}
@@ -450,19 +451,18 @@
 				switchBtnMobile.style.color="green";
 				menuBtnMobile[i].classList.add("animatedButton");
 				menuBtnMobile[i].classList.add(computeRandomValue(animationBeats));
-				//menuBtnMobile[i].classList.add("heartBeat");
 				menuBtnMobile[i].classList.remove("disabledButton");
 			}
-			if (mailBoxItems!=null){
+			if (mailBoxItems!=null & false){
 				for (var j = 0; j < mailBoxItems.length; j++){
-					if (j%4==0|j%4==3){mailBoxItems[j].classList.add("blueBeat");}
+					if (j%6%2==0){mailBoxItems[j].classList.add("blueBeat");}
 					else{mailBoxItems[j].classList.add("redBeat");}
 				}
 			}
-			bubbleRound=200;
+			notMenuMobileOpen=false;
+			bubbleRound=125;
 			animationTime=100000;
 			bubbleAnimation();
-			notMenuMobileOpen=false;
 			// sessionStorage.menuMobileStatus="visible";
 		}
 		else{
@@ -472,10 +472,9 @@
 				for (var j = 0; j < menuBtnMobile.length; j++){
 					menuBtnMobile[i].classList.remove(animationBeats[j]);
 				}
-				//menuBtnMobile[i].classList.remove("heartBeat");
 				menuBtnMobile[i].classList.add("disabledButton");
 			}
-			if (mailBoxItems!=null){
+			if (mailBoxItems!=null & false){
 				for (var j = 0; j < mailBoxItems.length; j++){
 					if (j%4==0|j%4==3){mailBoxItems[j].classList.remove("blueBeat");}
 					else{mailBoxItems[j].classList.remove("redBeat");}

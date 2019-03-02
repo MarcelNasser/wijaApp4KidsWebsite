@@ -5,7 +5,8 @@
 #tableContact tr:nth-child(even) td:nth-child(odd){background-color: #ff8000;}
 #tableContact tr:nth-child(even) td:nth-child(even){background-color: dodgerblue;}
 #tableContact img {max-height:3em; margin:0 auto;}
-#tableContact td{padding:2em;width:33%;}
+#tableContact td{width:33%;}
+.mailBoxItem{padding:2em;margin:0;}
 /* #tableContact tr{padding:1em;height:33%;} */
 
 #mailBox{
