@@ -403,14 +403,14 @@
 		menuIcon.style.display="none";
 		menuMobile.style.display="inline-block";
 		pElements=content.getElementsByTagName("p");
-		if (pElements!=null){
+		if (pElements!=null & false){
 			for(var i=0;i<pElements.length;i++){
 				pElements[i].style.fontSize="1.35em";
 				pElements[i].style.lineHeight=idealInline;
 			}
 		}
 		h5Elements=content.getElementsByTagName("h5");
-		if (pElements!=null){
+		if (pElements!=null & false){
 			for(var i=0;i<h5Elements.length;i++){
 				h5Elements[i].style.fontSize="1.45em";
 			}
@@ -432,14 +432,14 @@
 		androidBadge.style.display="inline-block";
 		if(wijaSlidesWrapper!=null){wijaSlidesWrapper.style.marginTop="3em";}
 		pElements=content.getElementsByTagName("p");
-		if (pElements!=null){
+		if (pElements!=null & false){
 			for(var i=0;i<pElements.length;i++){
 				pElements[i].style.fontSize="1.2em";
 				pElements[i].style.lineHeight="1.2em";
 			}
 		}
 		h5Elements=content.getElementsByTagName("h5");
-		if (pElements!=null){
+		if (pElements!=null & false){
 			for(var i=0;i<h5Elements.length;i++){
 				h5Elements[i].style.fontSize="1.3em";
 			}
