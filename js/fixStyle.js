@@ -75,6 +75,14 @@
 			if (mailBox!=null ){closeMailBox();}
 			if (responseHttp!=null){closeResponseHttp();}
 			if (popBox!=null){closePopBox();}
+			if (overlayStack[overlayStack.length-1]=='fadeAnimation'){
+				if (overlay.classList.contains("fadein")){	
+					overlay.classList.remove("fadein");				
+				}
+				overlay.style.zIndex="1";
+				overlay.style.opacity="0.4";
+				overlayStack.pop('fadeAnimation');
+			}
 		}
 		if (overlayStack.length>2){overlayStack.pop();}
 	}
@@ -243,6 +251,7 @@
 	}
 	
 	function overlayFadein(){
+		overlayStack.push('fadeAnimation');
 		overlay.style.display="block";
 		overlay.style.backgroundColor="rgba(0,0,0,0.9)";
 		overlay.style.zIndex="15";
