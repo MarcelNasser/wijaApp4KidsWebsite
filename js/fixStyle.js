@@ -83,16 +83,20 @@
 		// if (mailBoxButton!=null){
 			// mailBoxButton.classList.add("fadeinBeat");
 		// }
-		window.scrollBy(0, 400);
-		showHiddenText('Text011');
+		window.scrollBy(0, 500);
+		showOnlyText('Text011');
+		hideOnlyText('Text012');
+		hideOnlyText('Text013');
+		hideOnlyText('Text014');
 		closePopBox();
 	}
 	
 	function dopopBoxJClicked(){
-		window.scrollBy(0, 600);
-		showHiddenText('Text012');
-		showHiddenText('Text013');
-		showHiddenText('Text014');
+		window.scrollBy(0, 700);
+		hideOnlyText('Text011');
+		showOnlyText('Text012');
+		showOnlyText('Text013');
+		showOnlyText('Text014');
 		closePopBox();
 	}
 	

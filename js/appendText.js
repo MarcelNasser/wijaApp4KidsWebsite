@@ -24,3 +24,18 @@ function showHiddenText(id_target){
 		}
 	} else { textDiv.style.display="none";}		
 }
+
+function showOnlyText(id_target){
+	var textDiv=document.getElementById(id_target);
+	textDiv.style.display="block";
+	if (isCrappyScreen()){
+		textDiv.style.fontSize="1.35em";
+		textDiv.style.lineHeight="1.8em";
+	}
+}
+
+function hideOnlyText(id_target){
+	var textDiv=document.getElementById(id_target);
+	textDiv.style.display="none";
+}
+
