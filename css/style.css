@@ -76,6 +76,8 @@ min-width:500px;
 	transform: scale(1.05); 
 }
 
+.menuButton{border-radius:50%;border:0.3em outset rgba(255,215,0,0.3);}
+
 .notificationBox {
 	z-index:99;
 	border-radius:0.5em;border: 2px solid #f3f3f3;
