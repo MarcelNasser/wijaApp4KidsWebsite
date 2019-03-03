@@ -11,8 +11,21 @@ function hideText(id_target){
 	if (next!=null){next.style.display="none";}
 	if (more!=null){more.style.display="inline-block";}
 }
-//var textDiv=document.getElementById("Text011");
-//var clicked=0;
+
+function fixTextBox(method){
+	if (method=="unpack"){
+		appendText('textBox001');
+		appendText('textBox002');
+		appendText('textBox003');
+		appendText('textBox004');
+	} else if (method=="pack") {
+		hideText('textBox001');
+		hideText('textBox002');
+		hideText('textBox003');
+		hideText('textBox004');
+	}
+}
+
 function showHiddenText(id_target){
 	var textDiv=document.getElementById(id_target);
 	if(textDiv.style.display===undefined|textDiv.style.display==""){textDiv.style.display="none";}

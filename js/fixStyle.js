@@ -20,6 +20,7 @@
 	var countBubble=0;
 	var bubbleRound;
 	var animationTime;
+	var isBubbleAnimationFinished=true;
 	var jobInfo = document.getElementById("responseLine");
 	var responseHttp= document.getElementById("responseContainer");
 	var overlayStack=['','overlay'];
@@ -31,6 +32,8 @@
 	var notificationBox=document.getElementsByClassName("notificationBox")[0];
 	var submitButton=document.getElementById("submitButton");
 	var mailBoxItems=document.getElementsByClassName("mailBoxItem");
+	var textBoxes=document.getElementsByClassName("textBox");
+	
 	for (var j = 0; j < mailBoxItems.length; j++){
 		mailBoxItems[j].onmouseenter=function(){
 		this.classList.remove("flipableY");
@@ -311,6 +314,7 @@
 		countBubble++;
 		if (countBubble==bubbleRound){
 			//ballAnimation();
+			isBubbleAnimationFinished=true;
 			overlayFadeout();
 		}
 	}
@@ -344,11 +348,11 @@
 		this.addEventListener("webkitAnimationEnd", vanishThenNext);
 		this.addEventListener("animationend", vanishThenNext);
 	}
-	var countBubble=0;
 	function bubbleAnimation(){
 		var bubble,radius,posX,delay;
 		var zIndex=19;
 		countBubble=0;
+		isBubbleAnimationFinished=false;
 		for (var i=0;i<bubbleRound;i++){
 			bubble=document.createElement('div');
 			body.appendChild(bubble);
@@ -438,6 +442,7 @@
 		body.style.width="100%";
 		navbar.style.overflow="hidden";
 		content.style.marginTop="11.2em";
+		if (textBoxes!=null){fixTextBox("unpack");}
 	}
 	
 	function unPackContent(){
@@ -465,6 +470,7 @@
 		wrapper.style.padding="0";
 		menuMobile.style.display="none";
 		content.style.marginTop="0px";
+		if (textBoxes!=null){fixTextBox("pack");}
 	}
 
 	function openMenuMobile(){
@@ -486,9 +492,11 @@
 				}
 			}
 			notMenuMobileOpen=false;
-			bubbleRound=125;
-			animationTime=100000;
-			bubbleAnimation();
+			if (isBubbleAnimationFinished){
+				bubbleRound=125;
+				animationTime=100000;
+				bubbleAnimation();
+			}
 			// sessionStorage.menuMobileStatus="visible";
 		}
 		else{
