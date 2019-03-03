@@ -442,7 +442,7 @@
 		body.style.width="100%";
 		navbar.style.overflow="hidden";
 		content.style.marginTop="11.2em";
-		if (textBoxes!=null){fixTextBox("unpack");}
+		if (textBoxes!=null){fixTextBox("pack");}
 	}
 	
 	function unPackContent(){
@@ -470,7 +470,7 @@
 		wrapper.style.padding="0";
 		menuMobile.style.display="none";
 		content.style.marginTop="0px";
-		if (textBoxes!=null){fixTextBox("pack");}
+		if (textBoxes!=null){fixTextBox("unpack");}
 	}
 
 	function openMenuMobile(){
