@@ -15,7 +15,7 @@
 	var tabContact=document.getElementById("tableContact");
 	var menuList=document.getElementsByClassName("material-icons menuButton");
 	var content=document.getElementById("content");
-	var colors=["blue","green","red"];
+	var colors=["blue","green","red","black","gold"];
 	var icolo=0;
 	var countBubble=0;
 	var bubbleRound;
@@ -55,7 +55,7 @@
 		//formX.innerHTML+=formX+"\n";
 		var formData=formX.elements;
 		for(var i=0;i<formData.length;i++){
-		if(args.includes(formData[i].name)){
+		if(valueInTab(formData[i].name,args)){
 			//formX.innerHTML+=formData[i].type+"\n";
 			if (formData[i].type=="textarea"){
 				//formX.innerHTML+=formData[i]+"\n";
@@ -472,6 +472,20 @@
 		content.style.marginTop="0px";
 		if (textBoxes!=null){fixTextBox("unpack");}
 	}
+	
+	function fixTextBox(method){
+		if (method=="unpack"){
+			appendText('textBox001');
+			appendText('textBox002');
+			appendText('textBox003');
+			appendText('textBox004');
+		} else if (method=="pack") {
+			hideText('textBox001');
+			hideText('textBox002');
+			hideText('textBox003');
+			hideText('textBox004');
+		}
+	}
 
 	function openMenuMobile(){
 		// if (sessionStorage.menuMobileStatus===undefined|sessionStorage.menuMobileStatus=="")
@@ -521,16 +535,17 @@
 				
 	}
 	
-	var tmp_array=[];
+	var tmp_array
+
 	function computeRandomValue(tab){
 		var toResetArray=true;
 		//console.log(tmp_array);
 		if (tmp_array!=null){
 			var allintab=true;
 			for (var j = 0; j < tmp_array.length; j++){
-				if (!tab.includes(tmp_array[j])){
+				if (!valueInTab(tmp_array[j],tab)){
 						allintab=false; break;
-					}
+				}
 			}
 			if (allintab & tmp_array.length>0){toResetArray=false;}
 		}
@@ -546,7 +561,14 @@
 		tmp_array.splice(irand,1);
 		return out;
 	}
-	
+	function valueInTab(value,tab){
+		rep=false;
+		try {rep=tab.includes(value);}
+		catch (error){
+			for (var i=0;i<tab.length;i++){if (tab[i]==value){rep=true;break;}}
+		}
+		return rep;
+	}	
 	function turnRed(elt){		
 		turnColor(elt,"pink","red");
 	}

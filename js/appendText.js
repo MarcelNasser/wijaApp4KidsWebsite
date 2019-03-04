@@ -12,20 +12,6 @@ function hideText(id_target){
 	if (more!=null){more.style.display="inline-block";}
 }
 
-function fixTextBox(method){
-	if (method=="unpack"){
-		appendText('textBox001');
-		appendText('textBox002');
-		appendText('textBox003');
-		appendText('textBox004');
-	} else if (method=="pack") {
-		hideText('textBox001');
-		hideText('textBox002');
-		hideText('textBox003');
-		hideText('textBox004');
-	}
-}
-
 function showHiddenText(id_target){
 	var textDiv=document.getElementById(id_target);
 	if(textDiv.style.display===undefined|textDiv.style.display==""){textDiv.style.display="none";}
