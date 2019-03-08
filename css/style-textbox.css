@@ -1,4 +1,6 @@
-#firstPost {float:left; margin:1.2em;padding:1.2em;}
+#firstPost {margin:1.2em auto;padding:1.2em;}
+@media only screen and (max-width:900px),(pointer:none),(pointer:coarse){
+#firstPost {margin:1.2em 0.5;padding:0;}}
 
 .textBox{border :2px gray solid;
 border-radius:1.2em;padding:1.2em 1.2em;

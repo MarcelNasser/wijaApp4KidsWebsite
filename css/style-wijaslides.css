@@ -10,7 +10,7 @@
 	/* variable de bricolage : les transformations CSS sont beugées : brico=-(H-L) */
 	--main-minus-brico:-172px;
 }
-@media only screen and (max-width:900px){
+@media only screen and (max-width:900px),(pointer:none),(pointer:coarse){
 :root {
 	/* gold number ratio between H and L */
 	--main-half-width:168px;
@@ -33,7 +33,7 @@
 	padding:2.4em 0 0 0;
 	margin:1.62em auto 0 auto;
 	}
-@media only screen and (max-width:900px){
+@media only screen and (max-width:900px),(pointer:none),(pointer:coarse){
 	#wijaSlidesWrapper{height:822px;}
 }
 .slideBox{
