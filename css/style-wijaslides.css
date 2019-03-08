@@ -10,6 +10,20 @@
 	/* variable de bricolage : les transformations CSS sont beugées : brico=-(H-L) */
 	--main-minus-brico:-172px;
 }
+@media only screen and (max-width:900px){
+:root {
+	/* gold number ratio between H and L */
+	--main-half-width:168px;
+	--main-width:336px;
+	--main-minus-half-width:-168px;
+	--main-minus-width:-336px;
+	--main-half-height:272px;
+	--main-minus-half-height:-272px;
+	--main-height:544px;
+	/* variable de bricolage : les transformations CSS sont beugées : brico=-(H-L) */
+	--main-minus-brico:-208px;
+}
+}
 
 #wijaSlidesWrapper{
 	perspective: 728px;
@@ -19,7 +33,9 @@
 	padding:2.4em 0 0 0;
 	margin:1.62em auto 0 auto;
 	}
-
+@media only screen and (max-width:900px){
+	#wijaSlidesWrapper{height:822px;}
+}
 .slideBox{
 	z-index:0;
 	margin:1.62em auto;
