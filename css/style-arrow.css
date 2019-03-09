@@ -5,6 +5,7 @@
 	width:75%;
 	margin:0 auto;
 }
+@media only screen and (orientation:portrait),only screen and (max-width:900px){#arrowDropTextWrapper{width:100%;margin:0 1em;}}
 
 #arrowDropTextWrapper h5{margin:0;font-size:1.5em;font-weight:normal;}
 
@@ -12,11 +13,13 @@
 padding:2em;margin:1em 2em 0 1em;
 box-shadow:0 0 0.5em dodgerblue;
 }
+@media only screen and (orientation:portrait),only screen and (max-width:900px){.hiddenText{padding:1em;margin:1em;}}
 
 .arrowOuter{
 	margin:2em auto 2em auto;
 	width:85%;
 }
+@media only screen and (orientation:portrait),only screen and (max-width:900px){.arrowOuter{margin:1em auto;width:100%;}}
 
 .arrowOuter p{
 	/* text-align:center; */
