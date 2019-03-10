@@ -616,5 +616,4 @@
 				eltBtn[i].style.backgroundColor=color1;
 			}
 		}		
-	}
-	
+	}	
