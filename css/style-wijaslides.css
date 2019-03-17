@@ -187,21 +187,21 @@
         border-radius: 0.5em;
 		max-width:22.5em;
 		min-height:13.9em;
-		font-size:0.9em;
+		font-size:0.9rem;
 		font-family: Consolas, Georgia, "Times New Roman", Times, serif;
-        line-height:1.5em;
+        line-height:1.5rem;
 		box-shadow:inset 0px 0px 30px dodgerblue;
 }
 
 p em{font-style:normal;color:blue;}
 
 
-.popBox a{font-size:1.25em;text-decoration:underline;color:blue;margin:1.2em 0 0 0;cursor:pointer;}
+.popBox a{font-size:1.25rem;text-decoration:underline;color:blue;margin:1.2em 0 0 0;cursor:pointer;}
 
 .popBox p a{
 			margin:0 0 0 0;text-align:center; padding:0 0;
             color:black;
-            font-weight:normal;line-height:1.2em;}
+            font-weight:normal;line-height:1.2rem;}
 			
 .social_media_button{border-radius:50%;margin:0.5em auto; }
 
@@ -220,7 +220,7 @@ p em{font-style:normal;color:blue;}
 	position:absolute;
 	}
 
-.wijaSlide h3 {font-size:5em;}
+.wijaSlide h3 {font-size:5rem;}
 
 .rotateLeft{
   -webkit-transform-style: preserve-3d; /* Safari 3-8  */  

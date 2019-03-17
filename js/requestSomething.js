@@ -17,7 +17,7 @@ function requestSomething(){
     }
 	jobInfo.style.textAlign = "left";
 	jobInfo.innerHTML+=" >>>  Requesting from host the Webmaster's e-mail ... <br\>";
-	jobInfo.innerHTML+="--------------------------------------------------";
+	jobInfo.innerHTML+="--------------------------------------";
 	xhttp.onreadystatechange=function(){
 		var state=xhttp.readyState;
 		var statut;
@@ -32,7 +32,7 @@ function requestSomething(){
 				//jobInfo.innerHTML+="<br\> -> Host sent the response with headers:: "+xhttp.getResponseHeader('Content-Type');
 
 				if(statut==200){
-					jobInfo.innerHTML+="<br\>--------------------------------------------------";
+					jobInfo.innerHTML+="<br\>--------------------------------------";
 					jobInfo.innerHTML+="<br\> -- Summary --"
 					jobInfo.innerHTML+="<br\> The fire/response test performed well. AWS services S3, Lambda and API Gateway are well configured."+
 					"The pipeline with the host is ready for datastreaming and further implements. By the way, the Webmaster's message output :: ";
@@ -41,7 +41,7 @@ function requestSomething(){
 
 				}
 				else{
-					jobInfo.innerHTML+="<br\>--------------------------------------------------";
+					jobInfo.innerHTML+="<br\>--------------------------------------";
 					jobInfo.innerHTML+="<br\> -- Summary --"
 					jobInfo.innerHTML+="<br\> Diagnosis : <br\> the HTTP request exited with an error status ("+statut+")";
 					jobInfo.innerHTML+="\ :: something went wrong while your browser was listening to the server.";
