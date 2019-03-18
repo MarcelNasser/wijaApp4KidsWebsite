@@ -34,7 +34,7 @@
 	margin:1.62em auto 0 auto;
 	}
 @media only screen and (orientation:portrait),only screen and (max-width:900px){
-	#wijaSlidesWrapper{height:822px;}
+	#wijaSlidesWrapper{height:822px;perspective: 873px;}
 }
 .slideBox{
 	z-index:0;
