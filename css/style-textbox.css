@@ -7,9 +7,6 @@ margin:0 auto 3.6em auto;}
 
 .textBox span img{display: inline;float:right;vertical-align:middle;max-height:50px;}
 
-/*.textBox a{color:dodgerblue;text-align:right;font-size:0.9rem !important;}*/
-/*@media only screen and (orientation:portrait),only screen and (max-width:900px){.textBox a {font-size:1.1rem !important;}}*/
-
 .textBox span a{display: inline;float:right;padding:0.2em;}
 
 .textBox p a{color:dodgerblue;text-align:right;font-size:0.9rem !important;cursor: pointer;}
