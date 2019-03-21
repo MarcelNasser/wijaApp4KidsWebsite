@@ -1,4 +1,3 @@
-/*Ajout d'un commentaire inutile*/
 #firstPost {margin:1.2em auto;padding:1.2em;}
 @media only screen and (orientation:portrait),only screen and (max-width:900px){#firstPost {margin:1.2em 0.5;padding:0;}}
 
